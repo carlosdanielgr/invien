@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Invien</title>
+
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN core-css ================== -->
+    <link href="/assets/css/vendor.min.css" rel="stylesheet" />
+    <link href="/assets/css/app.min.css" rel="stylesheet" />
+    <link href="/assets/css/invienStylesheet.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css"
+    />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <!-- <style>
+      body {
+        font-family: "Gilroy", sans-serif;
+      }
+
+      .bell-mt {
+        font-family: "Bell-MT", serif;
+      }
+
+      .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 1100;
+      }
+
+      .my-float {
+        margin-top: 16px;
+      }
+
+      .BtnInvien {
+        /* padding: 15px 25px; */
+        border: unset;
+        border-radius: 5px;
+        color: #fff;
+        z-index: 1;
+        background: rgba(236, 28, 36, 1);
+        position: relative;
+        font-weight: 1000;
+        /* font-size: 17px; */
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        overflow: hidden;
+      }
+
+      .BtnInvien::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        border-radius: 5px;
+        background-color: #fff;
+        z-index: -1;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+      }
+
+      .BtnInvien:hover {
+        color: rgba(236, 28, 36, 1) !important;
+      }
+
+      .BtnInvien:hover::before {
+        width: 100%;
+      }
+
+      .norBtnInvien {
+        border-radius: 5px;
+        color: #fff;
+        background: rgba(236, 28, 36, 1);
+        transition: background 0.3s ease;
+      }
+
+      .norBtnInvien:hover {
+        background: rgba(200, 24, 30, 1);
+        color: #fff;
+      }
+
+      .custom-navbar .nav-link {
+        color: white !important;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.3s;
+        font-size: 17px;
+      }
+
+      .custom-navbar .nav-link:hover {
+        color: #f8f9fa;
+        border-bottom: 2px solid white;
+      }
+
+      .custom-navbar .nav-link.BtnInvien {
+        border-bottom: none;
+        transition: color 0.3s;
+      }
+
+      .custom-navbar .nav-link.BtnInvien:hover {
+        border-bottom: none;
+        color: rgba(236, 28, 36, 1) !important;
+      }
+
+      #bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .content-bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .content-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .video-shadow {
+        filter: brightness(50%);
+      }
+
+      .home .home-content-phrases {
+        z-index: 1020;
+        position: absolute;
+        top: 25%;
+        left: 0;
+        right: 0;
+        color: rgba(255, 255, 255, 0.5);
+        padding: 0 15px;
+        text-align: left;
+      }
+
+      @keyframes fadeOutUp {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .phrase {
+        display: inline-block;
+        position: relative;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        font-size: clamp(2rem, 4vw, 4rem);
+        color: #fff;
+      }
+
+      .phrase-exit {
+        animation-name: fadeOutUp;
+      }
+
+      .phrase-enter {
+        animation-name: fadeInUp;
+      }
+
+      .home .home-content-menu {
+        z-index: 1020;
+        position: absolute;
+        top: 65%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: left;
+      }
+
+      .home-menu-tabs {
+        border-bottom: none;
+      }
+
+      .home-menu-tabs .nav-item {
+        max-width: fit-content;
+        padding: 0 1rem;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .form {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .form > div {
+        padding: 0 1rem;
+      }
+
+      .form > div:not(:last-child, :nth-child(4)) {
+        border-right: 1px solid #b9b9b9;
+      }
+
+      .btn-custom-confirm {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-weight: 500;
+        border-radius: 0;
+      }
+
+      .btn-custom-confirm:hover {
+        box-shadow: inset 0 -2px 0 #fff;
+        border-radius: 0;
+      }
+
+      .btn-custom-asesores {
+        background-color: transparent;
+        border: none;
+        color: rgba(125, 125, 125, 1);
+        font-weight: 500;
+        border-radius: 0;
+        font-weight: 600;
+      }
+
+      .btn-custom-asesores:hover {
+        color: rgba(236, 28, 36, 1);
+        box-shadow: inset 0 -2px 0 rgba(236, 28, 36, 1);
+        font-family: "Gilroy";
+      }
+
+      .btn-custom {
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        border: none;
+        color: #000;
+        box-shadow: none;
+        outline: none;
+        padding: 0.375rem 0;
+        width: 100%;
+        text-align: left;
+        font-weight: 500;
+        border-radius: 0;
+      }
+
+      .btn-custom > span {
+        color: #858585;
+        font-size: 12px;
+        padding: 0;
+        border-style: none;
+        font-weight: normal;
+        white-space: nowrap;
+        padding-right: 2rem;
+      }
+
+      .btn-custom:hover,
+      .btn-custom:focus,
+      .btn-custom:active.btn-custom:active {
+        background-color: transparent;
+        color: #000;
+        box-shadow: none;
+      }
+
+      .dropdown-menu {
+        border-radius: 0;
+        border: 1px solid #ccc;
+      }
+
+      .home-menu-tabs .nav-link {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        transition: color 0.3s;
+      }
+
+      .home-menu-tabs .nav-link:hover,
+      .home-menu-tabs .nav-link.active {
+        border-bottom: 2px solid white;
+      }
+
+      .home-menu-panel {
+        padding: 20px;
+        background-color: #fff;
+      }
+
+      .home-menu-panel .tab-pane {
+        display: none;
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+        backdrop-filter: blur(20px); /* Ensure the blur is consistent */
+        -webkit-backdrop-filter: blur(
+          20px
+        ); /* Ensure the blur is consistent for Safari */
+      }
+
+      .home-menu-panel .tab-pane.active {
+        display: block;
+      }
+
+      .home-menu-select {
+        width: 100%;
+        margin-bottom: 10px;
+        color: #000;
+      }
+
+      .home-menu-btn {
+        background-color: #ecec28;
+        border: none;
+        color: #000;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .home-menu-btn:hover {
+        background-color: #ffcc00;
+      }
+
+      .invien-highlight {
+        color: rgba(236, 28, 36, 1) !important;
+        font-weight: 700;
+      }
+
+      .invien-captions {
+        font-size: 1.1rem !important;
+        color: rgba(91, 91, 91, 1);
+      }
+
+      .section-title {
+        font-size: clamp(1.49rem, 2vw + 1rem, 2.49rem);
+        font-weight: 400;
+        font-family: "Bell-MT";
+      }
+
+      .section-paragraph {
+        font-family: "Gilroy";
+        font-size: clamp(1rem, 1vw + 0.5rem, 1.75rem);
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: 1.5em;
+        padding-left: 10.8125rem !important;
+        padding-right: 13.8125rem !important;
+      }
+
+      .section-paragraph-modal {
+        font-family: "Gilroy";
+        font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: 1.5em;
+        padding-left: 10.8125rem !important;
+        padding-right: 13.8125rem !important;
+        text-align: justify;
+      }
+
+      .border-right-red {
+        border-right: 2px solid rgba(236, 28, 36, 1); /* Borde rojo */
+      }
+
+      .invest-section img.img-fluid {
+        width: 100%;
+        height: 400px !important;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .contact-title {
+        color: rgba(45, 45, 45, 1);
+      }
+
+      .form-control,
+      .form-control:focus,
+      .form-control:active {
+        border: none;
+        box-shadow: none;
+      }
+
+      .form-control {
+        font-weight: 400; /* Cambia el peso del texto aquí */
+      }
+
+      #phone {
+        width: 100% !important;
+      }
+
+      .intl-tel-input {
+        width: 100%;
+      }
+
+      .intl-tel-input .form-control {
+        width: 100% !important;
+      }
+
+      .input-group .form-control {
+        width: 100%;
+      }
+
+      .col-centered {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #carouselExampleControlsMulti .carousel-inner {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #carouselExampleControlsMulti .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+      }
+
+      #carouselExampleControlsMulti .carousel-inner {
+        padding: 1em;
+      }
+
+      #carouselExampleControlsMulti .card {
+        margin: 0 0.5em;
+        box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+        border: none;
+      }
+
+      #carouselExampleControlsMulti .carousel-control-prev,
+      .carousel-control-next {
+        background-color: #e1e1e1;
+        width: 6vh;
+        height: 6vh;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #carouselExampleControlsMulti img {
+        width: 700px;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .carousel-item {
+        position: relative;
+      }
+
+      .carousel-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(236, 28, 36, 1);
+        color: #fff;
+        padding: 15px;
+        text-align: left;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .carousel:not(#testimonialCarousel) {
+        width: 100%;
+        max-width: 300px; /* Esto asegura que el carrusel no se expanda más allá del contenedor en pantallas más pequeñas */
+        margin: 0 auto;
+      }
+
+      .carousel-caption {
+        background: rgba(
+          236,
+          28,
+          36,
+          1
+        ); /* Mantiene el fondo de la leyenda pero lo hace ligeramente transparente */
+        color: #fff;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .carousel-caption h5,
+      .carousel-caption p {
+        margin: 0;
+        font-size: 1rem; /* Asegura que el texto sea legible en pantallas pequeñas */
+      }
+
+      .carousel-inner img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .btn-icon i {
+        color: rgba(236, 28, 36, 1);
+      }
+
+      .btn-footer {
+        border-radius: 0px !important;
+        background: rgba(249, 249, 247, 1);
+        font-size: 24px !important;
+      }
+
+      .text-footer {
+        color: rgba(91, 91, 91, 1);
+      }
+
+      .text-footer-op {
+        color: rgba(91, 91, 91, 1);
+        opacity: 50%;
+      }
+
+      .tabs-container {
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      .invien-section {
+        background-color: #5b5b5b; /* Replace with the actual color you need */
+        color: white;
+        padding: 4rem 1rem; /* Adjust padding as needed */
+        position: relative;
+        /* overflow: hidden; */
+      }
+
+      .asesor-section {
+        background-color: #dddddd;
+        color: black;
+        margin-top: 5rem !important;
+        /* padding-top: 1.85rem !important;
+            padding-bottom: 1.85rem !important; */
+      }
+
+      .invien-section::after {
+        content: " "; /* Ensure there's a space, it can sometimes help with visibility */
+        position: absolute;
+        top: 0; /* Adjusted to 0 to make it easier to control with transform */
+        left: 50%;
+        transform: translate(
+          -50%,
+          -50%
+        ); /* Center horizontally and slightly move above the div */
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent; /* Adjust the size to be more noticeable */
+        border-right: 50px solid transparent;
+        border-top: 50px solid white; /* Ensure this color contrasts with the background */
+        z-index: 10; /* Increase z-index to ensure it's above other content */
+      }
+
+      .tab-content {
+        margin-top: 1rem;
+        border-radius: 1rem;
+      }
+
+      .header3-text {
+        font-size: 2rem;
+        font-weight: 100;
+      }
+
+      .header2-text {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .my-form {
+        background-color: #5b5b5b; /* Form background color */
+        padding: 2rem;
+        border-radius: 0.5rem; /* Rounded corners */
+      }
+
+      .my-form .form-label {
+        color: white; /* Label text color */
+      }
+
+      .my-form .form-control {
+        background-color: #f8f9fa; /* Input background color */
+        border: none; /* Remove input border */
+      }
+
+      .form-label {
+        font-weight: 400 !important;
+      }
+
+      .invien-text-color {
+        color: #ec1c24;
+        font-family: "Gilroy Bold";
+        font-weight: bold;
+        font-size: 3rem;
+      }
+
+      .invien-text-description {
+        font-family: "Gilroy";
+        font-size: 1.5rem;
+      }
+
+      .invien-text-description-bold {
+        font-family: "Gilroy Bold";
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .clickable-card {
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        border-radius: 40px;
+        background-color: #f1f1f1;
+        --bs-card-border-color: none;
+      }
+
+      .custom-border-radius {
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+      }
+
+      .clickable-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      }
+
+      .clickable-card .card-title {
+        font-family: "Gilroy Bold";
+        color: #5b5b5b;
+        font-size: 1.5rem;
+      }
+
+      .clickable-card .card-text {
+        font-family: "Gilroy";
+        color: #5b5b5b;
+        font-size: 1.3rem;
+      }
+
+      .clickable-card .card-status {
+        font-family: "Gilroy bold";
+        color: #ec1c24;
+        font-size: 1.3rem;
+      }
+
+      .img-fluid {
+        height: 220px !important;
+      }
+
+      .img-fluid-asesores {
+        height: 110px !important;
+      }
+
+      .mt-negative {
+        margin-top: -4rem;
+      }
+
+      .invien-text-contact {
+        color: #4d4d4d;
+        font-family: "Gilroy Bold";
+        font-weight: bold;
+        font-size: 2rem;
+      }
+
+      .custom-lft-padding {
+        padding-left: 8rem;
+      }
+
+      .custom-rgh-padding {
+        padding-right: 8rem;
+      }
+
+      .project-card {
+        transition: all 0.3s ease;
+        --bs-card-border-color: none;
+      }
+
+      .project-card:hover {
+        transform: scale(1.05);
+        z-index: 10;
+      }
+
+      .card-img-top {
+        height: 340px;
+        object-fit: cover;
+      }
+
+      .preventa-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: black;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      .card-title {
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+
+      .card-text {
+        color: gray;
+      }
+
+      .location-text {
+        color: red;
+        font-weight: bold;
+      }
+
+      .details-btn {
+        display: none;
+        background-color: red;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+      }
+
+      .project-card:hover .details-btn {
+        display: block;
+      }
+
+      .card-body {
+        position: relative;
+        z-index: 1;
+      }
+
+      .invien-title-400 {
+        color: rgba(236, 28, 36, 1);
+        font-weight: 400;
+        font-size: 1.79375rem;
+      }
+
+      .invien-title-400b {
+        color: rgba(45, 45, 45, 1);
+        font-weight: 400;
+        font-size: 1.79375rem;
+      }
+
+      .subtitle-400b {
+        color: rgba(30, 30, 30, 1);
+        font-weight: 400;
+        font-size: 2.79375rem;
+      }
+
+      .custom-modal-title {
+        color: rgba(45, 45, 45, 1);
+        font-weight: 400;
+        font-size: 2.09375rem;
+      }
+
+      .modal-body {
+        text-align: center; /* Centra el texto en el cuerpo del modal */
+      }
+
+      .modal-body .container {
+        margin-bottom: 1.5rem; /* Espaciado entre secciones */
+      }
+
+      .modal-body img {
+        max-width: 100%; /* Asegura que la imagen no exceda el ancho del modal */
+        height: auto; /* Mantén las proporciones de la imagen */
+        display: block;
+      }
+
+      .custom-icon {
+        width: 52px;
+        height: 31px;
+        margin: 0 !important;
+      }
+
+      .list-group li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px; /* Espacio entre los elementos de la lista */
+      }
+
+      #testimonialCarousel {
+        background: rgba(236, 28, 36, 1);
+        color: #fff;
+      }
+
+      .testimonial .testimonial-text,
+      .testimonial-author {
+        font-size: 1.79375rem;
+        font-family: "Bell-MT";
+        font-weight: 400;
+      }
+
+      #testimonialCarousel .carousel-item {
+        min-height: 300px; /* Ajusta este valor según el contenido más alto */
+      }
+
+      .item-container {
+        min-height: 300px;
+      }
+
+      .asesores-modal {
+        max-height: 500px;
+      }
+
+      .custom-mx-margin {
+        margin-left: 10.8125rem !important;
+        margin-right: 10.8125rem !important;
+      }
+
+      .btn-outline-primary {
+        --bs-btn-color: #ec1c24;
+        --bs-btn-border-color: #ec1c24;
+        --bs-btn-hover-color: #ffffff;
+        --bs-btn-hover-bg: #ec1c24;
+        --bs-btn-hover-border-color: #ec1c24;
+        --bs-btn-focus-shadow-rgb: 52, 143, 226;
+        --bs-btn-active-color: #ffffff;
+        --bs-btn-active-bg: #ec1c24;
+        --bs-btn-active-border-color: #ec1c24;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #ec1c24;
+        --bs-btn-disabled-bg: transparent;
+        --bs-btn-disabled-border-color: #ec1c24;
+        --bs-gradient: none;
+      }
+
+      .contactForm::placeholder {
+        color: #ccc;
+        opacity: 1;
+      }
+
+      .form-control:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #ccc;
+      }
+
+      .form-control::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #ccc;
+      }
+
+      .bg-lightGray {
+        --bs-bg-opacity: 1;
+        background-color: #999999;
+      }
+
+      .bg-lightGray:focus {
+        --bs-bg-opacity: 1;
+        background-color: #999999;
+      }
+
+      .header.navbar-sm .nav-link {
+        color: black !important;
+      }
+
+      .header.navbar-sm .nav-link:hover {
+        color: rgba(236, 28, 36, 1) !important;
+        box-shadow: inset 0 -2px 0 rgba(236, 28, 36, 1);
+      }
+
+      .header.navbar-sm .nav-link.BtnInvien {
+        color: #fff !important;
+      }
+
+      .header.navbar-sm .nav-link.BtnInvien:hover {
+        color: rgba(236, 28, 36, 1) !important;
+      }
+      .card-footer-custom {
+        background-color: #e30613;
+        color: white;
+        padding: 15px;
+        /* text-align: center; */
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        font-family: "Gilroy";
+        border-radius: 0 0 10px 10px;
+        /* justify-content: center; */
+      }
+
+      .asesores-description {
+        font-size: 1.49rem;
+      }
+
+      .asesores-mail {
+        font-size: 1.29rem;
+        color: white;
+      }
+
+      .asesores-phone {
+        font-size: 1.09rem;
+        color: white;
+      }
+
+      .contact-us {
+        font-size: 1.53125rem;
+        font-weight: 400;
+      }
+
+      @media (max-width: 1199px) {
+        .contact-us {
+          font-size: calc(1.278125rem + 0.3375vw);
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .invest-section img.img-fluid {
+          height: 300px !important;
+        }
+
+        .section-paragraph-modal {
+          padding-left: 7.8125rem !important;
+          padding-right: 10.8125rem !important;
+        }
+
+        .custom-mx-margin {
+          margin-left: 7.8125rem !important;
+          margin-right: 7.8125rem !important;
+        }
+
+        .asesores-modal {
+          max-height: 400px;
+        }
+
+        .carousel-inner img {
+          max-height: 400px;
+        }
+      }
+
+      @media (max-width: 1110px) {
+        .video-shadow > img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .header3-text {
+          font-size: 1.75rem;
+        }
+
+        .header2-text {
+          font-size: 2.15rem;
+        }
+
+        .header.navbar-transparent {
+          background: white;
+        }
+
+        .header.navbar-transparent .logo {
+          content: url("/assets/img/logo-invien.png");
+        }
+
+        .header.navbar-transparent
+          .navbar-collapse
+          .navbar-nav
+          .nav-item
+          .nav-link {
+          color: #2d353c !important;
+          padding-left: 1rem;
+        }
+
+        .header.navbar-transparent
+          .navbar-collapse
+          .navbar-nav
+          .nav-item
+          .nav-link.BtnInvien {
+          color: #fff !important;
+        }
+
+        .header.navbar-transparent
+          .navbar-collapse
+          .navbar-nav
+          .nav-item
+          .nav-link.BtnInvien:hover {
+          color: rgba(236, 28, 36, 1) !important;
+        }
+
+        .section-paragraph {
+          padding-left: 7.8125rem !important;
+          padding-right: 10.8125rem !important;
+        }
+
+        .section-paragraph-modal {
+          padding-left: 1.8125rem !important;
+          padding-right: 1.8125rem !important;
+        }
+
+        .invest-section img.img-fluid {
+          height: 250px !important;
+        }
+
+        .custom-mx-margin {
+          margin-left: 1.8125rem !important;
+          margin-right: 1.8125rem !important;
+        }
+
+        .testimonial .testimonial-text,
+        .testimonial-author {
+          font-size: 1.19375rem;
+          font-family: "Bell-MT";
+          font-weight: 400;
+        }
+
+        #testimonialCarousel .carousel-item {
+          min-height: 200px; /* Ajusta este valor según el contenido más alto */
+        }
+
+        .item-container {
+          min-height: 200px;
+        }
+
+        .asesores-modal {
+          max-height: 300px;
+        }
+
+        .carousel-inner img {
+          max-height: 300px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header3-text {
+          font-size: 1.5rem;
+        }
+
+        .header2-text {
+          font-size: 1.75rem;
+        }
+
+        .mt-negative {
+          margin-top: -3rem;
+        }
+
+        .home .home-content-menu {
+          top: 50%;
+        }
+
+        .custom-lft-padding {
+          padding-left: 0;
+          justify-content: center !important;
+        }
+
+        .custom-rgh-padding {
+          padding-right: 0;
+        }
+
+        .section-paragraph {
+          padding-left: 3.8125rem !important;
+          padding-right: 3.8125rem !important;
+        }
+
+        .section-paragraph-modal {
+          padding-left: 1.8125rem !important;
+          padding-right: 1.8125rem !important;
+        }
+
+        .invest-section img.img-fluid {
+          height: 200px !important;
+        }
+
+        .border-right-red {
+          border-right: none;
+        }
+
+        .item-container {
+          min-height: 100px;
+        }
+
+        .asesores-modal {
+          max-height: 200px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .header3-text {
+          font-size: 1.25rem;
+        }
+
+        .header2-text {
+          font-size: 1.5rem;
+        }
+
+        .section-paragraph {
+          padding-left: 1.8125rem !important;
+          padding-right: 1.8125rem !important;
+        }
+
+        .section-paragraph-modal {
+          padding-left: 1.8125rem !important;
+          padding-right: 1.8125rem !important;
+        }
+
+        .asesores-modal {
+          max-height: 100px;
+        }
+      }
+    </style> -->
+    <!-- ================== END core-css ================== -->
+  </head>
+  <body>
+    <a
+      href="https://api.whatsapp.com/send?phone=526624247136&text=%C2%A1Hola%21%2C%20Quisiera%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20una%20propiedad%20de%20Invien."
+      class="whatsapp-button"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp my-float"></i>
+    </a>
+    <!-- begin #page-container -->
+    <main class="main">
+      <div
+        id="header"
+        class="header navbar navbar-transparent navbar-fixed-top navbar-expand-lg custom-navbar"
+      >
+        <!-- begin container-fluid for full width container -->
+        <div class="container-fluid">
+          <!-- begin navbar-brand -->
+          <a href="#" class="navbar-brand" onclick="javascript:void(0);">
+            <img
+              id="navbarLogo"
+              class="logo"
+              src="/assets/images/logo-invien.png"
+              alt="Logo"
+            />
+          </a>
+          <!-- end navbar-brand -->
+          <!-- begin navbar-toggle -->
+          <button
+            class="btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#header-navbar"
+          >
+            <img width="30" src="./assets/icons/menu.png" alt="menu" />
+          </button>
+          <!-- end navbar-toggle -->
+          <!-- begin navbar-collapse -->
+          <div
+            class="collapse navbar-collapse justify-content-end me-lg-5"
+            id="header-navbar"
+          >
+            <ul class="navbar-nav pb-3 pb-lg-0">
+              <li class="nav-item me-2 me-xl-4 me-xxl-5">
+                <a class="nav-link" href="/quienes-somos.html"
+                  >Acerca de Nosotros</a
+                >
+              </li>
+              <li class="nav-item me-2 me-xl-4 me-xxl-5">
+                <a class="nav-link" href="/nuestros-servicios.html"
+                  >Servicios</a
+                >
+              </li>
+              <li class="nav-item me-2 me-xl-4 me-xxl-5">
+                <a class="nav-link" href="/propiedades.html">Propiedades</a>
+              </li>
+              <li class="nav-item me-2 me-xl-4 me-xxl-5">
+                <a class="nav-link" href="/asesores.html">Asesores</a>
+              </li>
+              <li class="nav-item me-2 me-xl-4 me-xxl-5">
+                <a class="nav-link" href="/contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+          <!-- end navbar-collapse -->
+        </div>
+        <!-- end container-fluid -->
+      </div>
+      <h1 class="title">
+        Transformamos
+        <span> tu </span>
+        <span>Inversión</span>
+        <span> en </span>
+        <span>Oportunidades</span>
+      </h1>
+    </main>
+    <!-- end #page-container -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="/assets/js/vendor.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#openModalSell").click(function () {
+          $("#myModal").modal("show");
+        });
+
+        $(".btn-custom-asesores").click(function () {
+          window.location.href = "/asesores.html";
+        });
+
+        let filters = {
+          propertyType: "",
+          country: "",
+          state: "",
+          municipality: "",
+        };
+
+        const statesByCountry = {
+          México: ["Sonora", "Ciudad de México"],
+          "Estados Unidos": ["Arizona"],
+        };
+
+        const municipalitiesByState = {
+          Sonora: ["Hermosillo", "San Carlos", "Bahía de Kino"],
+          "Ciudad de México": ["Ciudad de México"],
+          Arizona: ["Tucson"],
+        };
+
+        setupFilters();
+
+        function updateStatesDropdown(country) {
+          const $stateDropdown = $(".state-menu");
+          $stateDropdown.empty();
+
+          if (statesByCountry[country]) {
+            statesByCountry[country].forEach((state) => {
+              $stateDropdown.append(
+                `<li><a class="dropdown-item" href="#">${state}</a></li>`
+              );
+            });
+            $(".state-dropdown").prop("disabled", false);
+          } else {
+            $(".state-dropdown").prop("disabled", true);
+          }
+
+          $('.filter-reset[data-filter="state"]').hide();
+        }
+
+        function updateMunicipalitiesDropdown(state) {
+          const $municipalityDropdown = $(".municipality-menu");
+          $municipalityDropdown.empty();
+
+          if (municipalitiesByState[state]) {
+            municipalitiesByState[state].forEach((municipality) => {
+              $municipalityDropdown.append(
+                `<li><a class="dropdown-item" href="#">${municipality}</a></li>`
+              );
+            });
+            $(".municipality-dropdown").prop("disabled", false);
+          } else {
+            $(".municipality-dropdown").prop("disabled", true);
+          }
+
+          $('.filter-reset[data-filter="municipality"]').hide();
+        }
+
+        function setupFilters() {
+          // Event listener for property type selection
+          $(".property-type-menu").on("click", ".dropdown-item", function (e) {
+            e.preventDefault();
+            const propertyType = $(this).text();
+            $(".property-type-dropdown").text(propertyType);
+            filters.propertyType = propertyType;
+          });
+
+          // Event listener for country selection
+          $(".country-menu").on("click", ".dropdown-item", function (e) {
+            e.preventDefault();
+            const country = $(this).text();
+            $(".country-dropdown").text(country);
+            filters.country = country;
+            updateStatesDropdown(country);
+          });
+
+          // Event listener for state selection
+          $(".state-menu").on("click", ".dropdown-item", function (e) {
+            e.preventDefault();
+            const state = $(this).text();
+            $(".state-dropdown").text(state);
+            filters.state = state;
+            updateMunicipalitiesDropdown(state);
+          });
+
+          // Event listener for municipality selection
+          $(".municipality-menu").on("click", ".dropdown-item", function (e) {
+            e.preventDefault();
+            const municipality = $(this).text();
+            $(".municipality-dropdown").text(municipality);
+            filters.municipality = municipality;
+          });
+
+          // Event listener for search button
+          $(".btn-custom-confirm").on("click", function () {
+            const queryString = Object.entries(filters)
+              .filter(([_, value]) => value !== "")
+              .map(
+                ([key, value]) =>
+                  `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+              )
+              .join("&");
+
+            window.location.href = `/propiedades.html?${queryString}`;
+          });
+        }
+
+        var inputPhones = document.querySelector("#phone");
+        var iti = window.intlTelInput(inputPhones, {
+          utilsScript:
+            "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+          initialCountry: "auto",
+          customContainer: "col-12 pl-0 pr-0",
+          separateDialCode: true,
+          geoIpLookup: function (callback) {
+            fetch("https://ipapi.co/json")
+              .then(function (res) {
+                return res.json();
+              })
+              .then(function (data) {
+                callback(data.country_code);
+              })
+              .catch(function () {
+                callback("us");
+              });
+          },
+        });
+
+        inputPhones.addEventListener("input", function () {
+          this.value = this.value.replace(/\D/g, "");
+        });
+
+        var inputPhones2 = document.querySelector("#phone2");
+        var iti2 = window.intlTelInput(inputPhones2, {
+          utilsScript:
+            "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+          initialCountry: "auto",
+          customContainer: "col-12 pl-0 pr-0",
+          separateDialCode: true,
+          geoIpLookup: function (callback) {
+            fetch("https://ipapi.co/json")
+              .then(function (res) {
+                return res.json();
+              })
+              .then(function (data) {
+                callback(data.country_code);
+              })
+              .catch(function () {
+                callback("us");
+              });
+          },
+        });
+
+        inputPhones2.addEventListener("input", function () {
+          this.value = this.value.replace(/\D/g, "");
+        });
+
+        const phrases = [
+          "Tu <strong>propiedad</strong> en las mejores manos",
+          "Invierte <strong>bien</strong> con <strong>Invien</strong>",
+          "Abriendo las  <strong>puertas</strong> a un mundo de <strong>oportunidades</strong> en <strong>bienes raíces</strong>",
+        ];
+
+        let currentPhraseIndex = 0;
+        const $phraseDisplay = $("#phrase-display");
+
+        // Function to update the phrase with animation
+        function updatePhrase() {
+          $phraseDisplay.addClass("phrase-exit");
+
+          setTimeout(() => {
+            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            $phraseDisplay.html(phrases[currentPhraseIndex]);
+            $phraseDisplay.removeClass("phrase-exit").addClass("phrase-enter");
+
+            setTimeout(() => {
+              $phraseDisplay.removeClass("phrase-enter");
+            }, 500); // Match this timeout with the animation duration
+          }, 300); // Match this timeout with the animation duration
+        }
+
+        // Initial display setup
+        $phraseDisplay.html(phrases[currentPhraseIndex]);
+
+        // Change phrase every 10 seconds
+        setInterval(updatePhrase, 5000);
+
+        $(document).ready(function () {
+          $(".dropdown-menu a").click(function () {
+            var selectedText = $(this).text();
+            $(this).closest(".dropdown").find(".btn").text(selectedText);
+          });
+        });
+
+        var items = $(".multi-item");
+        var carouselInner = $(".multi-inner");
+
+        var totalItems = items.length;
+        var itemWidth = items.width();
+
+        // Clonar los elementos suficientes para que se vean sin saltos
+        items.slice(0, totalItems).clone().appendTo(carouselInner);
+        items.slice(0, totalItems).clone().prependTo(carouselInner);
+
+        // Set the initial scroll position
+        carouselInner.scrollLeft(totalItems * itemWidth);
+
+        $(".carousel-control-next").on("click", function () {
+          carouselInner
+            .finish()
+            .animate(
+              { scrollLeft: "+=" + itemWidth },
+              400,
+              "linear",
+              function () {
+                if (carouselInner.scrollLeft() >= totalItems * itemWidth * 2) {
+                  carouselInner.scrollLeft(totalItems * itemWidth);
+                }
+              }
+            );
+        });
+
+        $(".carousel-control-prev").on("click", function () {
+          carouselInner
+            .finish()
+            .animate(
+              { scrollLeft: "-=" + itemWidth },
+              400,
+              "linear",
+              function () {
+                if (carouselInner.scrollLeft() <= 0) {
+                  carouselInner.scrollLeft(totalItems * itemWidth);
+                }
+              }
+            );
+        });
+      });
+    </script>
+  </body>
+</html>

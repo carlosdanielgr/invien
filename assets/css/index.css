@@ -1,0 +1,44 @@
+@import "./main.css";
+
+.whatsapp-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1100;
+  text-decoration: none;
+}
+
+.whatsapp-button > i {
+  font-size: 30px;
+}
+
+.main {
+  padding: 1rem;
+  background-image: url(./../images/invien.png);
+  background-size: cover;
+}
+
+.title {
+  padding-top: 110px;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.title > span:nth-child(even) {
+  font-size: 3rem;
+  font-family: bell-i;
+}
+
+.title > span:nth-child(odd) {
+  font-size: 2rem;
+}

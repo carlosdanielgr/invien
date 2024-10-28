@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Asesores - Invien</title>
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN core-css ================== -->
+    <link href="/assets/css/vendor.min.css" rel="stylesheet" />
+    <link href="/assets/css/app.min.css" rel="stylesheet" />
+    <link href="/assets/css/invienStylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    <style>
+        body {
+            font-family: 'Gilroy';
+        }
+    
+        .bell-mt {
+            font-family: 'Bell MT';
+        }
+    
+        .form-label {
+            font-weight: 400 !important;
+        }
+    
+        .header.navbar-transparent .navbar-nav .nav-item .nav-link {
+            color: rgba(125, 125, 125, 1) !important;
+        }
+    
+            .header.navbar-transparent .navbar-nav .nav-item .nav-link:hover {
+                color: rgba(236, 28, 36, 1) !important;
+                box-shadow: inset 0 -2px 0 rgba(236, 28, 36, 1);
+            }
+    
+            .header.navbar-transparent .navbar-nav .nav-item .nav-link.BtnInvien {
+                color: #fff !important;
+            }
+    
+                .header.navbar-transparent .navbar-nav .nav-item .nav-link.BtnInvien:hover {
+                    color: rgba(236, 28, 36, 1) !important;
+                }
+    
+            .header.navbar-transparent .navbar-nav .nav-item .nav-link.active, .header.navbar-transparent .navbar-nav .nav-item .nav-link:hover {
+                color: rgba(236, 28, 36, 1) !important;
+                box-shadow: inset 0 -2px 0 rgba(236, 28, 36, 1);
+            }
+    
+        .BtnInvien {
+            border: unset;
+            border-radius: 5px;
+            color: #fff !important;
+            z-index: 1;
+            background: rgba(236, 28, 36, 1);
+            position: relative;
+            font-weight: 1000;
+            -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+            overflow: hidden;
+        }
+    
+            .BtnInvien::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 0;
+                border-radius: 5px;
+                background-color: #fff;
+                z-index: -1;
+                -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                transition: all 250ms;
+            }
+    
+            .BtnInvien:hover {
+                color: rgba(236, 28, 36, 1) !important;
+            }
+    
+                .BtnInvien:hover::before {
+                    width: 100%;
+                }
+    
+        .norBtnInvien {
+            border-radius: 5px;
+            color: #fff;
+            background: rgba(236, 28, 36, 1);
+            transition: background 0.3s ease;
+        }
+    
+            .norBtnInvien:hover {
+                background: rgba(200, 24, 30, 1);
+                color: #fff;
+            }
+    
+        .first-section {
+            padding-top: 10rem !important;
+        }
+    
+        .invien-highlight {
+            color: rgba(236, 28, 36, 1) !important;
+            font-weight: 400;
+        }
+    
+        .invest-section img.img-fluid {
+            width: 100%;
+            height: 400px !important;
+            display: block;
+            margin: 0 auto;
+        }
+    
+        .section-title {
+            font-size: clamp(1.5rem, 2vw + 1rem, 3.25rem);
+            font-weight: 400;
+        }
+    
+        .section-title2 {
+            font-size: clamp(1.5rem, 2vw + 1rem, 2.75rem);
+            font-weight: 400;
+        }
+    
+        .section-paragraph {
+            font-family: 'Gilroy';
+            font-size: clamp(1rem, 1vw + 0.5rem, 1.75rem);
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 1.5em;
+            padding-left: 10.8125rem !important;
+            padding-right: 13.8125rem !important;
+        }
+    
+        .section-paragraph2 {
+            font-family: 'Gilroy';
+            font-size: clamp(1.05rem, 1vw + 0.85rem, 1.55rem);
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 1.5em;
+            text-align: justify;
+        }
+    
+        .contact-title {
+            color: rgba(45, 45, 45, 1);
+        }
+    
+        .form-control,
+        .form-control:focus,
+        .form-control:active {
+            border: none;
+            box-shadow: none;
+        }
+    
+        .form-control {
+            font-weight: 400;
+        }
+    
+        #phone {
+            width: 100% !important;
+        }
+    
+        .intl-tel-input {
+            width: 100%;
+        }
+    
+            .intl-tel-input .form-control {
+                width: 100% !important;
+            }
+    
+        .input-group .form-control {
+            width: 100%;
+        }
+    
+        .col-centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .carousel-item {
+            position: relative;
+        }
+    
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(236, 28, 36, 1);
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            border-radius: 0 0 10px 10px;
+        }
+    
+            .carousel-caption h5 {
+                margin: 0;
+                font-size: 1.25rem;
+            }
+    
+            .carousel-caption p {
+                margin: 0;
+                font-size: 1rem;
+            }
+    
+        .carousel-inner img {
+            max-height: 500px;
+            object-fit: cover;
+        }
+    
+        .btn-icon i {
+            color: rgba(236, 28, 36, 1);
+        }
+    
+        .btn-footer {
+            border-radius: 0px !important;
+            background: rgba(249, 249, 247, 1);
+            font-size: 24px !important;
+        }
+    
+        .text-footer {
+            color: rgba(91, 91, 91, 1);
+        }
+    
+        .text-footer-op {
+            color: rgba(91, 91, 91, 1);
+            opacity: 50%;
+        }
+    
+        .custom-icon {
+            width: 52px;
+            height: 31px;
+            margin-right: -10px;
+        }
+    
+        .card-custom {
+            width: 300px;
+            height: 375px;
+            margin: auto;
+            border: none;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .card-image {
+            height: 260px;
+            width: 100%;
+            object-fit: cover;
+            background-size: cover;
+            background-position: center 10%;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+        }
+    
+        .card-footer-custom {
+            background-color: #e30613;
+            color: white;
+            padding: 15px;
+            /* text-align: center; */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Gilroy';
+            /* justify-content: center; */
+        }
+
+        .asesores-description {
+            font-size: 1.49rem;
+        }
+
+        .asesores-mail {
+            font-size: 1.29rem;
+            color: white;
+        }
+
+        .asesores-phone {
+            font-size: 1.09rem;
+            color: white;
+        }
+
+        .contact-us {
+            font-size: 1.53125rem;
+        }
+    
+        .card-footer-custom h5,
+        .card-footer-custom p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        @media (max-width: 1199px) {
+            .contact-us {
+                font-size: calc(1.278125rem + .3375vw);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .section-paragraph {
+                padding-left: 7.8125rem !important;
+                padding-right: 10.8125rem !important
+            }
+    
+            .header.navbar-transparent .navbar-collapse .navbar-nav .nav-item .nav-link {
+                color: #2d353c !important;
+                padding-left: 1rem;
+            }
+    
+                .header.navbar-transparent .navbar-collapse .navbar-nav .nav-item .nav-link.BtnInvien {
+                    color: #fff !important;
+                }
+    
+                    .header.navbar-transparent .navbar-collapse .navbar-nav .nav-item .nav-link.BtnInvien:hover {
+                        color: rgba(236, 28, 36, 1) !important;
+                    }
+    
+            .header.navbar-transparent .navbar-nav .nav-item .nav-link.active, .header.navbar-transparent .navbar-nav .nav-item .nav-link:hover {
+                color: rgba(236, 28, 36, 1) !important;
+                box-shadow: none;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .custom-lft-padding {
+                padding-left: 0;
+                justify-content: center !important;
+            }
+    
+            .custom-rgh-padding {
+                padding-right: 0;
+            }
+    
+            .section-paragraph {
+                padding-left: 3.8125rem !important;
+                padding-right: 3.8125rem !important
+            }
+        }
+    
+        @media (max-width: 576px) {
+            .section-paragraph {
+                padding-left: 1.8125rem !important;
+                padding-right: 1.8125rem !important
+            }
+        }
+    
+    </style>
+    <!-- ================== END core-css ================== -->
+</head>
+<body>
+    <div id="page-container" class="fade">
+        <!-- begin #header -->
+        <div id="header" class="header navbar navbar-transparent navbar-fixed-top navbar-expand-lg" style="background: #ffffff;box-shadow: 0 0 16px rgba(0,0,0,.15)">
+            <!-- begin container -->
+            <div class="container-fluid">
+                <!-- begin navbar-brand -->
+                <a href="/index.html" class="navbar-brand ms-5">
+                    <img src="/assets/img/logo-invien.png" />
+                </a>
+                <!-- end navbar-brand -->
+                <!-- begin navbar-toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- end navbar-header -->
+                <!-- begin navbar-collapse -->
+                <div class="collapse navbar-collapse justify-content-end me-lg-5" id="header-navbar">
+                    <ul class="navbar-nav pb-3 pb-lg-0">
+                        <li class="nav-item me-2 me-xl-4 me-xxl-5"><a class="nav-link" href="/quienes-somos.html">¿QUIÉNES SOMOS?</a></li>
+                        <li class="nav-item me-2 me-xl-4 me-xxl-5"><a class="nav-link" href="/nuestros-servicios.html">NUESTROS SERVICIOS</a></li>
+                        <li class="nav-item me-2 me-xl-4 me-xxl-5"><a class="nav-link" href="/propiedades.html">PROPIEDADES</a></li>
+                        <li class="nav-item me-2 me-xl-4 me-xxl-5"><a class="nav-link active" href="#" onclick="javascript:void(0);">ASESORES</a></li>
+                        <li class="nav-item me-2 me-xl-4 me-xxl-5"><a class="nav-link BtnInvien" href="/contacto.html">CONTÁCTANOS</a></li>
+                    </ul>
+                </div>
+                <!-- end navbar-collapse -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #header -->
+        <section class="first-section invest-section bell-mt">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12 custom-title text-center">
+                        <h2 class="section-title"><span class="invien-highlight">Un equipo sólido</span></h2>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12 col-lg-6 pe-lg-5">
+                        <p class="section-paragraph2">
+                            En Invien Real Estate, contamos con un equipo de asesores expertos en temas de compra y venta de propiedades, quienes se mantienen actualizados mediante formación continua en el mercado inmobiliario
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-6 ps-lg-5">
+                        <p class="section-paragraph2">
+                            Nos enorgullece ofrecer a nuestros clientes una experiencia profesional en la búsqueda de su próximo hogar o propiedad de inversión, respaldados por habilidades y certificaciones en el arte de las ventas y rentas inmobiliarias
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="invest-section bell-mt">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-lg-4 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5">
+                        <div class="card card-custom">
+                            <div class="card-image" style="background-image: url('/assets/img/asesores/JorgeSantamaria.jpg');"></div>
+                            <div class="card-footer-custom">
+                                <span class="asesores-description">Jorge Santamaría</span>
+                                <a class="asesores-mail" href="mailto:jsantamaria@invien.mx">jsantamaria@invien.mx</a>
+                                <a class="asesores-phone" href="tel:+526621122880">+52 662 112 2880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5">
+                        <div class="card card-custom">
+                            <div class="card-image" style="background-image: url('/assets/img/beautiful-young-business-woman-posing-isolated-white.jpg');"></div>
+                            <div class="card-footer-custom">
+                                <span class="asesores-description">Gaby Mancilla</span>
+                                <a class="asesores-mail" href="mailto:gmancilla@invien.mx">gmancilla@invien.mx</a>
+                                <a class="asesores-phone" href="tel:+528180882015">+52 81 8088 2015</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5">
+                        <div class="card card-custom">
+                            <div class="card-image" style="background-image: url('/assets/img/asesores/MarthaBriseno.jpeg');"></div>
+                            <div class="card-footer-custom">
+                                <span class="asesores-description">Martha Briseño</span>
+                                <a class="asesores-mail" href="mailto:mbriseno@invien.mx">mbriseno@invien.mx</a>
+                                <a class="asesores-phone" href="tel:+526622561058">+52 662 256 1058</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5">
+                        <div class="card card-custom">
+                            <div class="card-image" style="background-image: url('/assets/img/asesores/MargaritaQuintana.jpeg');"></div>
+                            <div class="card-footer-custom">
+                                <span class="asesores-description">Margarita Quintana</span>
+                                <a class="asesores-mail" href="mailto:mquintana@invien.mx">mquintana@invien.mx</a>
+                                <a class="asesores-phone" href="tel:+526621120075">+52 662 112 0075</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5">
+                        <div class="card card-custom">
+                            <div class="card-image" style="background-image: url('/assets/img/asesores/IvanArredondo.jpeg');"></div>
+                            <div class="card-footer-custom">
+                                <span class="asesores-description">Ivan Arredondo</span>
+                                <a class="asesores-mail" href="mailto:iarredondo@invien.mx">iarredondo@invien.mx</a>
+                                <a class="asesores-phone" href="tel:+526622335407">+52 662 233 5407</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5">
+                        <div class="card card-custom">
+                            <div class="card-image" style="background-image: url('/assets/img/asesores/LuisFernandoOchoa.jpeg');"></div>
+                            <div class="card-footer-custom">
+                                <span class="asesores-description">Luis Fernando Ochoa</span>
+                                <a class="asesores-mail" href="mailto:fortega@invien.mx">lochoa@invien.mx</a>
+                                <a class="asesores-phone" href="tel:+14808730539">+1 (480) 873 0539</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5">
+                        <div class="card card-custom">
+                            <div class="card-image" style="background-image: url('/assets/img/beautiful-young-business-woman-posing-isolated-white.jpg');"></div>
+                            <div class="card-footer-custom">
+                                <span class="asesores-description">Christian Janette López</span>
+                                <a class="asesores-mail" href="mailto:clopez@invien.mx">clopez@invien.mx</a>
+                                <a class="asesores-phone" href="tel:+526621429293">+52 662 142 9293</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5">
+                        <div class="card card-custom">
+                            <div class="card-image" style="background-image: url('/assets/img/asesores/AlejandraCastro.jpeg');"></div>
+                            <div class="card-footer-custom">
+                                <span class="asesores-description">Alejandra Castro</span>
+                                <a class="asesores-mail" href="mailto:acastro@invien.mx">acastro@invien.mx</a>
+                                <a class="asesores-phone" href="tel:+526621071101">+52 662 107 1101</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="container ms-0 me-0" style="max-width: 100%;">
+            <div class="row">
+                <div class="col-12 d-flex flex-column align-items-center mb-3 mb-lg-0 py-5" style="background: rgba(249, 249, 247, 1)">
+                    <span class="text-center mb-3 contact-us">Conecta con los expertos</span>
+                    <form class="w-100" style="max-width: 300px;">
+                        <div class="row mb-3">
+                            <div class="form-group col-12">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="form-group col-12">
+                                <label for="phone" class="form-label">Número de celular</label>
+                                <div class="input-group w-100">
+                                    <input type="tel" class="form-control w-100" id="phone" pattern="\d*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="form-group col-12">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="form-group col-12">
+                                <label for="message" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="message" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <button type="submit" class="btn norBtnInvien align-items-center">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <footer class="footer mt-1 p-3" style="background: rgba(255, 255, 255, 1);">
+            <div class="container ms-0 me-0" style="max-width: 100%;">
+                <div class="row">
+                    <div class="col-12 col-lg-6 d-flex align-items-center mb-3 mb-lg-0">
+                        <a href="https://www.instagram.com/invien.mx/" class="btn btn-footer btn-default btn-icon me-2"><i class="fab fa-instagram-square"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61559642990429" class="btn btn-footer btn-default btn-icon me-3"><i class="fab fa-facebook-f"></i></a>
+                        <p class="mb-0" style="color: rgba(72, 72, 74, 1);">Parkview - Blvd. Fco. Eusebio Kino 514, Pitic, 83150 Hermosillo, Son.</p>
+                    </div>
+                    <div class="col-12 col-lg-6 d-flex justify-content-lg-end align-items-center">
+                        <div class="d-flex flex-row flex-lg-row w-100 justify-content-between justify-content-lg-end" style="color: rgba(72, 72, 74, 1);">
+                            <p class="mb-0 me-lg-3 text-footer-op">2024 INVIEN Real Estate</p>
+                            <p class="mb-0 me-lg-3 text-footer-op">Todos los derechos reservados</p>
+                            <p class="mb-0 text-footer">Aviso de privacidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- end #page-container -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="/assets/js/vendor.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var inputPhones = document.querySelector('#phone');
+            var iti = window.intlTelInput(inputPhones, {
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+                initialCountry: "auto",
+                customContainer: "col-12 pl-0 pr-0",
+                separateDialCode: true,
+                geoIpLookup: function (callback) {
+                    fetch("https://ipapi.co/json")
+                        .then(function (res) { return res.json(); })
+                        .then(function (data) { callback(data.country_code); })
+                        .catch(function () { callback("us"); });
+                }
+            });
+    
+            inputPhones.addEventListener('input', function () {
+                this.value = this.value.replace(/\D/g, '');
+            });
+    
+            $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+                $('.default-select2').select2();
+            });
+    
+            $('#sellUserInfo').on('click', function () {
+    
+            });
+            $('.clickable-card').click(function () {
+                $('#propertyModal').modal('show');
+                // // Suppose this card has an attribute 'data-id' with a unique identifier for the content
+                // var contentId = $(this).attr('data-id');
+    
+                // $.ajax({
+                // 	url: '/YourPage?handler=PartialView', // The request URL
+                // 	type: 'GET',
+                // 	data: { id: contentId }, // Pass the unique content ID to the server
+                // 	success: function (data) {
+                // 		// Load the Partial View content into the modal body
+                // 		$('#dynamicModal .modal-body').html(data);
+                // 		// Show the modal
+                // 		$('#dynamicModal').modal('show');
+                // 	},
+                // 	error: function () {
+                // 		// Handle errors here, such as displaying an alert or updating the UI accordingly
+                // 		alert('Could not load the details. Please try again.');
+                // 	}
+                // });
+            });
+        });
+    </script>
+</body>
+</html>

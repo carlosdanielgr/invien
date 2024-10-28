@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../css/fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../css/fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bell-MT';
+    src: url('../css/fonts/Bell-MT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
