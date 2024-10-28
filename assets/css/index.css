@@ -177,7 +177,11 @@
 
 @media screen and (max-width: 990px) {
   .header.navbar-transparent .navbar-collapse {
+    background-color: #4b4b4b;
     padding: 1rem;
+  }
+
+  .header.navbar-transparent {
     background-color: #4b4b4b;
   }
 }
