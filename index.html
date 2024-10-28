@@ -1126,72 +1126,66 @@
     <!-- ================== END core-css ================== -->
   </head>
   <body>
-    <a
+    <!-- <a
       href="https://api.whatsapp.com/send?phone=526624247136&text=%C2%A1Hola%21%2C%20Quisiera%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20una%20propiedad%20de%20Invien."
       class="whatsapp-button"
       target="_blank"
     >
       <i class="fab fa-whatsapp my-float"></i>
-    </a>
+    </a> -->
     <!-- begin #page-container -->
     <main class="main">
-      <div
+      <header
         id="header"
         class="header navbar navbar-transparent navbar-fixed-top navbar-expand-lg custom-navbar"
       >
-        <!-- begin container-fluid for full width container -->
-        <div class="container-fluid">
-          <!-- begin navbar-brand -->
-          <a href="#" class="navbar-brand" onclick="javascript:void(0);">
-            <img
-              id="navbarLogo"
-              class="logo"
-              src="/assets/images/logo-invien.png"
-              alt="Logo"
-            />
-          </a>
-          <!-- end navbar-brand -->
-          <!-- begin navbar-toggle -->
-          <button
-            class="btn"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#header-navbar"
-          >
-            <img width="30" src="./assets/icons/menu.png" alt="menu" />
-          </button>
-          <!-- end navbar-toggle -->
-          <!-- begin navbar-collapse -->
-          <div
-            class="collapse navbar-collapse justify-content-end me-lg-5"
-            id="header-navbar"
-          >
-            <ul class="navbar-nav pb-3 pb-lg-0">
-              <li class="nav-item me-2 me-xl-4 me-xxl-5">
-                <a class="nav-link" href="/quienes-somos.html"
-                  >Acerca de Nosotros</a
-                >
-              </li>
-              <li class="nav-item me-2 me-xl-4 me-xxl-5">
-                <a class="nav-link" href="/nuestros-servicios.html"
-                  >Servicios</a
-                >
-              </li>
-              <li class="nav-item me-2 me-xl-4 me-xxl-5">
-                <a class="nav-link" href="/propiedades.html">Propiedades</a>
-              </li>
-              <li class="nav-item me-2 me-xl-4 me-xxl-5">
-                <a class="nav-link" href="/asesores.html">Asesores</a>
-              </li>
-              <li class="nav-item me-2 me-xl-4 me-xxl-5">
-                <a class="nav-link" href="/contacto.html">Contacto</a>
-              </li>
-            </ul>
-          </div>
-          <!-- end navbar-collapse -->
+        <!-- begin navbar-brand -->
+        <a href="#" class="navbar-brand" onclick="javascript:void(0);">
+          <img
+            id="navbarLogo"
+            class="logo"
+            src="/assets/images/logo-invien.png"
+            alt="Logo"
+          />
+        </a>
+        <!-- end navbar-brand -->
+        <!-- begin navbar-toggle -->
+        <button
+          class="btn btn-menu"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#header-navbar"
+        >
+          <img width="30" src="./assets/icons/menu.png" alt="menu" />
+        </button>
+        <!-- end navbar-toggle -->
+        <!-- begin navbar-collapse -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="header-navbar"
+        >
+          <ul class="navbar-nav pb-3 pb-lg-0">
+            <li class="nav-item me-2 me-xl-4 me-xxl-5">
+              <a class="nav-link" href="/quienes-somos.html"
+                >Acerca de Nosotros</a
+              >
+            </li>
+            <li class="nav-item me-2 me-xl-4 me-xxl-5">
+              <a class="nav-link" href="/nuestros-servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item me-2 me-xl-4 me-xxl-5">
+              <a class="nav-link" href="/propiedades.html">Propiedades</a>
+            </li>
+            <li class="nav-item me-2 me-xl-4 me-xxl-5">
+              <a class="nav-link" href="/asesores.html">Asesores</a>
+            </li>
+            <li class="nav-item me-2 me-xl-4 me-xxl-5">
+              <a class="nav-link" href="/contacto.html">Contacto</a>
+            </li>
+          </ul>
         </div>
-        <!-- end container-fluid -->
-      </div>
+        <!-- end navbar-collapse -->
+      </header>
       <h1 class="title">
         Transformamos
         <span> tu </span>
@@ -1199,6 +1193,360 @@
         <span> en </span>
         <span>Oportunidades</span>
       </h1>
+      <div class="home-content-menu ms-1">
+        <ul class="nav home-menu-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              href="#venta-tab"
+              data-bs-toggle="tab"
+              class="nav-link flex-grow-1 active custom-rounded-start"
+              role="tab"
+              aria-selected="true"
+              >Compra</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              href="#renta-tab"
+              data-bs-toggle="tab"
+              class="nav-link flex-grow-1"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              >Vende</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              href="#"
+              class="nav-link flex-grow-1 custom-rounded-end"
+              id="openModalSell"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              >Renta</a
+            >
+          </li>
+        </ul>
+        <div class="tab-content home-menu-panel pb-3">
+          <div class="tab-pane fade active show" id="venta-tab" role="tabpanel">
+            <form class="form">
+              <div class="dropdown">
+                <button
+                  class="btn btn-custom dropdown-toggle property-type-dropdown"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Tipo de propiedad
+                  <span class="form-select">
+                    Selecciona el tipo de propiedad
+                  </span>
+                </button>
+                <ul
+                  class="dropdown-menu property-type-menu"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li><a class="dropdown-item" href="#">Casa</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Departamento</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Terreno residencial</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Terreno comercial</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Terreno industrial</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Local</a></li>
+                  <li><a class="dropdown-item" href="#">Oficina</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Bodega industrial</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Edificio</a></li>
+                  <li><a class="dropdown-item" href="#">Otros</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button
+                  class="btn btn-custom dropdown-toggle country-dropdown"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  País
+                  <span class="form-select"> Ej. Mexico, Estados Unidos </span>
+                </button>
+                <ul
+                  class="dropdown-menu country-menu"
+                  aria-labelledby="dropdownMenuButton2"
+                >
+                  <li><a class="dropdown-item" href="#">México</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Estados Unidos</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button
+                  class="btn btn-custom dropdown-toggle state-dropdown"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Estado
+                  <span class="form-select"> Selecciona un estado </span>
+                </button>
+                <ul
+                  class="dropdown-menu state-menu"
+                  aria-labelledby="dropdownMenuButton3"
+                >
+                  <li><a class="dropdown-item" href="#">Sonora</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button
+                  class="btn btn-custom dropdown-toggle municipality-dropdown"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Municipio
+                  <span class="form-select"> Selecciona un municipio </span>
+                </button>
+                <ul
+                  class="dropdown-menu municipality-menu"
+                  aria-labelledby="dropdownMenuButton4"
+                >
+                  <li><a class="dropdown-item" href="#">Hermosillo</a></li>
+                  <li><a class="dropdown-item" href="#">San Carlos</a></li>
+                </ul>
+              </div>
+              <div class="col d-flex align-items-center btnSearch">
+                <button type="button" class="btn norBtnInvien px-4">
+                  Buscar
+                </button>
+              </div>
+            </form>
+            <!-- <form class="row g-3 form">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-custom dropdown-toggle property-type-dropdown"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Tipo de propiedad
+                          <span class="form-select">
+                            Selecciona el tipo de propiedad
+                          </span>
+                        </button>
+                        <ul
+                          class="dropdown-menu property-type-menu"
+                          aria-labelledby="dropdownMenuButton1"
+                        >
+                          <li><a class="dropdown-item" href="#">Casa</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Departamento</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Terreno residencial</a
+                            >
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Terreno comercial</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Terreno industrial</a>
+                          </li>
+                          <li><a class="dropdown-item" href="#">Local</a></li>
+                          <li><a class="dropdown-item" href="#">Oficina</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Bodega industrial</a>
+                          </li>
+                          <li><a class="dropdown-item" href="#">Edificio</a></li>
+                          <li><a class="dropdown-item" href="#">Otros</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-custom dropdown-toggle country-dropdown"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          País
+                          <span class="form-select">
+                            Ej. Mexico, Estados Unidos
+                          </span>
+                        </button>
+                        <ul
+                          class="dropdown-menu country-menu"
+                          aria-labelledby="dropdownMenuButton2"
+                        >
+                          <li><a class="dropdown-item" href="#">México</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Estados Unidos</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-custom dropdown-toggle state-dropdown"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Estado
+                        </button>
+                        <ul
+                          class="dropdown-menu state-menu"
+                          aria-labelledby="dropdownMenuButton3"
+                        >
+                          <li><a class="dropdown-item" href="#">Sonora</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-custom dropdown-toggle municipality-dropdown"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Municipio
+                        </button>
+                        <ul
+                          class="dropdown-menu municipality-menu"
+                          aria-labelledby="dropdownMenuButton4"
+                        >
+                          <li><a class="dropdown-item" href="#">Hermosillo</a></li>
+                          <li><a class="dropdown-item" href="#">San Carlos</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-12 text-center">
+                      <button type="button" class="btn norBtnInvien px-4">
+                        Buscar
+                      </button>
+                    </div>
+                  </form> -->
+          </div>
+          <div class="tab-pane fade py-5 px-3" id="renta-tab" role="tabpanel">
+            <form class="row g-3">
+              <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-custom dropdown-toggle property-type-dropdown"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Tipo de propiedad
+                  </button>
+                  <ul
+                    class="dropdown-menu property-type-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li><a class="dropdown-item" href="#">Casa</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Departamento</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Terreno residencial</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Terreno comercial</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Terreno industrial</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Local</a></li>
+                    <li><a class="dropdown-item" href="#">Oficina</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Bodega industrial</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Edificio</a></li>
+                    <li><a class="dropdown-item" href="#">Otros</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-custom dropdown-toggle country-dropdown"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    País
+                  </button>
+                  <ul
+                    class="dropdown-menu country-menu"
+                    aria-labelledby="dropdownMenuButton2"
+                  >
+                    <li><a class="dropdown-item" href="#">México</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Estados Unidos</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-custom dropdown-toggle state-dropdown"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Estado
+                  </button>
+                  <ul
+                    class="dropdown-menu state-menu"
+                    aria-labelledby="dropdownMenuButton3"
+                  >
+                    <li><a class="dropdown-item" href="#">Sonora</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-custom dropdown-toggle municipality-dropdown"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Municipio
+                  </button>
+                  <ul
+                    class="dropdown-menu municipality-menu"
+                    aria-labelledby="dropdownMenuButton4"
+                  >
+                    <li><a class="dropdown-item" href="#">Hermosillo</a></li>
+                    <li><a class="dropdown-item" href="#">San Carlos</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 text-center">
+                <button type="button" class="btn btn-custom-confirm">
+                  Buscar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- end #page-container -->
 
