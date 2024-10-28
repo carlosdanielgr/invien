@@ -40,7 +40,7 @@
 }
 
 .header.navbar-transparent.navbar-sm {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: #4b4b4b;
 }
 
@@ -105,8 +105,9 @@
 .norBtnInvien {
   border-radius: 5px;
   color: #fff;
-  background: rgba(236, 28, 36, 1);
+  background: var(--primary);
   transition: background 0.3s ease;
+  font-weight: 400;
 }
 
 .norBtnInvien:hover {
@@ -137,6 +138,86 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+/*            STATE PROJECTS              */
+.estate-projects {
+  padding: 3rem 1rem;
+  background-color: #f5f5f5;
+}
+
+.estate-projects-title {
+  text-align: center;
+  > p {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin: 0;
+  }
+  > h2 {
+    font-size: 2.6rem;
+    font-family: bell;
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+}
+
+.carousel {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.estate-projects-content-card {
+  display: flex;
+  gap: 1rem;
+}
+
+.estate-projects-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.estate-projects-card > span {
+  color: #4f4f4f;
+}
+
+.estate-projects-desc {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.estate-projects-desc > span:nth-child(1) {
+  font-size: 1.3rem;
+}
+
+.estate-projects-desc > span:nth-child(2) {
+  color: var(--primary);
+}
+
+.estate-projects-desc > span:nth-child(3) {
+  font-size: 0.84rem;
+  color: #4f4f4f;
+}
+
+.carousel-content-btn {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.carousel-btn,
+.carousel-btn:hover,
+.carousel-btn:active.carousel-btn:active {
+  border-radius: 50%;
+  background-color: var(--primary);
+  padding: 0.1rem 0.3rem;
+  color: white;
+}
+
+.carousel-item > div:first-child {
+  display: none;
 }
 
 @media screen and (min-width: 990px) {
@@ -183,5 +264,17 @@
 
   .header.navbar-transparent {
     background-color: #4b4b4b;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-item > div:first-child {
+    display: block;
+    max-width: 370px;
+    margin: 0 auto;
+  }
+
+  .carousel-item > div:last-child {
+    display: none;
   }
 }
