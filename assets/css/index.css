@@ -304,6 +304,38 @@
   margin: 0 auto 1.5rem;
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f5f5f5;
+}
+
+.contact-form {
+  padding: 1rem;
+}
+
+.contact-title {
+  font-size: 2.6rem;
+  font-family: bell;
+  font-weight: 400;
+  margin: 1.5rem 0;
+  max-width: 15rem;
+}
+
+.contact .form-label,
+.contact .form-control::placeholder {
+  font-weight: 400;
+}
+
+.contact .form-control {
+  border: 0;
+}
+
+.contact .form-control:focus {
+  box-shadow: 0 0 0 0.25rem #ec1c2457;
+}
+
 @media screen and (min-width: 990px) {
   .header {
     padding: 0 3rem;
@@ -353,5 +385,10 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+  }
+
+  .contact {
+    flex-direction: row;
+    align-items: center;
   }
 }
