@@ -158,61 +158,66 @@
 }
 
 /*            STATE PROJECTS              */
-.estate-projects {
+.carousel-primary {
   padding: 3rem 1rem;
   background-color: #f5f5f5;
 }
 
-.estate-projects-title {
+.carousel-primary-title {
   text-align: center;
   > p {
     font-size: 1.3rem;
     color: var(--primary);
     margin: 0;
   }
-  > h2 {
+  > h2,
+  > h4 {
     font-size: 2.6rem;
     font-family: bell;
     font-weight: 400;
-    margin-bottom: 3rem;
+    max-width: 28rem;
+    margin: 0 auto 3rem;
   }
 }
 
-.carousel-primary {
+.carousel-primary .carousel {
   max-width: 1120px;
   margin: 0 auto;
 }
 
-.estate-projects-content-card {
+.carousel-primary-content-card {
   display: flex;
   gap: 1rem;
+  width: 100%;
 }
 
-.estate-projects-card {
+.carousel-primary-card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  flex: 1;
 }
 
-.estate-projects-card > span {
+.carousel-primary-gray {
+  display: block;
   color: #4f4f4f;
 }
 
-.estate-projects-desc {
+.carousel-primary-desc {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.estate-projects-desc > span:nth-child(1) {
+.carousel-primary-desc > span:nth-child(1) {
   font-size: 1.3rem;
 }
 
-.estate-projects-desc > span:nth-child(2) {
+.carousel-primary-desc > span:nth-child(2) {
   color: var(--primary);
 }
 
-.estate-projects-desc > span:nth-child(3) {
+.carousel-primary-desc > span:nth-child(3) {
   font-size: 0.84rem;
   color: #4f4f4f;
 }
