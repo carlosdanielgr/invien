@@ -1,0 +1,86 @@
+@use "../../../styles/mixins" as *;
+
+.footer-section {
+  padding: 4rem 1rem 3rem;
+  @include screen(small) {
+    padding: 5rem 3rem 4rem;
+  }
+}
+
+.footer-section-logo {
+  max-width: 11rem;
+}
+
+.footer-section-map {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footer-section-social {
+  display: flex;
+  gap: 0.5rem;
+  > a {
+    color: var(--primary);
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 0.1rem 0.35rem;
+  }
+}
+
+.footer-section-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  > a {
+    font-size: 0.96rem;
+    color: #818181;
+  }
+}
+
+.footer-section-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  @include screen(small) {
+    gap: 4rem;
+  }
+}
+
+.footer-section-info > div {
+  display: flex;
+  flex-direction: column;
+  > span:first-child {
+    font-size: 1.4rem;
+  }
+  span:not(:first-child) {
+    font-size: 0.88rem;
+    color: #626262;
+  }
+  button {
+    width: fit-content;
+  }
+}
+
+.footer-section-info > div:first-child {
+  > span:nth-child(2) {
+    font-size: 0.77rem;
+  }
+}
+
+.footer-section-legal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  > span,
+  > a {
+    font-size: 0.9rem;
+  }
+  > a {
+    color: #000;
+  }
+}
