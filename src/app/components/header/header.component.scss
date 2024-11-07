@@ -1,0 +1,52 @@
+@use "../../../styles/mixins" as *;
+
+.header {
+  padding: 0 1rem;
+  color: #fff;
+  @include screen(med-small) {
+    padding: 0 3rem;
+  }
+}
+
+.header .navbar-brand > img:last-child {
+  display: none;
+}
+
+.header.navbar-transparent.navbar-sm .btn-menu {
+  filter: brightness(0);
+}
+
+.header.navbar-transparent.navbar-sm .navbar-brand > img:last-child {
+  display: block;
+}
+
+.header.navbar-transparent.navbar-sm .navbar-brand > img:first-child {
+  display: none;
+}
+
+.header.navbar-transparent .navbar-nav .nav-item .nav-link,
+.header.navbar-transparent .navbar-nav .nav-item .nav-link:hover {
+  color: #fff;
+  font-size: 0.944rem;
+}
+
+.header.navbar-transparent.navbar-sm,
+.header.navbar-transparent.navbar-sm .nav-link,
+.header.navbar-transparent.navbar-sm .nav-link:hover,
+.header.navbar-transparent.navbar-sm .nav-i18n > a {
+  color: #000 !important;
+}
+
+.nav-i18n {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+  > a {
+    color: #fff;
+    font-size: 0.6rem;
+  }
+  > div {
+    margin-top: -0.3rem;
+  }
+}
