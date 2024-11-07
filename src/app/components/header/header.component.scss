@@ -1,10 +1,12 @@
 @use "../../../styles/mixins" as *;
 
 .header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  width: 100%;
   padding: 1rem;
   color: #fff;
+  z-index: 1000;
+  transition: all 0.2s linear;
   @include screen(med-small) {
     padding: 1rem 3rem;
   }
@@ -22,6 +24,7 @@
 
 .navbar-scrolled {
   background-color: #fff;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .header.navbar-transparent.navbar-scrolled .btn-menu {
