@@ -22,4 +22,11 @@ export const routes: Routes = [
         (c) => c.PropertiesComponent
       ),
   },
+  {
+    path: 'our-services',
+    loadComponent: () =>
+      import('./components/our-services/our-services.component').then(
+        (c) => c.OurServicesComponent
+      ),
+  },
 ];
