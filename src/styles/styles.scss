@@ -62,6 +62,12 @@ p {
   color: #fff;
 }
 
+.carousel-primary-content-card {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
 :root {
   --primary: #ec1c24;
 }

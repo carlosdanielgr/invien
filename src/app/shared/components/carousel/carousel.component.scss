@@ -1,0 +1,38 @@
+.carousel-primary {
+  padding: 3rem 1rem;
+  &__title {
+    text-align: center;
+    > p {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin: 0;
+    }
+    > h2,
+    > h4 {
+      font-size: 2.6rem;
+      font-family: bell;
+      font-weight: 400;
+      max-width: 28rem;
+      margin: 0 auto 3rem;
+    }
+  }
+  &__content-btn {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  &__btn,
+  &__btn:hover,
+  &__btn:focus,
+  &__btn:active {
+    border-radius: 50%;
+    background-color: var(--primary);
+    padding: 0.1rem 0.3rem;
+    color: white;
+  }
+  .carousel {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}

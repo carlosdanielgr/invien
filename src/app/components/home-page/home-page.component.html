@@ -241,3 +241,102 @@
     </div>
   </div>
 </main>
+<div class="p-3">
+  <article class="why-invest">
+    <figure class="col">
+      <img src="./assets/images/invest.png" alt="invest" />
+    </figure>
+    <div class="col">
+      <h3 class="why-invest-title">¿Por qué invertir en bienes raíces?</h3>
+      <p>
+        Invertir en bienes raíces es una de las formas más seguras de hacer
+        crecer y diversificar tu patrimonio.
+      </p>
+      <p>
+        Este tipo de inversión no solo te ofrece la posibilidad de generar
+        ingresos estables a través de rentas, sino que también se beneficia de
+        la plusvalía, es decir, el aumento del valor de las propiedades con el
+        paso del tiempo.
+      </p>
+      <div class="why-invest-options">
+        <div>
+          <img src="./assets/icons/check.png" alt="check" />
+          <span>Diversifica tu Patrimonio</span>
+        </div>
+        <div>
+          <img src="./assets/icons/check.png" alt="check" />
+          <span>Genera Ingresos Estables</span>
+        </div>
+        <div>
+          <img src="./assets/icons/check.png" alt="check" />
+          <span>Gana mas por tu Inversion</span>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+<article
+  id="carouselExampleCaptions"
+  class="carousel carousel-comments slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <span
+        >“Invien hizo todo el proceso de compra sencillo y sin complicaciones.
+        ¡Gran servicio!”</span
+      >
+      <span>- Comprador</span>
+    </div>
+    <div class="carousel-item">
+      <span
+        >“Invien hizo todo el proceso de compra sencillo y sin complicaciones.
+        ¡Gran servicio!”</span
+      >
+      <span>- Comprador</span>
+    </div>
+    <div class="carousel-item">
+      <span
+        >“Invien hizo todo el proceso de compra sencillo y sin complicaciones.
+        ¡Gran servicio!”</span
+      >
+      <span>- Comprador</span>
+    </div>
+  </div>
+</article>
+<app-carousel
+  title="CONOCE AL EQUIPO"
+  subtitle="Tu Propiedad en las Mejores Manos"
+>
+  @for (advisers of slidesAdvisers; track $index; let isFirst = $first) {
+  <div class="carousel-item" [class.active]="isFirst">
+    <div class="carousel-primary-content-card">
+      @for (item of advisers; track $index) {
+      <app-adviser class="col" [adviser]="item" />
+      }
+    </div>
+  </div>
+  }
+</app-carousel>

@@ -116,3 +116,69 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.why-invest {
+  max-width: 1120px;
+  margin: 3rem auto;
+  @include screen(small) {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.why-invest-title {
+  font-size: 2.6rem;
+  font-family: bell;
+  font-weight: 400;
+  margin: 1.5rem 0;
+  max-width: 22rem;
+}
+
+.why-invest p,
+.why-invest span {
+  color: #626262;
+}
+
+.why-invest-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.why-invest-options > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.why-invest-options > div > img {
+  width: 20px;
+}
+
+.carousel-comments {
+  background-color: black;
+}
+
+.carousel-comments .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.carousel-comments .carousel-item {
+  padding: 8rem 1rem;
+  text-align: center;
+}
+
+.carousel-comments .carousel-item > span {
+  display: block;
+  color: #fff;
+}
+
+.carousel-comments .carousel-item > span:first-child {
+  font-size: 1.7rem;
+  max-width: 42rem;
+  margin: 0 auto 1.5rem;
+}

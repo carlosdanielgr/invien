@@ -1,0 +1,9 @@
+.adviser {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  &__contact {
+    display: block;
+    color: #4f4f4f;
+  }
+}

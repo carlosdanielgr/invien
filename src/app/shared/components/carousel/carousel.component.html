@@ -1,0 +1,96 @@
+<article class="carousel-primary">
+  <div class="carousel-primary__title">
+    <p>{{ title }}</p>
+    <h2>{{ subtitle }}</h2>
+  </div>
+  <div
+    id="carouselExampleAutoplaying2"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <ng-content />
+      <!-- <div class="carousel-item">
+        <div class="carousel-primary-content-card">
+          <div class="carousel-primary-card">
+            <img src="./assets/images/advisors/jorge.png" alt="..." />
+            <div>
+              <span class="d-block fs-3">Jorge Santamaría</span>
+              <span>Fundador y asesor inmobiliario</span>
+            </div>
+            <div>
+              <span class="carousel-primary-gray">
+                {{ "jsantamaria@invien.mx" }}
+              </span>
+              <span class="carousel-primary-gray">+52 662 112 2880</span>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-primary-content-card">
+          <div class="carousel-primary-content-card">
+            <div class="carousel-primary-card">
+              <img src="./assets/images/advisors/jorge.png" alt="..." />
+              <div>
+                <span class="d-block fs-3">Jorge Santamaría</span>
+                <span>Fundador y asesor inmobiliario</span>
+              </div>
+              <div>
+                <span class="carousel-primary-gray">
+                  {{ "jsantamaria@invien.mx" }}
+                </span>
+                <span class="carousel-primary-gray">+52 662 112 2880</span>
+              </div>
+            </div>
+            <div class="carousel-primary-card">
+              <img src="./assets/images/advisors/gaby.png" alt="..." />
+              <div>
+                <span class="d-block fs-3">Gaby Mancilla</span>
+                <span>Fundadora y asesora inmobiliaria</span>
+              </div>
+              <div>
+                <span class="carousel-primary-gray">
+                  {{ "gmancilla@invien.mx" }}
+                </span>
+                <span class="carousel-primary-gray">+52 81 8088 2015</span>
+              </div>
+            </div>
+            <div class="carousel-primary-card">
+              <img src="./assets/images/advisors/martha.png" alt="..." />
+              <div>
+                <span class="d-block fs-3">Martha Briseño</span>
+                <span>Asesora inmobiliaria</span>
+              </div>
+              <div>
+                <span class="carousel-primary-gray">
+                  {{ "mbriseno@invien.mx" }}
+                </span>
+                <span class="carousel-primary-gray">+52 662 256 1058</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <div class="carousel-primary__content-btn">
+      <button type="button" class="btn norBtnInvien">Ver Todos</button>
+      <div>
+        <button
+          class="btn carousel-primary__btn mx-2"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying2"
+          data-bs-slide="prev"
+        >
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button
+          class="btn carousel-primary__btn"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying2"
+          data-bs-slide="next"
+        >
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
