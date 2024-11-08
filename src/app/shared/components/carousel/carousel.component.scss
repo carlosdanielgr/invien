@@ -22,15 +22,6 @@
     justify-content: space-between;
     gap: 1rem;
   }
-  &__btn,
-  &__btn:hover,
-  &__btn:focus,
-  &__btn:active {
-    border-radius: 50%;
-    background-color: var(--primary);
-    padding: 0.1rem 0.3rem;
-    color: white;
-  }
   .carousel {
     max-width: 1120px;
     margin: 0 auto;

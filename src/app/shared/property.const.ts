@@ -1,6 +1,6 @@
 import { Property } from './interfaces/property.interface';
 
-const ORIGINAL_PROPERTIES: Property[] = [
+export const ORIGINAL_PROPERTIES: Property[] = [
   {
     imageUrl: './assets/images/carousel/test1.png',
     title: 'Ámbar',

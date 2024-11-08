@@ -8,6 +8,17 @@
     <app-property-filter />
   </div>
   <div class="properties__list">
-    <div></div>
+    @for (item of properties; track $index) {
+    <app-property [property]="item" [info]="item.price" />
+    }
+  </div>
+  <div class="properties__pagination">
+    <button class="btn carousel-btn" type="button">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+    <span>1</span>
+    <button class="btn carousel-btn" type="button">
+      <i class="bi bi-arrow-right"></i>
+    </button>
   </div>
 </article>

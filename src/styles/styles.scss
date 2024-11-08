@@ -73,6 +73,16 @@ p {
   }
 }
 
+.carousel-btn,
+.carousel-btn:hover,
+.carousel-btn:focus,
+.carousel-btn:active {
+  border-radius: 50%;
+  background-color: var(--primary);
+  padding: 0.1rem 0.3rem;
+  color: white;
+}
+
 :root {
   --primary: #ec1c24;
 }
