@@ -1,0 +1,14 @@
+<app-carousel
+  titlePrimary="Comienza a invertir"
+  subtitle="Proyectos Inmobiliarios"
+>
+  @for (properties of slidesProperties; track $index; let isFirst = $first) {
+  <div class="carousel-item" [class.active]="isFirst">
+    <div class="carousel-primary-content-card">
+      @for (item of properties; track $index) {
+      <app-property class="col" [property]="item" [info]="item.type" />
+      }
+    </div>
+  </div>
+  }
+</app-carousel>

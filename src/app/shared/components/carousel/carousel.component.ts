@@ -9,7 +9,7 @@ import { NgComponentOutlet } from '@angular/common';
   styleUrl: './carousel.component.scss',
 })
 export class CarouselComponent {
-  @Input() title: string = '';
+  @Input() titlePrimary: string = '';
 
   @Input() subtitle: string = '';
 
