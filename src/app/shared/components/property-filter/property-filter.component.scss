@@ -1,0 +1,67 @@
+@use "../../../../styles/mixins" as *;
+
+.property-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  max-width: 1110px;
+  background-color: #fff;
+  @include screen(med-small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    > div:not(:last-child, :nth-child(4)) {
+      border-right: 1px solid #b9b9b9;
+    }
+  }
+  &__btn-toggle {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    box-shadow: none;
+    outline: none;
+    padding: 0.375rem 0;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    border-radius: 0;
+    &::after {
+      display: none;
+    }
+    .form-select {
+      background-color: transparent;
+    }
+    > span {
+      color: #858585;
+      font-size: 12px;
+      padding: 0;
+      border-style: none;
+      font-weight: normal;
+      white-space: nowrap;
+      padding-right: 2rem;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: #000;
+      box-shadow: none;
+    }
+  }
+  &__btn-search {
+    > button {
+      width: 100%;
+    }
+    @include screen(med-small) {
+      justify-content: flex-end;
+      > button {
+        width: fit-content;
+      }
+    }
+  }
+}

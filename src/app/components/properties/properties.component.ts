@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
+import { PropertyFilterComponent } from '@shared/components/property-filter/property-filter.component';
+
 @Component({
   selector: 'app-properties',
   standalone: true,
-  imports: [],
+  imports: [PropertyFilterComponent],
   templateUrl: './properties.component.html',
-  styleUrl: './properties.component.scss'
+  styleUrl: './properties.component.scss',
 })
-export class PropertiesComponent {
-
-}
+export class PropertiesComponent {}
