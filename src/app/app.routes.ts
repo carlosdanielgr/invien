@@ -15,4 +15,11 @@ export const routes: Routes = [
         (c) => c.AboutUsComponent
       ),
   },
+  {
+    path: 'properties',
+    loadComponent: () =>
+      import('./components/properties/properties.component').then(
+        (c) => c.PropertiesComponent
+      ),
+  },
 ];

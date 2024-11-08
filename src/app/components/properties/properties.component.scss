@@ -1,0 +1,16 @@
+.properties {
+  &__main {
+    padding: 1rem;
+    background-image: url(./../../../assets/images/invien.png);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    font-size: 3.7rem;
+    color: #fff;
+    font-weight: 400;
+  }
+}

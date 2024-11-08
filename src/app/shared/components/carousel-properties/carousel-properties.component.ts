@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-
 import { PROPERTIES } from '@shared/property.const';
-import { PropertyComponent } from './property/property.component';
+import { PropertyComponent } from '../carousel-properties/property/property.component';
 import { CarouselComponent } from '../carousel/carousel.component';
 
 @Component({
-  selector: 'app-properties',
+  selector: 'app-carousel-properties',
   standalone: true,
   imports: [CarouselComponent, PropertyComponent],
-  templateUrl: './properties.component.html',
-  styleUrl: './properties.component.scss',
+  templateUrl: './carousel-properties.component.html',
+  styleUrl: './carousel-properties.component.scss',
 })
-export class PropertiesComponent {
+export class CarouselPropertiesComponent {
   slidesProperties = PROPERTIES;
 }
