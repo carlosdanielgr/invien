@@ -1,6 +1,6 @@
 import { Adviser } from './interfaces/adviser.interface';
 
-const ORIGINAL_ADVISERS: Adviser[] = [
+export const ORIGINAL_ADVISERS: Adviser[] = [
   {
     image: './assets/images/advisors/jorge.png',
     name: 'Jorge',

@@ -4,6 +4,7 @@ import { ADVISERS } from '@shared/adviser.const';
 import { AdviserComponent } from '@shared/components/adviser/adviser.component';
 import { CarouselPropertiesComponent } from '@shared/components/carousel-properties/carousel-properties.component';
 import { CarouselComponent } from '@shared/components/carousel/carousel.component';
+import { CommentsComponent } from '@shared/components/comments/comments.component';
 import { PropertyFilterComponent } from '@shared/components/property-filter/property-filter.component';
 
 @Component({
@@ -13,6 +14,7 @@ import { PropertyFilterComponent } from '@shared/components/property-filter/prop
     PropertyFilterComponent,
     CarouselComponent,
     AdviserComponent,
+    CommentsComponent,
     CarouselPropertiesComponent,
   ],
   templateUrl: './home-page.component.html',

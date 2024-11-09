@@ -29,4 +29,11 @@ export const routes: Routes = [
         (c) => c.OurServicesComponent
       ),
   },
+  {
+    path: 'advisers',
+    loadComponent: () =>
+      import('./components/advisers/advisers.component').then(
+        (c) => c.AdvisersComponent
+      ),
+  },
 ];

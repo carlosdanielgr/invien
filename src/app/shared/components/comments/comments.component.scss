@@ -1,0 +1,21 @@
+.comments {
+  background-color: black;
+  .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .carousel-item {
+    padding: 8rem 1rem;
+    text-align: center;
+    > span {
+      display: block;
+      color: #fff;
+      &:first-child {
+        font-size: 1.7rem;
+        max-width: 42rem;
+        margin: 0 auto 1.5rem;
+      }
+    }
+  }
+}
