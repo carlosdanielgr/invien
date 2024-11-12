@@ -67,4 +67,38 @@
       }
     }
   }
+  &__description {
+    padding: 4rem 1rem;
+    background-color: #f5f5f5;
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      @extend %max-width;
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      > button {
+        max-width: fit-content;
+      }
+    }
+    &-title {
+      font-size: 1.7rem;
+      font-family: "bell";
+      font-weight: 400;
+    }
+    &-text {
+      color: #626262;
+    }
+    &-amenity {
+      display: flex;
+      gap: 0.5rem;
+      color: #626262;
+      > img {
+        width: 1rem;
+      }
+    }
+  }
 }
