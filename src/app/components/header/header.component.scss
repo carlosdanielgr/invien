@@ -10,6 +10,9 @@
   @include screen(med-small) {
     padding: 1rem 3rem;
   }
+  &__shadow {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+  }
 }
 
 .navbar-brand {
@@ -24,7 +27,6 @@
 
 .navbar-scrolled {
   background-color: #fff;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .header.navbar-transparent.navbar-scrolled .btn-menu {

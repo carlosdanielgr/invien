@@ -23,6 +23,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'properties/:id',
+    loadComponent: () =>
+      import(
+        './components/properties/property-detail/property-detail.component'
+      ).then((c) => c.PropertyDetailComponent),
+  },
+  {
     path: 'our-services',
     loadComponent: () =>
       import('./components/our-services/our-services.component').then(

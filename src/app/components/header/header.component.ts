@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  Renderer2,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -18,9 +24,16 @@ export class HeaderComponent {
     } else this.removeClass();
   }
 
+  @Input() lightHeader = false;
+
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   addClass(): void {
+    this.renderer.addClass(
+      this.el.nativeElement.querySelector('header'),
+      'header__shadow'
+    );
+    if (this.lightHeader) return;
     this.renderer.addClass(
       this.el.nativeElement.querySelector('header'),
       'navbar-scrolled'
@@ -28,6 +41,11 @@ export class HeaderComponent {
   }
 
   removeClass(): void {
+    this.renderer.removeClass(
+      this.el.nativeElement.querySelector('header'),
+      'header__shadow'
+    );
+    if (this.lightHeader) return;
     this.renderer.removeClass(
       this.el.nativeElement.querySelector('header'),
       'navbar-scrolled'

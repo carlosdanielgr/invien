@@ -13,11 +13,14 @@ import { ContactComponent } from './components/contact/contact.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  activeLightHeader = false;
+
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.activeLightHeader = event.url.includes('/properties/');
         window.scrollTo(0, 0);
       }
     });
