@@ -67,44 +67,70 @@
 </article>
 <div class="property-detail__description">
   <div class="property-detail__description-content">
-    <div>
-      <h2 class="property-detail__description-title">Descripción</h2>
-      <p class="property-detail__description-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-        consectetur, nisl nec ultricies ultricies, nunc nisl ultricies sapien,
-        nec ultricies sapien nunc nec nisl. Nulla consectetur, nisl nec
-        ultricies ultricies, nunc nisl ultricies sapien, nec ultricies
-      </p>
+    <div class="property-detail__description-info">
+      <div>
+        <h2 class="property-detail__description-title">Descripción</h2>
+        <p class="property-detail__description-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          consectetur, nisl nec ultricies ultricies, nunc nisl ultricies sapien,
+          nec ultricies sapien nunc nec nisl. Nulla consectetur, nisl nec
+          ultricies ultricies, nunc nisl ultricies sapien, nec ultricies
+        </p>
+      </div>
+      <div>
+        <h2 class="property-detail__description-title">Detalles</h2>
+        <span class="property-detail__description-text"
+          >Tipo: Departamento</span
+        >
+        <span class="property-detail__description-text">Antiguedad: 2009</span>
+      </div>
+      <div>
+        <h3 class="property-detail__description-title">Amenidades</h3>
+        <span class="property-detail__description-amenity">
+          <img src="./assets/icons/check-gray.svg" alt="check-gray" /> Cocina
+          Separada
+        </span>
+        <span class="property-detail__description-amenity">
+          <img src="./assets/icons/check-gray.svg" alt="check-gray" />
+          Elevador
+        </span>
+        <span class="property-detail__description-amenity">
+          <img src="./assets/icons/check-gray.svg" alt="check-gray" />
+          Terraza
+        </span>
+        <span class="property-detail__description-amenity">
+          <img src="./assets/icons/check-gray.svg" alt="check-gray" />
+          Parrilla
+        </span>
+        <span class="property-detail__description-amenity">
+          <img src="./assets/icons/check-gray.svg" alt="check-gray" /> Cocina
+        </span>
+      </div>
+      <button class="btn btn-outline-primary">
+        <i class="bi bi-printer"></i> Imprimir Propiedad
+      </button>
     </div>
-    <div>
-      <h2 class="property-detail__description-title">Detalles</h2>
-      <span class="property-detail__description-text">Tipo: Departamento</span>
-      <span class="property-detail__description-text">Antiguedad: 2009</span>
-    </div>
-    <div>
-      <h3 class="property-detail__description-title">Amenidades</h3>
-      <span class="property-detail__description-amenity">
-        <img src="./assets/icons/check-gray.svg" alt="check-gray" /> Cocina
-        Separada
-      </span>
-      <span class="property-detail__description-amenity">
-        <img src="./assets/icons/check-gray.svg" alt="check-gray" />
-        Elevador
-      </span>
-      <span class="property-detail__description-amenity">
-        <img src="./assets/icons/check-gray.svg" alt="check-gray" />
-        Terraza
-      </span>
-      <span class="property-detail__description-amenity">
-        <img src="./assets/icons/check-gray.svg" alt="check-gray" />
-        Parrilla
-      </span>
-      <span class="property-detail__description-amenity">
-        <img src="./assets/icons/check-gray.svg" alt="check-gray" /> Cocina
-      </span>
-    </div>
-    <button class="btn btn-outline-primary">
-      <i class="bi bi-printer"></i> Imprimir Propiedad
-    </button>
+    <app-form />
   </div>
 </div>
+<div class="property-detail__video">
+  <iframe
+    height="570"
+    src="https://www.youtube.com/embed/IdRABquWjEM?si=aXY5hPXnuJrOiFTL"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+</div>
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82701.40836889607!2d-99.19136510250074!3d19.45480219992883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fe239cb4e179%3A0x5829452d1ed9f0eb!2sHermosillo%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX%2C%20M%C3%A9xico!5e0!3m2!1ses!2sco!4v1731517443579!5m2!1ses!2sco"
+  width="100%"
+  height="450"
+  style="border: 0"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+<app-carousel-properties />

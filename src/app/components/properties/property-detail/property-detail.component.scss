@@ -75,6 +75,20 @@
       flex-direction: column;
       gap: 2rem;
       @extend %max-width;
+      @include screen(small) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      > app-form {
+        flex: 1;
+        max-width: 460px;
+      }
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 540px;
       > div {
         display: flex;
         flex-direction: column;
@@ -99,6 +113,13 @@
       > img {
         width: 1rem;
       }
+    }
+  }
+  &__video {
+    @extend %max-width;
+    padding: 5rem 1rem;
+    > iframe {
+      width: 100%;
     }
   }
 }
