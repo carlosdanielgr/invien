@@ -1,0 +1,53 @@
+<form class="form">
+  <div class="form__adviser">
+    <figure class="form__adviser-img">
+      <img src="./assets/images/advisors/jorge.png" alt="" />
+    </figure>
+    <div class="form__adviser-info">
+      <span>Jorge Santamaría </span>
+      <span>{{ "jsantamaria@invien.mx" }}</span>
+      <span>+52 662 112 2880</span>
+    </div>
+  </div>
+  <div>
+    <label for="name" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Nombre"
+      required
+    />
+  </div>
+  <div>
+    <label for="phone" class="form-label">Teléfono</label>
+    <input
+      type="text"
+      class="form-control"
+      id="phone"
+      placeholder="+123 456 7890"
+      required
+    />
+  </div>
+  <div>
+    <label for="email" class="form-label">Correo electrónico</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="tucorreo@email.com"
+      required
+    />
+  </div>
+  <div>
+    <label for="message" class="form-label">Mensaje</label>
+    <textarea
+      class="form-control"
+      id="message"
+      rows="5"
+      placeholder="Dejanos un mensaje"
+      required
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-invien px-3 mt-3">Enviar</button>
+</form>
