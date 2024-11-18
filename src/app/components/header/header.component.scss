@@ -2,6 +2,9 @@
 
 .header {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 1rem;
   color: #fff;
@@ -13,45 +16,63 @@
   &__shadow {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
   }
-}
-
-.navbar-brand {
-  > img {
-    max-width: 120px;
+  &__logo {
+    > img {
+      max-width: 120px;
+      &:last-child {
+        display: none;
+      }
+    }
   }
-}
-
-.header .navbar-brand > img:last-child {
-  display: none;
+  &__btn-menu {
+    > img {
+      width: 25px;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__links {
+    flex-direction: row;
+    @include screen(custom, max, 768) {
+      display: none;
+    }
+  }
 }
 
 .navbar-scrolled {
   background-color: #fff;
 }
 
-.header.navbar-transparent.navbar-scrolled .btn-menu {
+.header.navbar-scrolled .header__btn-menu {
   filter: brightness(0);
 }
 
-.header.navbar-transparent.navbar-scrolled .navbar-brand > img:last-child {
+.header.navbar-scrolled .header__logo > img:last-child {
   display: block;
 }
 
-.header.navbar-transparent.navbar-scrolled .navbar-brand > img:first-child {
+.header.navbar-scrolled .header__logo > img:first-child {
   display: none;
 }
 
-.header.navbar-transparent .navbar-nav .nav-item .nav-link,
-.header.navbar-transparent .navbar-nav .nav-item .nav-link:hover {
+.header .navbar-nav .nav-item .nav-link,
+.header .navbar-nav .nav-item .nav-link:hover {
   color: #fff;
   font-size: 0.944rem;
 }
 
-.header.navbar-transparent.navbar-scrolled,
-.header.navbar-transparent.navbar-scrolled .nav-link,
-.header.navbar-transparent.navbar-scrolled .nav-link:hover,
-.header.navbar-transparent.navbar-scrolled .nav-i18n > a {
+.header.navbar-scrolled,
+.header.navbar-scrolled .nav-link,
+.header.navbar-scrolled .nav-link:hover,
+.header.navbar-scrolled .nav-i18n > a {
   color: #000 !important;
+}
+
+.offcanvas-body .nav-i18n > a {
+  color: #000;
 }
 
 .nav-i18n {
@@ -62,8 +83,12 @@
   > a {
     color: #fff;
     font-size: 0.6rem;
+    text-decoration: none;
   }
   > div {
     margin-top: -0.3rem;
+  }
+  @include screen(custom, max, 768) {
+    display: none;
   }
 }
