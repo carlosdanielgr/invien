@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { ADVISERS } from '@shared/adviser.const';
 import { AdviserComponent } from '@shared/components/adviser/adviser.component';
@@ -11,6 +12,7 @@ import { PropertyFilterComponent } from '@shared/components/property-filter/prop
   selector: 'app-home-page',
   standalone: true,
   imports: [
+    RouterLink,
     PropertyFilterComponent,
     CarouselComponent,
     AdviserComponent,

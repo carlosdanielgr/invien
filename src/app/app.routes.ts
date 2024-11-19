@@ -43,4 +43,9 @@ export const routes: Routes = [
         (c) => c.AdvisersComponent
       ),
   },
+  {
+    path: 'sell',
+    loadComponent: () =>
+      import('./components/sell-property/sell-property.component'),
+  },
 ];
