@@ -1,7 +1,8 @@
 .properties {
   &__main {
     padding: 1rem;
-    background-image: url(./../../../assets/images/invien.png);
+    background-image: url(./../../../assets/images/properties.png);
+    background-position-y: center;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -42,5 +43,20 @@
     justify-content: center;
     align-items: center;
     padding: 3rem 0;
+    &-num {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      &--active {
+        border-radius: 50%;
+        background-color: var(--primary);
+        color: #fff;
+      }
+      > button {
+        cursor: pointer;
+        padding: 0.2rem 0.75rem;
+      }
+    }
   }
 }

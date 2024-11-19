@@ -3,7 +3,8 @@
 .our-services {
   &__main {
     padding: 1rem;
-    background-image: url(./../../../assets/images/invien.png);
+    background-image: url(./../../../assets/images/services.png);
+    background-position-y: center;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -60,9 +61,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 1rem;
+    padding: 7rem 1rem;
     text-align: center;
-    background-color: #000;
+    background-image: url(./../../../assets/images/services-info.png);
+    background-position-y: center;
+    background-size: cover;
     > p,
     span {
       font-size: 1.7rem;

@@ -3,7 +3,8 @@
 .advisers {
   &__main {
     padding: 1rem;
-    background-image: url(./../../../assets/images/invien.png);
+    background-image: url(./../../../assets/images/advisors.png);
+    background-position-y: center;
     background-size: cover;
     min-height: 100vh;
     display: flex;

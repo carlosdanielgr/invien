@@ -1,7 +1,8 @@
 .about-us {
   &__main {
     padding: 1rem;
-    background-image: url(./../../../assets/images/invien.png);
+    background-image: url(./../../../assets/images/about-us.png);
+    background-position-y: center;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -44,12 +45,14 @@
 }
 
 .banner {
-  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 7rem 1rem;
   color: #fff;
+  background-image: url(./../../../assets/images/about-us-info.png);
+  background-position-y: center;
+  background-size: cover;
 }
 
 .banner > p {
