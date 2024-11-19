@@ -11,6 +11,7 @@
   padding: 1rem;
   background-image: url(./../../../assets/images/invien.png);
   background-size: cover;
+  background-position-y: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,16 +27,25 @@
   color: white;
   font-size: 2.5rem;
   font-weight: 500;
-  max-width: 550px;
+  max-width: 750px;
+  @include screen(med-small) {
+    font-size: 3.5rem;
+  }
 }
 
 .title > span:nth-child(even) {
   font-size: 3rem;
   font-family: bell-i;
+  @include screen(med-small) {
+    font-size: 4rem;
+  }
 }
 
 .title > span:nth-child(odd) {
   font-size: 2rem;
+  @include screen(med-small) {
+    font-size: 3rem;
+  }
 }
 
 .home-menu-tabs .nav-link {
@@ -54,7 +64,7 @@
 }
 
 .why-invest {
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 3rem auto;
   @include screen(small) {
     display: flex;

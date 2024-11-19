@@ -3,21 +3,19 @@
     <p>{{ titlePrimary }}</p>
     <h2>{{ subtitle }}</h2>
   </div>
-  <div
-    id="carouselExampleAutoplaying2"
-    class="carousel slide"
-    data-bs-ride="carousel"
-  >
+  <div id="carousel-{{ id }}" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <ng-content />
     </div>
     <div class="carousel-primary__content-btn">
-      <button type="button" class="btn btn-invien">Ver Todos</button>
+      <button type="button" class="btn btn-invien" [routerLink]="viewAll">
+        Ver Todos
+      </button>
       <div>
         <button
           class="btn carousel-btn mx-2"
           type="button"
-          data-bs-target="#carouselExampleAutoplaying2"
+          [attr.data-bs-target]="'#carousel-' + id"
           data-bs-slide="prev"
         >
           <i class="bi bi-arrow-left"></i>
@@ -25,7 +23,7 @@
         <button
           class="btn carousel-btn"
           type="button"
-          data-bs-target="#carouselExampleAutoplaying2"
+          [attr.data-bs-target]="'#carousel-' + id"
           data-bs-slide="next"
         >
           <i class="bi bi-arrow-right"></i>

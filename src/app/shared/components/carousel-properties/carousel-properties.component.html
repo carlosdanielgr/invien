@@ -1,6 +1,8 @@
 <app-carousel
   titlePrimary="Comienza a invertir"
   subtitle="Proyectos Inmobiliarios"
+  viewAll="/properties"
+  id="properties"
 >
   @for (properties of slidesProperties; track $index; let isFirst = $first) {
   <div class="carousel-item" [class.active]="isFirst">

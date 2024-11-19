@@ -36,7 +36,7 @@
   }
   &__links {
     flex-direction: row;
-    @include screen(custom, max, 768) {
+    @include screen(custom, max, 850) {
       display: none;
     }
   }
@@ -88,7 +88,7 @@
   > div {
     margin-top: -0.3rem;
   }
-  @include screen(custom, max, 768) {
+  @include screen(custom, max, 850) {
     display: none;
   }
 }

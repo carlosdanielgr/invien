@@ -26,10 +26,10 @@ $primary: #ec1c24;
 }
 
 * {
-  font-size: 18px;
+  font-size: 15px;
   font-family: gilroy, Arial, Helvetica, sans-serif;
   @include screen(small) {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 

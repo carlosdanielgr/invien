@@ -90,6 +90,8 @@
 <app-carousel
   titlePrimary="CONOCE AL EQUIPO"
   subtitle="Tu Propiedad en las Mejores Manos"
+  viewAll="/advisers"
+  id="advisers"
 >
   @for (advisers of slidesAdvisers; track $index; let isFirst = $first) {
   <div class="carousel-item" [class.active]="isFirst">
