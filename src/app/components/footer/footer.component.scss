@@ -56,9 +56,11 @@
   > span:first-child {
     font-size: 1.4rem;
   }
-  span:not(:first-child) {
+  span:not(:first-child),
+  a {
     font-size: 0.88rem;
     color: #626262;
+    text-decoration: none;
   }
   button {
     width: fit-content;

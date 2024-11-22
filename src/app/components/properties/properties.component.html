@@ -1,30 +1,32 @@
 <article class="properties">
-  <div class="properties__main">
-    <h1 class="properties__title">Propiedades</h1>
+  <div class="properties__main main">
+    <h1>Propiedades</h1>
   </div>
-  <div class="properties__filter">
-    <span>Comienza a invertir</span>
-    <h2>Propiedades Seleccionadas</h2>
+  <div class="properties__filter section pb-5">
+    <span class="subtitle">Comienza a invertir</span>
+    <h2 class="title">Propiedades Seleccionadas</h2>
     <app-property-filter />
   </div>
-  <div class="properties__list">
-    @for (item of properties; track $index) {
-    <app-property [property]="item" [info]="item.price" />
-    }
-  </div>
-  <div class="properties__pagination">
-    <button class="btn carousel-btn" type="button">
-      <i class="bi bi-arrow-left"></i>
-    </button>
-    <div class="properties__pagination-num">
-      <button type="button" class="btn properties__pagination-num--active">
-        1
-      </button>
-      <button type="button" class="btn">2</button>
-      <button type="button" class="btn">3</button>
+  <div class="section pt-0">
+    <div class="properties__list">
+      @for (item of properties; track $index) {
+      <app-property [property]="item" [info]="item.price" />
+      }
     </div>
-    <button class="btn carousel-btn" type="button">
-      <i class="bi bi-arrow-right"></i>
-    </button>
+    <div class="properties__pagination">
+      <button class="btn carousel-btn" type="button">
+        <i class="bi bi-arrow-left"></i>
+      </button>
+      <div class="properties__pagination-num">
+        <button type="button" class="btn properties__pagination-num--active">
+          1
+        </button>
+        <button type="button" class="btn">2</button>
+        <button type="button" class="btn">3</button>
+      </div>
+      <button class="btn carousel-btn" type="button">
+        <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
   </div>
 </article>

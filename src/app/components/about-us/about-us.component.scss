@@ -1,24 +1,11 @@
 .about-us {
   &__main {
-    padding: 1rem;
     background-image: url(./../../../assets/images/about-us.png);
-    background-position-y: center;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &__title {
-    font-size: 3.7rem;
-    color: #fff;
-    font-weight: 400;
   }
 }
 
 .we-are,
 .spaces {
-  padding: 4rem 1rem;
   > div {
     display: flex;
     flex-direction: column;
@@ -28,6 +15,10 @@
   }
 }
 
+.spaces--reverse > div {
+  flex-direction: column-reverse;
+}
+
 .we-are p,
 .spaces p {
   color: #626262;
@@ -35,13 +26,6 @@
 
 .we-are-title {
   max-width: 25rem;
-}
-
-.we-are-title,
-.spaces-title {
-  font-size: 2.6rem;
-  font-weight: 400;
-  font-family: bell;
 }
 
 .banner {

@@ -1,17 +1,10 @@
 .carousel-primary {
-  padding: 3rem 1rem;
   &__title {
     text-align: center;
     > p {
-      font-size: 1.3rem;
-      color: var(--primary);
       margin: 0;
     }
-    > h2,
-    > h4 {
-      font-size: 2.6rem;
-      font-family: bell;
-      font-weight: 400;
+    > h2 {
       max-width: 28rem;
       margin: 0 auto 3rem;
     }

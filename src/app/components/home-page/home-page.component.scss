@@ -7,11 +7,8 @@
   }
 }
 
-.main {
+.home-page {
   padding: 1rem;
-  background-image: url(./../../../assets/images/invien.png);
-  background-size: cover;
-  background-position-y: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,32 +16,38 @@
   @include screen(med-small) {
     padding: 2rem 3rem;
   }
-}
-
-.title {
-  padding-top: 150px;
-  margin-bottom: 1rem;
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 500;
-  max-width: 750px;
-  @include screen(med-small) {
-    font-size: 3.5rem;
+  &__video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
   }
-}
-
-.title > span:nth-child(even) {
-  font-size: 3rem;
-  font-family: bell-i;
-  @include screen(med-small) {
-    font-size: 4rem;
-  }
-}
-
-.title > span:nth-child(odd) {
-  font-size: 2rem;
-  @include screen(med-small) {
-    font-size: 3rem;
+  &__title {
+    padding-top: 150px;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 500;
+    max-width: 750px;
+    @include screen(med-small) {
+      font-size: 3.5rem;
+    }
+    > span:nth-child(even) {
+      font-size: 3rem;
+      font-family: bell-i;
+      @include screen(med-small) {
+        font-size: 4rem;
+      }
+    }
+    > span:nth-child(odd) {
+      font-size: 2rem;
+      @include screen(med-small) {
+        font-size: 3rem;
+      }
+    }
   }
 }
 
@@ -65,7 +68,7 @@
 
 .why-invest {
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 0 auto;
   @include screen(small) {
     display: flex;
     align-items: center;
@@ -74,9 +77,6 @@
 }
 
 .why-invest-title {
-  font-size: 2.6rem;
-  font-family: bell;
-  font-weight: 400;
   margin: 1.5rem 0;
   max-width: 22rem;
 }

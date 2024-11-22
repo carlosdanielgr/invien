@@ -2,20 +2,7 @@
 
 .our-services {
   &__main {
-    padding: 1rem;
     background-image: url(./../../../assets/images/services.png);
-    background-position-y: center;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &__title {
-    font-size: 3.7rem;
-    color: #fff;
-    font-weight: 400;
-    font-family: gilroy-bold;
   }
   &__info {
     display: flex;
@@ -23,7 +10,9 @@
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1rem;
+    &--reverse {
+      flex-direction: column-reverse;
+    }
     @include screen(small) {
       flex-direction: row;
       align-items: center;
@@ -31,10 +20,9 @@
     &-info {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      > h2 {
-        font-size: 2.6rem;
-        font-family: bell;
+      gap: 1rem;
+      @include screen(small) {
+        gap: 2rem;
       }
     }
     &-item {

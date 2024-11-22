@@ -2,25 +2,16 @@
 
 .sell-property {
   &__main {
-    padding: 1rem;
     background-image: url(./../../../assets/images/sell-property.png);
-    background-size: cover;
-    background-position-y: center;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   &__title {
-    text-align: center;
-    font-size: 3.7rem;
-    color: #fff;
-    font-weight: 400;
-    font-family: gilroy-bold;
     max-width: 730px;
     &--custom {
-      font-size: 3.7rem;
+      font-size: 2.6rem;
       white-space: nowrap;
+      @include screen(small) {
+        font-size: 3.7rem;
+      }
       > img {
         position: sticky;
         margin-right: -2rem;
@@ -36,7 +27,6 @@
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1rem;
     @include screen(small) {
       flex-direction: row;
       align-items: center;
@@ -45,10 +35,6 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      > h2 {
-        font-size: 2.6rem;
-        font-family: bell;
-      }
     }
     &-item {
       display: flex;

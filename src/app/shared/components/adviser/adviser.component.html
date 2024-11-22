@@ -5,7 +5,11 @@
     <span> {{ adviser.position }} </span>
   </div>
   <div>
-    <span class="adviser__contact"> {{ adviser.email }} </span>
-    <span class="adviser__contact"> {{ adviser.phone }} </span>
+    <a class="adviser__contact" href="mailto:{{ adviser.email }}">
+      {{ adviser.email }}
+    </a>
+    <a class="adviser__contact" href="tel:{{ adviser.phone }}">
+      {{ adviser.phone }}
+    </a>
   </div>
 </div>

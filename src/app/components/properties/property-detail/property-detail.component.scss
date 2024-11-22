@@ -21,7 +21,6 @@
   &__props {
     display: grid;
     gap: 1rem;
-    padding: 2rem 0;
     @extend %max-width;
     @include screen(small) {
       grid-template-columns: 1fr 1fr;
@@ -68,7 +67,6 @@
     }
   }
   &__description {
-    padding: 4rem 1rem;
     background-color: #f5f5f5;
     &-content {
       display: flex;
@@ -117,7 +115,6 @@
   }
   &__video {
     @extend %max-width;
-    padding: 5rem 1rem;
     > iframe {
       width: 100%;
     }

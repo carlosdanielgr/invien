@@ -36,6 +36,7 @@ $primary: #ec1c24;
 body {
   margin: 0;
   color: #000;
+  overflow-x: hidden;
 }
 
 img {
@@ -82,6 +83,59 @@ p {
   background-color: var(--primary);
   padding: 0.1rem 0.3rem;
   color: white;
+  > i {
+    font-size: 1.5rem;
+  }
+}
+
+.carousel-btn:hover {
+  background-color: rgb(200, 24, 30);
+}
+
+.title {
+  font-size: 1.77rem;
+  font-family: bell;
+  font-weight: 400;
+  @include screen(small) {
+    font-size: 2.6rem;
+  }
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--primary);
+  @include screen(small) {
+    font-size: 1.3rem;
+  }
+}
+
+.main {
+  padding: 1rem;
+  background-position-y: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 50vh;
+  > h1 {
+    font-size: 2.6rem;
+    color: #fff;
+    font-weight: 400;
+    @include screen(small) {
+      font-size: 3.7rem;
+    }
+  }
+  @include screen(small) {
+    min-height: 100vh;
+  }
+}
+
+.section {
+  padding: 3.5rem 1rem;
+  @include screen(small) {
+    padding: 5.3rem 1rem;
+  }
 }
 
 :root {

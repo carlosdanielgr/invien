@@ -9,6 +9,13 @@
     flex-direction: row;
     align-items: center;
   }
+  &__image {
+    background-image: url(./../../../assets/images/contact.png);
+    background-position-y: center;
+    background-size: cover;
+    height: 791px;
+    min-height: 400px;
+  }
   &__inputs {
     display: grid;
     gap: 1rem;
@@ -23,17 +30,13 @@
 }
 
 .contact-form {
-  padding: 1rem;
   &__content {
     max-width: 550px;
-    margin: 0 auto;
+    padding-left: 2rem;
   }
 }
 
 .contact-title {
-  font-size: 2.6rem;
-  font-family: bell;
-  font-weight: 400;
   margin: 1.5rem 0;
   max-width: 15rem;
 }

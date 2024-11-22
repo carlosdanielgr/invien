@@ -13,6 +13,11 @@
   @include screen(med-small) {
     padding: 1rem 3rem;
   }
+  @include screen(custom, max, 850) {
+    .nav-i18n {
+      display: none;
+    }
+  }
   &__shadow {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
   }
@@ -71,8 +76,14 @@
   color: #000 !important;
 }
 
-.offcanvas-body .nav-i18n > a {
+.offcanvas-body .nav-i18n > a,
+div {
   color: #000;
+  font-size: 1.2rem;
+}
+
+.offcanvas-body .nav-link {
+  font-size: 1.7rem;
 }
 
 .nav-i18n {
@@ -87,8 +98,5 @@
   }
   > div {
     margin-top: -0.3rem;
-  }
-  @include screen(custom, max, 850) {
-    display: none;
   }
 }
