@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { ADVISERS } from '@shared/adviser.const';
@@ -22,6 +22,20 @@ import { PropertyFilterComponent } from '@shared/components/property-filter/prop
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
-export class HomePageComponent {
+export class HomePageComponent implements AfterViewInit {
+  @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
+
+  // @HostListener('document:click', ['$event'])
+  // onClick(): void {
+  //   // if (this.video) this.video.nativeElement.play();
+  // }
+
   slidesAdvisers = ADVISERS;
+
+  constructor() {}
+
+  ngAfterViewInit(): void {
+    this.video.nativeElement.muted = true;
+    this.video.nativeElement.play();
+  }
 }
