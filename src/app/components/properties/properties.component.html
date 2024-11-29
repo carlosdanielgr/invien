@@ -9,8 +9,7 @@
   </div>
   <div class="section pt-0">
     <div class="properties__list">
-      @if (!propertyService.loading) { @for (item of propertyService.properties$
-      | async; track $index) {
+      @if (!loading) { @for (item of properties; track $index) {
       <app-property [property]="item" />
       } }@else {
       <app-property-skeleton />
@@ -21,20 +20,9 @@
       <app-property-skeleton />
       }
     </div>
-    <div class="properties__pagination">
-      <button class="btn carousel-btn" type="button">
-        <i class="bi bi-arrow-left"></i>
-      </button>
-      <div class="properties__pagination-num">
-        <button type="button" class="btn properties__pagination-num--active">
-          1
-        </button>
-        <button type="button" class="btn">2</button>
-        <button type="button" class="btn">3</button>
-      </div>
-      <button class="btn carousel-btn" type="button">
-        <i class="bi bi-arrow-right"></i>
-      </button>
-    </div>
+    <app-pagination
+      [pagination]="pagination"
+      (params)="onGetProperties($event)"
+    />
   </div>
 </article>

@@ -3,8 +3,12 @@ import { Injectable } from '@angular/core';
 
 import { environment } from '@env/environment';
 import { Property } from '@shared/interfaces/property.interface';
-import { Response } from '@shared/interfaces/response.interface';
-import { BehaviorSubject } from 'rxjs';
+import {
+  Pagination,
+  QueryPagination,
+  Response,
+} from '@shared/interfaces/response.interface';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +16,9 @@ import { BehaviorSubject } from 'rxjs';
 export class PropertyService {
   private readonly API_URL = `${environment.apiUrl}property/`;
 
-  properties$ = new BehaviorSubject<Property[]>([]);
+  private originProperties$ = new BehaviorSubject<Property[]>([]);
+
+  pagination!: Pagination;
 
   loading = false;
 
@@ -22,11 +28,19 @@ export class PropertyService {
     return this.http.get<Response<Property[]>>(`${this.API_URL}all/es`);
   }
 
+  getPropertiesPaginate(params: QueryPagination) {
+    return this.http.get<Response<Property[]>>(`${this.API_URL}all/es`, {
+      params,
+    });
+  }
+
   initGetProperties() {
     this.loading = true;
     this.getProperties().subscribe({
       next: (response) => {
-        this.properties$.next(response.data);
+        const { data, ...pagination } = response;
+        this.pagination = pagination;
+        this.originProperties$.next(data);
         this.loading = false;
       },
       error: (error) => {
@@ -34,5 +48,9 @@ export class PropertyService {
         console.error(error);
       },
     });
+  }
+
+  get properties$(): Observable<Property[]> {
+    return this.originProperties$.asObservable();
   }
 }
