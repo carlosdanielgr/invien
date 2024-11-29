@@ -1,5 +1,9 @@
 <div role="button" class="property" (click)="redirectProperty()">
-  <img [src]="apiUrl + property.images[0]" [alt]="property.name" />
+  <img
+    class="property__img"
+    [src]="apiUrl + property.images[0]"
+    [alt]="property.name"
+  />
   <div class="property__desc">
     <span>{{ property.name }}</span>
     <span>●</span>
