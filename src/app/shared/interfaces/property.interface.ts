@@ -1,7 +1,27 @@
 export interface Property {
-  imageUrl: string;
-  title: string;
-  city: string;
-  type: string;
+  id: string;
+  name: string;
+  description: string;
+  images: string[];
   price: string;
+  total_size: string;
+  built_size: string;
+  rooms: number;
+  bathrooms: number;
+  garage: number;
+  details: string;
+  amenities: string[];
+  url_video: string;
+  url_map: string;
+  location: string;
+  pdf: string;
+  advisor: Advisor;
+}
+
+export interface Advisor {
+  id: string;
+  name: string;
+  phone: string;
+  email: string;
+  image: string;
 }

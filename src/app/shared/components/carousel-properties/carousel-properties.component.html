@@ -4,11 +4,11 @@
   viewAll="/properties"
   id="properties"
 >
-  @for (properties of slidesProperties; track $index; let isFirst = $first) {
+  @for (properties of matrixProperties; track $index; let isFirst = $first) {
   <div class="carousel-item" [class.active]="isFirst">
     <div class="carousel-primary-content-card">
       @for (item of properties; track $index) {
-      <app-property class="col" [property]="item" [info]="item.type" />
+      <app-property class="col" [property]="item" />
       }
     </div>
   </div>

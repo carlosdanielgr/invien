@@ -9,8 +9,8 @@
   </div>
   <div class="section pt-0">
     <div class="properties__list">
-      @for (item of properties; track $index) {
-      <app-property [property]="item" [info]="item.price" />
+      @for (item of propertyService.properties$ | async; track $index) {
+      <app-property [property]="item" />
       }
     </div>
     <div class="properties__pagination">

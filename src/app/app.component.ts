@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
+import { PropertyService } from '@shared/services/property.service';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -15,9 +16,13 @@ import { ContactComponent } from './components/contact/contact.component';
 export class AppComponent {
   activeLightHeader = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private readonly propertyService: PropertyService
+  ) {}
 
   ngOnInit() {
+    this.propertyService.initGetProperties();
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeLightHeader = event.url.includes('/properties/');

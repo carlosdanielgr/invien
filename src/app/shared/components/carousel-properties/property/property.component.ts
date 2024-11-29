@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { environment } from '@env/environment';
 import { Property } from '@shared/interfaces/property.interface';
 
 @Component({
@@ -11,9 +12,9 @@ import { Property } from '@shared/interfaces/property.interface';
   styleUrl: './property.component.scss',
 })
 export class PropertyComponent {
-  @Input() property: Partial<Property> = {};
+  @Input() property!: Property;
 
-  @Input() info: string = '';
+  apiUrl = `${environment.apiUrl}uploads/`;
 
   constructor(private readonly router: Router) {}
 
