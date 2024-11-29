@@ -20,6 +20,11 @@
       <app-property-skeleton />
       }
     </div>
+    @if (!properties.length && !loading) {
+    <div class="alert alert-light properties__alert" role="alert">
+      <i class="bi bi-exclamation-circle"></i> No hay propiedades disponibles
+    </div>
+    }
     <app-pagination
       [pagination]="pagination"
       (params)="onGetProperties($event)"
