@@ -1,3 +1,5 @@
+import { Advisor } from './advisor.interface';
+
 export interface Property {
   id: string;
   name: string;
@@ -16,12 +18,4 @@ export interface Property {
   location: string;
   pdf: string;
   advisor: Advisor;
-}
-
-export interface Advisor {
-  id: string;
-  name: string;
-  phone: string;
-  email: string;
-  image: string;
 }

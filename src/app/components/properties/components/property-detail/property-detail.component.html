@@ -1,3 +1,4 @@
+@if(!loading){
 <article class="property-detail">
   <div
     id="carouselExampleAutoplaying2"
@@ -5,15 +6,15 @@
     data-bs-ride="carousel"
   >
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./assets/images/invien.png" alt="" />
+      @for (item of property.images; track $index; let first = $first) {
+      <div class="carousel-item" [class.active]="first">
+        <img
+          class="property-detail__carousel-img"
+          [src]="apiUrl + item"
+          [alt]="item"
+        />
       </div>
-      <div class="carousel-item">
-        <img src="./assets/images/invien.png" alt="" />
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/invien.png" alt="" />
-      </div>
+      }
     </div>
     <div class="property-detail__carousel-btn">
       <button
@@ -36,38 +37,36 @@
   </div>
   <div class="property-detail__props section">
     <div>
-      <h1 class="property-detail__props-title">Plaza Andenes Local #233</h1>
-      <span class="property-detail__props-type"
-        >Plaza Andenes, Hermosillo, Sonora</span
-      >
+      <h1 class="property-detail__props-title">{{ property.name }}</h1>
+      <span class="property-detail__props-type">{{ property.location }}</span>
     </div>
     <div class="property-detail__props-features">
       <div>
         <img src="./assets/icons/measures.svg" alt="measures" />
-        <span>68.67 M2</span>
+        <span>{{ property.total_size }} m2</span>
         <span>Terreno</span>
       </div>
       <div>
         <img src="./assets/icons/measures.svg" alt="measures" />
-        <span>68.67 M2</span>
+        <span>{{ property.built_size }} m2</span>
         <span>Construccion</span>
       </div>
       <div>
         <img src="./assets/icons/room.svg" alt="room" />
-        <span>3 Habitaciones</span>
+        <span>{{ property.rooms }} Habitaciones</span>
       </div>
       <div>
         <img src="./assets/icons/bathroom.svg" alt="bathroom" />
-        <span>2 Baños</span>
+        <span>{{ property.bathrooms }} Baños</span>
       </div>
       <div>
         <img src="./assets/icons/garage.svg" alt="garage" />
-        <span>1 Cochera</span>
+        <span>{{ property.garage }} Cochera</span>
       </div>
     </div>
     <div class="property-detail__props-price">
       <span>En Venta</span>
-      <span>$3,708,180</span>
+      <span>$ {{ property.price }} MXN</span>
     </div>
   </div>
 </article>
@@ -77,68 +76,57 @@
       <div>
         <h2 class="property-detail__description-title">Descripción</h2>
         <p class="property-detail__description-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          consectetur, nisl nec ultricies ultricies, nunc nisl ultricies sapien,
-          nec ultricies sapien nunc nec nisl. Nulla consectetur, nisl nec
-          ultricies ultricies, nunc nisl ultricies sapien, nec ultricies
+          {{ property.description }}
         </p>
       </div>
       <div>
         <h2 class="property-detail__description-title">Detalles</h2>
-        <span class="property-detail__description-text"
-          >Tipo: Departamento</span
-        >
-        <span class="property-detail__description-text">Antiguedad: 2009</span>
+        <span class="property-detail__description-text">
+          {{ property.details }}
+        </span>
       </div>
       <div>
         <h3 class="property-detail__description-title">Amenidades</h3>
-        <span class="property-detail__description-amenity">
-          <img src="./assets/icons/check-gray.svg" alt="check-gray" /> Cocina
-          Separada
-        </span>
+        @for (item of property.amenities; track $index) {
         <span class="property-detail__description-amenity">
           <img src="./assets/icons/check-gray.svg" alt="check-gray" />
-          Elevador
+          {{ item }}
         </span>
-        <span class="property-detail__description-amenity">
-          <img src="./assets/icons/check-gray.svg" alt="check-gray" />
-          Terraza
-        </span>
-        <span class="property-detail__description-amenity">
-          <img src="./assets/icons/check-gray.svg" alt="check-gray" />
-          Parrilla
-        </span>
-        <span class="property-detail__description-amenity">
-          <img src="./assets/icons/check-gray.svg" alt="check-gray" /> Cocina
-        </span>
+        }
       </div>
-      <button class="btn btn-outline-primary">
+      <button class="btn btn-outline-primary" (click)="onPrintPdf()">
         <i class="bi bi-printer"></i> Imprimir Propiedad
       </button>
     </div>
-    <app-form />
+    <app-form [advisor]="property.advisor" />
   </div>
 </div>
 <div class="property-detail__video section">
   <iframe
     height="570"
-    src="https://www.youtube.com/embed/IdRABquWjEM?si=aXY5hPXnuJrOiFTL"
+    loading="lazy"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen
+    [src]="property.url_video"
   ></iframe>
 </div>
 <div class="section">
   <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82701.40836889607!2d-99.19136510250074!3d19.45480219992883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fe239cb4e179%3A0x5829452d1ed9f0eb!2sHermosillo%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX%2C%20M%C3%A9xico!5e0!3m2!1ses!2sco!4v1731517443579!5m2!1ses!2sco"
     width="100%"
     height="450"
     style="border: 0"
     allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
+    [src]="property.url_map"
   ></iframe>
 </div>
+} @else{
+<div class="property-detail__loader">
+  <app-loader />
+</div>
+}
 <app-carousel-properties />

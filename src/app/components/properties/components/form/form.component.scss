@@ -21,10 +21,12 @@
       flex-direction: column;
       gap: 0.5rem;
       overflow: hidden;
-      > span {
+      > span,
+      > a {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        text-decoration: none;
         &:not(:first-child) {
           color: #5e5e5e;
         }

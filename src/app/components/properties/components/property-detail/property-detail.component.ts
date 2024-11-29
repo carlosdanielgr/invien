@@ -1,13 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
+import { environment } from '@env/environment';
 import { CarouselPropertiesComponent } from '@shared/components/carousel-properties/carousel-properties.component';
-import { FormComponent } from '../../../form/form.component';
+import { Property } from '@shared/interfaces/property.interface';
+import { LoaderComponent } from '@shared/components/loader/loader.component';
+import { PropertyService } from '@shared/services/property.service';
+import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-property-detail',
   standalone: true,
-  imports: [FormComponent, CarouselPropertiesComponent],
+  imports: [FormComponent, CarouselPropertiesComponent, LoaderComponent],
   templateUrl: './property-detail.component.html',
   styleUrl: './property-detail.component.scss',
 })
-export class PropertyDetailComponent {}
+export class PropertyDetailComponent implements OnInit {
+  property!: Property;
+
+  apiUrl = `${environment.apiUrl}uploads/`;
+
+  loading = true;
+
+  id = '';
+
+  constructor(
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly sanitizer: DomSanitizer,
+    private readonly propertyService: PropertyService
+  ) {
+    this.id = activatedRoute.snapshot.params['id'];
+  }
+
+  ngOnInit(): void {
+    this.getProperty();
+  }
+
+  private getProperty(): void {
+    this.propertyService.getPropertyById(this.id).subscribe({
+      next: (response) => {
+        this.property = response.data;
+        this.sanitizerUrl();
+        this.loading = false;
+      },
+      error: (error) => {
+        this.loading = false;
+      },
+    });
+  }
+
+  private sanitizerUrl() {
+    this.property.url_video = this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.property.url_video
+    ) as string;
+    this.property.url_map = this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.property.url_map
+    ) as string;
+  }
+
+  onPrintPdf(): void {
+    window.open(this.apiUrl + this.property.pdf, '_blank');
+  }
+}

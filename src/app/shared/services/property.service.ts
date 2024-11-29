@@ -28,6 +28,10 @@ export class PropertyService {
     return this.http.get<Response<Property[]>>(`${this.API_URL}all/es`);
   }
 
+  getPropertyById(id: string) {
+    return this.http.get<Response<Property>>(`${this.API_URL}${id}/es`);
+  }
+
   getPropertiesPaginate(params: QueryPagination) {
     return this.http.get<Response<Property[]>>(`${this.API_URL}all/es`, {
       params,

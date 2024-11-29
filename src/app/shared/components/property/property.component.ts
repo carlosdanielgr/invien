@@ -19,6 +19,6 @@ export class PropertyComponent {
   constructor(private readonly router: Router) {}
 
   redirectProperty() {
-    this.router.navigate(['/properties', 1]);
+    this.router.navigate(['/properties', this.property.id]);
   }
 }

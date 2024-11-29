@@ -1,6 +1,4 @@
-import { Adviser } from './interfaces/adviser.interface';
-
-export const ORIGINAL_ADVISERS: Adviser[] = [
+export const ORIGINAL_ADVISERS = [
   {
     image: './assets/images/advisors/jorge.png',
     name: 'Jorge Santamaría',
@@ -66,7 +64,7 @@ export const ORIGINAL_ADVISERS: Adviser[] = [
   },
 ];
 
-export const ADVISERS: Adviser[][] = [];
+export const ADVISERS: any[][] = [];
 
 const splitArray = (numParts: number) => {
   const partLength = Math.ceil(ORIGINAL_ADVISERS.length / numParts);

@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-import { Adviser } from '@shared/interfaces/adviser.interface';
-
 @Component({
   selector: 'app-adviser',
   standalone: true,
@@ -10,5 +8,11 @@ import { Adviser } from '@shared/interfaces/adviser.interface';
   styleUrl: './adviser.component.scss',
 })
 export class AdviserComponent {
-  @Input() adviser: Partial<Adviser> = {};
+  @Input() adviser: Partial<{
+    name: string;
+    email: string;
+    phone: string;
+    position: string;
+    image: string;
+  }> = {};
 }
