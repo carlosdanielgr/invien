@@ -14,7 +14,7 @@ import { Property } from '@shared/interfaces/property.interface';
 export class PropertyComponent {
   @Input() property!: Property;
 
-  apiUrl = `${environment.apiUrl}uploads/`;
+  apiUrl = `${environment.apiUrl}uploads/images/`;
 
   constructor(private readonly router: Router) {}
 

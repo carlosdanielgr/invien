@@ -19,7 +19,7 @@ import { FormComponent } from '../form/form.component';
 export class PropertyDetailComponent implements OnInit {
   property!: Property;
 
-  apiUrl = `${environment.apiUrl}uploads/`;
+  apiUrl = `${environment.apiUrl}uploads/images/`;
 
   loading = true;
 
@@ -28,7 +28,7 @@ export class PropertyDetailComponent implements OnInit {
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly sanitizer: DomSanitizer,
-    private readonly propertyService: PropertyService
+    private readonly propertyService: PropertyService,
   ) {
     this.id = activatedRoute.snapshot.params['id'];
   }
@@ -52,14 +52,14 @@ export class PropertyDetailComponent implements OnInit {
 
   private sanitizerUrl() {
     this.property.url_video = this.sanitizer.bypassSecurityTrustResourceUrl(
-      this.property.url_video
+      this.property.url_video,
     ) as string;
     this.property.url_map = this.sanitizer.bypassSecurityTrustResourceUrl(
-      this.property.url_map
+      this.property.url_map,
     ) as string;
   }
 
   onPrintPdf(): void {
-    window.open(this.apiUrl + this.property.pdf, '_blank');
+    window.print();
   }
 }

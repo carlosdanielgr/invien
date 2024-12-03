@@ -16,6 +16,5 @@ export interface Property {
   url_video: string;
   url_map: string;
   location: string;
-  pdf: string;
   advisor: Advisor;
 }

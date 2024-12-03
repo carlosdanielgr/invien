@@ -1,8 +1,9 @@
 export interface Advisor {
-  id: string;
+  id: number;
   name: string;
   phone: string;
   email: string;
   image: string;
-  role: string;
+  role_es: string;
+  role_en: string;
 }

@@ -1,12 +1,20 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { ADVISERS } from '@shared/adviser.const';
 import { AdviserComponent } from '@shared/components/adviser/adviser.component';
 import { CarouselPropertiesComponent } from '@shared/components/carousel-properties/carousel-properties.component';
 import { CarouselComponent } from '@shared/components/carousel/carousel.component';
 import { CommentsComponent } from '@shared/components/comments/comments.component';
 import { PropertyFilterComponent } from '@shared/components/property-filter/property-filter.component';
+import { splitArray } from '@shared/functions';
+import { Advisor } from '@shared/interfaces/advisor.interface';
+import * as advisors from './../../../assets/advisors.json';
 
 @Component({
   selector: 'app-home-page',
@@ -22,7 +30,7 @@ import { PropertyFilterComponent } from '@shared/components/property-filter/prop
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
-export class HomePageComponent implements AfterViewInit {
+export class HomePageComponent implements OnInit, AfterViewInit {
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
 
   // @HostListener('document:click', ['$event'])
@@ -30,9 +38,16 @@ export class HomePageComponent implements AfterViewInit {
   //   // if (this.video) this.video.nativeElement.play();
   // }
 
-  slidesAdvisers = ADVISERS;
+  slidesAdvisers: Advisor[][] = [];
 
   constructor() {}
+
+  ngOnInit(): void {
+    this.slidesAdvisers = splitArray<Advisor>(
+      window.innerWidth > 992 ? 3 : 1,
+      advisors.data,
+    );
+  }
 
   ngAfterViewInit(): void {
     this.video.nativeElement.muted = true;

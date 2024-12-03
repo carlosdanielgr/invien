@@ -1,0 +1,85 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Lius Fdo. Ochoa",
+      "email": "mbriseno@invien.mx",
+      "phone": "+52 662 256 1058",
+      "image": "assets/images/advisors/luis.png",
+      "role_es": "Asesor inmobiliario",
+      "role_en": "Real estate advisor"
+    },
+    {
+      "id": 2,
+      "name": "Iván Arredondo",
+      "email": "mbriseno@invien.mx",
+      "phone": "+52 662 256 1058",
+      "image": "assets/images/advisors/ivan.png",
+      "role_es": "Asesor inmobiliario",
+      "role_en": "Real state advisor"
+    },
+    {
+      "id": 3,
+      "name": "Christian Janette Lopez",
+      "email": "jsantamaria@invien.mx",
+      "phone": "+52 55 1234 5678",
+      "image": "assets/images/advisors/advisor.png",
+      "role_es": "Gerente",
+      "role_en": "Manager"
+    },
+    {
+      "id": 4,
+      "name": "Jorge Santamaría",
+      "email": "jsantamaria@invien.mx",
+      "phone": "+52 662 112 2880",
+      "image": "assets/images/advisors/jorge.png",
+      "role_es": "Fundador y asesor inmobiliario",
+      "role_en": "Real estate advisor"
+    },
+    {
+      "id": 5,
+      "name": "Alejandra Castro",
+      "email": "mbriseno@invien.mx",
+      "phone": "+52 662 256 1058",
+      "image": "assets/images/advisors/alejandra.png",
+      "role_es": "Asesor inmobiliaria",
+      "role_en": "Real estate advisor"
+    },
+    {
+      "id": 6,
+      "name": "Gaby Mancilla",
+      "email": "gmancilla@invien.mx",
+      "phone": "+52 81 8088 2015",
+      "image": "assets/images/advisors/advisor.png",
+      "role_es": "Fundadora y asesora inmobiliaria",
+      "role_en": "Founder and real estate consultant"
+    },
+    {
+      "id": 7,
+      "name": "C. Janet López",
+      "email": "mbriseno@invien.mx",
+      "phone": "+52 662 256 1058",
+      "image": "assets/images/advisors/advisor.png",
+      "role_es": "Gerente",
+      "role_en": "Manager"
+    },
+    {
+      "id": 8,
+      "name": "Margarita Quintana",
+      "email": "mbriseno@invien.mx",
+      "phone": "+52 662 256 1058",
+      "image": "assets/images/advisors/margarita.png",
+      "role_es": "Asesora inmobiliaria",
+      "role_en": "Real estate advisor"
+    },
+    {
+      "id": 9,
+      "name": "Martha Briseño",
+      "email": "mbriseno@invien.mx",
+      "phone": "+52 662 256 1058",
+      "image": "assets/images/advisors/martha.png",
+      "role_es": "Asesora inmobiliaria",
+      "role_en": "Real estate advisor"
+    }
+  ]
+}
