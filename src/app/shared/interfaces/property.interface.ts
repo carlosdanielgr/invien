@@ -7,6 +7,7 @@ export interface Property {
   description: string;
   images: string[];
   price: string;
+  currency: string;
   total_size: string;
   built_size: string;
   rooms: number;

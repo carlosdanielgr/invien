@@ -9,11 +9,17 @@ import { LoaderComponent } from '@shared/components/loader/loader.component';
 import { PropertyService } from '@shared/services/property.service';
 import { FormComponent } from '../form/form.component';
 import * as advisors from '../../../../../assets/advisors.json';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-property-detail',
   standalone: true,
-  imports: [FormComponent, CarouselPropertiesComponent, LoaderComponent],
+  imports: [
+    FormComponent,
+    CarouselPropertiesComponent,
+    LoaderComponent,
+    CurrencyPipe,
+  ],
   templateUrl: './property-detail.component.html',
   styleUrl: './property-detail.component.scss',
 })
@@ -57,9 +63,10 @@ export class PropertyDetailComponent implements OnInit {
   }
 
   private sanitizerUrl() {
-    this.property.url_video = this.sanitizer.bypassSecurityTrustResourceUrl(
-      this.property.url_video,
-    ) as string;
+    if (this.property.url_video)
+      this.property.url_video = this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.property.url_video,
+      ) as string;
     this.property.url_map = this.sanitizer.bypassSecurityTrustResourceUrl(
       this.property.url_map,
     ) as string;
