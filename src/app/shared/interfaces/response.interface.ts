@@ -8,4 +8,15 @@ export interface Pagination {
   total: number;
 }
 
-export interface QueryPagination extends Partial<Omit<Pagination, 'total'>> {}
+export interface QueryFilter extends Partial<Omit<Pagination, 'total'>> {
+  maxPrice?: string;
+  maxRooms?: string;
+  maxTotalSize?: string;
+  minPrice?: string;
+  minRooms?: string;
+  minTotalSize?: string;
+  typeId?: string;
+  countryId?: string;
+  stateId?: string;
+  townId?: string;
+}

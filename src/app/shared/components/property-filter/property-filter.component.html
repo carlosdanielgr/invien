@@ -1,72 +1,316 @@
 <form class="property-filter">
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle property-type-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      Precio
-      <span class="form-select"> Selecciona el rango de precio </span>
-    </button>
-    <ul
-      class="dropdown-menu property-type-menu"
-      aria-labelledby="dropdownMenuButton1"
-    >
-      <li><a class="dropdown-item" href="#">Menos de 200</a></li>
-      <li><a class="dropdown-item" href="#">Entre 200 MXN y 500 MXN</a></li>
-      <li>
-        <a class="dropdown-item" href="#">Entre 500MXN y 1.000 MXN</a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="#">Entre 1.000 MXN y 3.000 MXN</a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="#">Más de 3.000 MXN</a>
-      </li>
-    </ul>
-  </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle country-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      Cantidad de habitaciones
-      <span class="form-select">Seleccione la cantidad</span>
-    </button>
-    <ul
-      class="dropdown-menu country-menu"
-      aria-labelledby="dropdownMenuButton2"
-    >
-      <li><a class="dropdown-item" href="#">Entre 1 y 3 habitaciones</a></li>
-      <li>
-        <a class="dropdown-item" href="#">Entre 3 y 7 habitaciones</a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="#">Más de 7 habitaciones</a>
-      </li>
-    </ul>
-  </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle state-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      Tamaño de terreno
-      <span class="form-select"> Selecciona el tamaño </span>
-    </button>
-    <ul class="dropdown-menu state-menu" aria-labelledby="dropdownMenuButton3">
-      <li><a class="dropdown-item" href="#">Menos de 10m2</a></li>
-      <li><a class="dropdown-item" href="#">Entre 10m2 y 20m2</a></li>
-      <li><a class="dropdown-item" href="#">Entre 20m2 y 50m2</a></li>
-      <li><a class="dropdown-item" href="#">Más 100m2</a></li>
-    </ul>
-  </div>
+  @if (isHomePage) {
+    <div class="dropdown col">
+      <button
+        class="btn property-filter__btn-toggle dropdown-toggle property-type-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Tipo de propiedad
+        <span class="form-select">
+          {{
+            currentFiltersName["typeId"]
+              ? currentFiltersName["typeId"]
+              : "Selecciona el tipo de propiedad"
+          }}
+        </span>
+      </button>
+      <ul
+        class="dropdown-menu property-type-menu"
+        aria-labelledby="dropdownMenuButton1"
+      >
+        @for (item of types; track $index) {
+          <li>
+            <a
+              role="button"
+              class="dropdown-item"
+              (click)="onSetFilter('typeId', item.id, item.type_es)"
+              >{{ item.type_es }}</a
+            >
+          </li>
+        }
+      </ul>
+    </div>
+    <div class="dropdown col">
+      <button
+        class="btn property-filter__btn-toggle dropdown-toggle country-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        País
+        <span class="form-select">
+          {{
+            currentFiltersName["countryId"]
+              ? currentFiltersName["countryId"]
+              : "Ej. Mexico, Estados Unidos"
+          }}
+        </span>
+      </button>
+      <ul
+        class="dropdown-menu country-menu"
+        aria-labelledby="dropdownMenuButton2"
+      >
+        @for (item of locations.countries; track $index) {
+          <li>
+            <a
+              role="button"
+              class="dropdown-item"
+              (click)="onSetFilter('countryId', item.id, item.country_es)"
+              >{{ item.country_es }}</a
+            >
+          </li>
+        }
+      </ul>
+    </div>
+    <div class="dropdown col">
+      <button
+        class="btn property-filter__btn-toggle dropdown-toggle state-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Estado
+        <span class="form-select">
+          {{
+            currentFiltersName["stateId"]
+              ? currentFiltersName["stateId"]
+              : "Selecciona un estado"
+          }}
+        </span>
+      </button>
+      <ul
+        class="dropdown-menu state-menu"
+        aria-labelledby="dropdownMenuButton3"
+      >
+        @for (item of locations.states; track $index) {
+          <li>
+            <a
+              role="button"
+              class="dropdown-item"
+              (click)="onSetFilter('stateId', item.id, item.state_es)"
+              >{{ item.state_es }}</a
+            >
+          </li>
+        }
+      </ul>
+    </div>
+    <div class="dropdown col">
+      <button
+        class="btn property-filter__btn-toggle dropdown-toggle municipality-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Municipio
+        <span class="form-select">
+          {{
+            currentFiltersName["townId"]
+              ? currentFiltersName["townId"]
+              : "Selecciona un municipio"
+          }}
+        </span>
+      </button>
+      <ul
+        class="dropdown-menu municipality-menu"
+        aria-labelledby="dropdownMenuButton4"
+      >
+        @for (item of locations.towns; track $index) {
+          <li>
+            <a
+              role="button"
+              class="dropdown-item"
+              (click)="onSetFilter('townId', item.id, item.town_es)"
+              >{{ item.town_es }}</a
+            >
+          </li>
+        }
+      </ul>
+    </div>
+  } @else {
+    <div class="dropdown col">
+      <button
+        class="btn property-filter__btn-toggle dropdown-toggle property-type-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Precio
+        <span class="form-select">
+          {{
+            currentFiltersName["Price"]
+              ? currentFiltersName["Price"]
+              : "Selecciona el rango de precio"
+          }}
+        </span>
+      </button>
+      <ul
+        class="dropdown-menu property-type-menu"
+        aria-labelledby="dropdownMenuButton1"
+      >
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="onSetFilterRange('Price', '', '200', 'Menos de $200')"
+            >Menos de $200</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="
+              onSetFilterRange('Price', '200', '500', 'Entre $200 y $500')
+            "
+            >Entre $200 y $500</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="
+              onSetFilterRange('Price', '500', '1000', 'Entre $500 y $1.000')
+            "
+            >Entre $500 y $1.000</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="
+              onSetFilterRange('Price', '1000', '3000', 'Entre $1.000 y $3.000')
+            "
+            >Entre $1.000 y $3.000</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="onSetFilterRange('Price', '3000', '', 'Más de $3.000')"
+            >Más de $3.000</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown col">
+      <button
+        class="btn property-filter__btn-toggle dropdown-toggle country-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Cantidad de habitaciones
+        <span class="form-select">
+          {{
+            currentFiltersName["Rooms"]
+              ? currentFiltersName["Rooms"]
+              : "Seleccione la cantidad"
+          }}
+        </span>
+      </button>
+      <ul
+        class="dropdown-menu country-menu"
+        aria-labelledby="dropdownMenuButton2"
+      >
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="
+              onSetFilterRange('Rooms', '1', '3', 'Entre 1 y 3 habitaciones')
+            "
+            >Entre 1 y 3 habitaciones</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="
+              onSetFilterRange('Rooms', '4', '7', 'Entre 4 y 7 habitaciones')
+            "
+            >Entre 4 y 7 habitaciones</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="
+              onSetFilterRange('Rooms', '8', '', 'Más de 7 habitaciones')
+            "
+            >Más de 7 habitaciones</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown col">
+      <button
+        class="btn property-filter__btn-toggle dropdown-toggle state-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Tamaño de terreno
+        <span class="form-select">
+          {{
+            currentFiltersName["TotalSize"]
+              ? currentFiltersName["TotalSize"]
+              : "Selecciona el tamaño"
+          }}
+        </span>
+      </button>
+      <ul
+        class="dropdown-menu state-menu"
+        aria-labelledby="dropdownMenuButton3"
+      >
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="onSetFilterRange('TotalSize', '', '10', 'Menos de 10m2')"
+            >Menos de 10m2</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="
+              onSetFilterRange('TotalSize', '10', '20', 'Entre 10m2 y 20m2')
+            "
+            >Entre 10m2 y 20m2</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="
+              onSetFilterRange('TotalSize', '20', '50', 'Entre 20m2 y 50m2')
+            "
+            >Entre 20m2 y 50m2</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="onSetFilterRange('TotalSize', '100', '', 'Más 100m2')"
+            >Más 100m2</a
+          >
+        </li>
+      </ul>
+    </div>
+  }
   <div class="d-flex align-items-center property-filter__btn-search">
-    <button type="button" class="btn btn-invien px-4">Buscar</button>
+    <button type="button" class="btn btn-invien px-4" (click)="onSearch()">
+      Buscar
+    </button>
   </div>
 </form>

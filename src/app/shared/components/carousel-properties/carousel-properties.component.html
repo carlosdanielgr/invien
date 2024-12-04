@@ -4,26 +4,30 @@
   viewAll="/properties"
   id="properties"
 >
-  @if(!propertyService.loading){ @for (properties of matrixProperties; track
-  $index; let isFirst = $first) {
-  <div class="carousel-item" [class.active]="isFirst">
-    <div class="carousel-primary-content-card">
-      @for (item of properties; track $index) {
-      <app-property class="col" [property]="item" />
-      }
+  @if (!propertyService.loading) {
+    @for (properties of matrixProperties; track $index; let isFirst = $first) {
+      <div class="carousel-item" [class.active]="isFirst">
+        <div class="carousel-primary-content-card">
+          @for (item of properties; track $index) {
+            <app-property class="col" [property]="item" />
+          }
+        </div>
+      </div>
+    }
+    @if (!matrixProperties.length) {
+      <app-no-data message="No hay propiedades disponibles" />
+    }
+  } @else {
+    <div class="carousel-item active">
+      <div class="carousel-primary-content-card">
+        @if (isWeb) {
+          <app-property-skeleton class="col" />
+          <app-property-skeleton class="col" />
+          <app-property-skeleton class="col" />
+        } @else {
+          <app-property-skeleton class="col" />
+        }
+      </div>
     </div>
-  </div>
-  } }@else {
-  <div class="carousel-item active">
-    <div class="carousel-primary-content-card">
-      @if (isWeb) {
-      <app-property-skeleton class="col" />
-      <app-property-skeleton class="col" />
-      <app-property-skeleton class="col" />
-      }@else {
-      <app-property-skeleton class="col" />
-      }
-    </div>
-  </div>
   }
 </app-carousel>

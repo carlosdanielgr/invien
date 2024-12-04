@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { PropertyService } from '@shared/services/property.service';
 import { Property } from '@shared/interfaces/property.interface';
 import { splitArray } from '@shared/functions';
+import { NoDataComponent } from '../no-data/no-data.component';
 import { PropertyComponent } from '../property/property.component';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { PropertySkeletonComponent } from '../property-skeleton/property-skeleton.component';
@@ -11,7 +12,12 @@ import { PropertySkeletonComponent } from '../property-skeleton/property-skeleto
 @Component({
   selector: 'app-carousel-properties',
   standalone: true,
-  imports: [CarouselComponent, PropertyComponent, PropertySkeletonComponent],
+  imports: [
+    CarouselComponent,
+    PropertyComponent,
+    PropertySkeletonComponent,
+    NoDataComponent,
+  ],
   templateUrl: './carousel-properties.component.html',
   styleUrl: './carousel-properties.component.scss',
 })
@@ -29,7 +35,7 @@ export class CarouselPropertiesComponent implements OnInit, OnDestroy {
       next: (properties) => {
         this.matrixProperties = splitArray<Property>(
           this.isWeb ? 3 : 1,
-          properties
+          properties,
         );
       },
     });

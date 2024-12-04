@@ -5,25 +5,25 @@
   <div class="properties__filter section pb-5">
     <span class="subtitle">Comienza a invertir</span>
     <h2 class="title">Propiedades Seleccionadas</h2>
-    <app-property-filter />
+    <app-property-filter (newFilter)="onGetProperties($event)" />
   </div>
   <div class="section pt-0">
     <div class="properties__list">
-      @if (!loading) { @for (item of properties; track $index) {
-      <app-property [property]="item" />
-      } }@else {
-      <app-property-skeleton />
-      <app-property-skeleton />
-      <app-property-skeleton />
-      <app-property-skeleton />
-      <app-property-skeleton />
-      <app-property-skeleton />
+      @if (!loading) {
+        @for (item of properties; track $index) {
+          <app-property [property]="item" />
+        }
+      } @else {
+        <app-property-skeleton />
+        <app-property-skeleton />
+        <app-property-skeleton />
+        <app-property-skeleton />
+        <app-property-skeleton />
+        <app-property-skeleton />
       }
     </div>
     @if (!properties.length && !loading) {
-    <div class="alert alert-light properties__alert" role="alert">
-      <i class="bi bi-exclamation-circle"></i> No hay propiedades disponibles
-    </div>
+      <app-no-data message="No hay propiedades disponibles" />
     }
     <app-pagination
       [pagination]="pagination"

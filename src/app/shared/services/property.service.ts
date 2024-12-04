@@ -5,7 +5,7 @@ import { environment } from '@env/environment';
 import { Property } from '@shared/interfaces/property.interface';
 import {
   Pagination,
-  QueryPagination,
+  QueryFilter,
   Response,
 } from '@shared/interfaces/response.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -32,9 +32,11 @@ export class PropertyService {
     return this.http.get<Response<Property>>(`${this.API_URL}${id}/es`);
   }
 
-  getPropertiesPaginate(params: QueryPagination) {
+  getPropertiesPaginate(params: QueryFilter) {
     return this.http.get<Response<Property[]>>(`${this.API_URL}all/es`, {
-      params,
+      params: {
+        ...params,
+      },
     });
   }
 

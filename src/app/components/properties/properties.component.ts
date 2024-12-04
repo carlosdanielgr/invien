@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { PropertyComponent } from '@shared/components/property/property.component';
 import { PropertyFilterComponent } from '@shared/components/property-filter/property-filter.component';
 import { PropertySkeletonComponent } from '@shared/components/property-skeleton/property-skeleton.component';
 import { PropertyService } from '@shared/services/property.service';
 import { Property } from '@shared/interfaces/property.interface';
-import {
-  Pagination,
-  QueryPagination,
-} from '@shared/interfaces/response.interface';
+import { NoDataComponent } from '@shared/components/no-data/no-data.component';
+import { Pagination, QueryFilter } from '@shared/interfaces/response.interface';
 import { PaginationComponent } from './components/pagination/pagination.component';
 
 @Component({
@@ -19,6 +18,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     PropertyComponent,
     PropertySkeletonComponent,
     PaginationComponent,
+    NoDataComponent,
   ],
   templateUrl: './properties.component.html',
   styleUrl: './properties.component.scss',
@@ -30,24 +30,37 @@ export class PropertiesComponent implements OnInit {
 
   loading = false;
 
-  constructor(private readonly propertyService: PropertyService) {}
+  urlParams = this.activatedRoute.snapshot.queryParams;
+
+  constructor(
+    private readonly propertyService: PropertyService,
+    private readonly activatedRoute: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
-    this.onGetProperties({ page: 1 });
+    this.onGetProperties({
+      page: 1,
+    });
   }
 
-  onGetProperties(params: QueryPagination): void {
+  onGetProperties(params: QueryFilter): void {
     this.loading = true;
-    this.propertyService.getPropertiesPaginate(params).subscribe({
-      next: (response) => {
-        const { data, ...pagination } = response;
-        this.properties = data;
-        if (!this.pagination) this.pagination = pagination;
-        this.loading = false;
-      },
-      error: (error) => {
-        this.loading = false;
-      },
-    });
+    this.propertyService
+      .getPropertiesPaginate({
+        page: this.pagination?.page,
+        ...this.urlParams,
+        ...params,
+      })
+      .subscribe({
+        next: (response) => {
+          const { data, ...pagination } = response;
+          this.properties = data;
+          if (!this.pagination) this.pagination = pagination;
+          this.loading = false;
+        },
+        error: (error) => {
+          this.loading = false;
+        },
+      });
   }
 }

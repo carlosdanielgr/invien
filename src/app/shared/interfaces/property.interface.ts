@@ -1,4 +1,5 @@
 import { Advisor } from './advisor.interface';
+import { Country, State, Town } from './location.interface';
 
 export interface Property {
   id: string;
@@ -18,4 +19,14 @@ export interface Property {
   location: string;
   advisor?: Advisor;
   advisorId: string;
+  country: Country;
+  state: State;
+  town: Town;
+  type: Type;
+}
+
+export interface Type {
+  id: string;
+  type_es: string;
+  type_en: string;
 }

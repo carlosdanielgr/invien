@@ -140,6 +140,7 @@ p {
 
 @media print {
   .header,
+  .footer-section-map,
   app-form,
   app-carousel-properties,
   app-contact {
@@ -176,6 +177,9 @@ p {
     .carousel {
       display: none;
     }
+  }
+  .footer-section {
+    padding-top: 10rem !important;
   }
   .section {
     padding: 1rem !important;

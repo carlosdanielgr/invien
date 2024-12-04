@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import {
-  Pagination,
-  QueryPagination,
-} from '@shared/interfaces/response.interface';
+import { Pagination, QueryFilter } from '@shared/interfaces/response.interface';
 
 @Component({
   selector: 'app-pagination',
@@ -13,7 +10,7 @@ import {
   styleUrl: './pagination.component.scss',
 })
 export class PaginationComponent {
-  @Output() params = new EventEmitter<QueryPagination>();
+  @Output() params = new EventEmitter<QueryFilter>();
 
   @Input('pagination') set changePagination(newPagination: Pagination) {
     this.pagination = newPagination;
