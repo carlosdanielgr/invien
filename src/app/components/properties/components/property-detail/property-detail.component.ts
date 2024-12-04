@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { environment } from '@env/environment';
 import { CarouselPropertiesComponent } from '@shared/components/carousel-properties/carousel-properties.component';
@@ -8,6 +8,7 @@ import { Property } from '@shared/interfaces/property.interface';
 import { LoaderComponent } from '@shared/components/loader/loader.component';
 import { PropertyService } from '@shared/services/property.service';
 import { FormComponent } from '../form/form.component';
+import * as advisors from '../../../../../assets/advisors.json';
 
 @Component({
   selector: 'app-property-detail',
@@ -27,6 +28,7 @@ export class PropertyDetailComponent implements OnInit {
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
+    private readonly router: Router,
     private readonly sanitizer: DomSanitizer,
     private readonly propertyService: PropertyService,
   ) {
@@ -41,10 +43,14 @@ export class PropertyDetailComponent implements OnInit {
     this.propertyService.getPropertyById(this.id).subscribe({
       next: (response) => {
         this.property = response.data;
+        this.property.advisor = advisors.data.find(
+          (advisor) => advisor.id === +this.property.advisorId,
+        );
         this.sanitizerUrl();
         this.loading = false;
       },
       error: (error) => {
+        this.router.navigate(['/properties']);
         this.loading = false;
       },
     });

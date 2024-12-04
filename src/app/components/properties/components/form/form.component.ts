@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { environment } from '@env/environment';
+
 import { Advisor } from '@shared/interfaces/advisor.interface';
 
 @Component({
@@ -11,6 +11,4 @@ import { Advisor } from '@shared/interfaces/advisor.interface';
 })
 export class FormComponent {
   @Input() advisor!: Advisor;
-
-  apiUrl = `${environment.apiUrl}uploads/advisors/`;
 }

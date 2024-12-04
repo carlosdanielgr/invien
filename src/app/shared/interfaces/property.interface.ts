@@ -16,5 +16,6 @@ export interface Property {
   url_video: string;
   url_map: string;
   location: string;
-  advisor: Advisor;
+  advisor?: Advisor;
+  advisorId: string;
 }
