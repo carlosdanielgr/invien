@@ -112,7 +112,11 @@
           <img src="./assets/icons/check-gray.svg" alt="check-gray" /> Cocina
         </span>
       </div>
-      <button class="btn btn-outline-primary">
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        (click)="onPrintPdf()"
+      >
         <i class="bi bi-printer"></i> Imprimir Propiedad
       </button>
     </div>

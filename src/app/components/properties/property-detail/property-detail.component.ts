@@ -10,4 +10,8 @@ import { FormComponent } from '../../form/form.component';
   templateUrl: './property-detail.component.html',
   styleUrl: './property-detail.component.scss',
 })
-export class PropertyDetailComponent {}
+export class PropertyDetailComponent {
+  onPrintPdf(): void {
+    window.print();
+  }
+}
