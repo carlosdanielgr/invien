@@ -1,15 +1,17 @@
 <article class="advisers">
   <div class="advisers__main main">
-    <h1>Asesores</h1>
+    <h1 i18n="@@advisors">Asesores</h1>
   </div>
   <div class="advisers__team section">
     <div class="advisers__team-title">
-      <span class="subtitle">CONOCE AL EQUIPO</span>
-      <h2 class="title">Tu Propiedad en las Mejores Manos</h2>
+      <span class="subtitle" i18n="@@advisors-title">CONOCE AL EQUIPO</span>
+      <h2 class="title" i18n="@@advisors-subtitle">
+        Tu Propiedad en las Mejores Manos
+      </h2>
     </div>
     <div class="advisers__list">
       @for (item of advisers; track $index) {
-      <app-adviser [adviser]="item" />
+        <app-adviser [adviser]="item" />
       }
     </div>
   </div>

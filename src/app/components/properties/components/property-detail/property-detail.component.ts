@@ -48,7 +48,7 @@ export class PropertyDetailComponent implements OnInit {
   private getProperty(): void {
     this.propertyService.getPropertyById(this.id).subscribe({
       next: (response) => {
-        this.property = response.data;
+        this.property = response;
         this.property.advisor = advisors.data.find(
           (advisor) => advisor.id === +this.property.advisorId,
         );

@@ -7,14 +7,8 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Tipo de propiedad
-        <span class="form-select">
-          {{
-            currentFiltersName["typeId"]
-              ? currentFiltersName["typeId"]
-              : "Selecciona el tipo de propiedad"
-          }}
-        </span>
+        <ng-container i18n="@@prop-filter-type">Tipo de propiedad</ng-container>
+        <span class="form-select"> {{ currentFiltersName["typeId"] }} </span>
       </button>
       <ul
         class="dropdown-menu property-type-menu"
@@ -25,8 +19,8 @@
             <a
               role="button"
               class="dropdown-item"
-              (click)="onSetFilter('typeId', item.id, item.type_es)"
-              >{{ item.type_es }}</a
+              (click)="onSetFilter('typeId', item.id, item.name)"
+              >{{ item.name }}</a
             >
           </li>
         }
@@ -39,13 +33,9 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        País
+        <ng-container i18n="@@country">País</ng-container>
         <span class="form-select">
-          {{
-            currentFiltersName["countryId"]
-              ? currentFiltersName["countryId"]
-              : "Ej. Mexico, Estados Unidos"
-          }}
+          {{ currentFiltersName["countryId"] }}
         </span>
       </button>
       <ul
@@ -57,8 +47,8 @@
             <a
               role="button"
               class="dropdown-item"
-              (click)="onSetFilter('countryId', item.id, item.country_es)"
-              >{{ item.country_es }}</a
+              (click)="onSetFilter('countryId', item.id, item.name)"
+              >{{ item.name }}</a
             >
           </li>
         }
@@ -71,13 +61,9 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Estado
+        <ng-container i18n="@@state">Estado</ng-container>
         <span class="form-select">
-          {{
-            currentFiltersName["stateId"]
-              ? currentFiltersName["stateId"]
-              : "Selecciona un estado"
-          }}
+          {{ currentFiltersName["stateId"] }}
         </span>
       </button>
       <ul
@@ -89,8 +75,8 @@
             <a
               role="button"
               class="dropdown-item"
-              (click)="onSetFilter('stateId', item.id, item.state_es)"
-              >{{ item.state_es }}</a
+              (click)="onSetFilter('stateId', item.id, item.name)"
+              >{{ item.name }}</a
             >
           </li>
         }
@@ -103,13 +89,10 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Municipio
+        <ng-container i18n="@@town">Municipio</ng-container>
+
         <span class="form-select">
-          {{
-            currentFiltersName["townId"]
-              ? currentFiltersName["townId"]
-              : "Selecciona un municipio"
-          }}
+          {{ currentFiltersName["townId"] }}
         </span>
       </button>
       <ul
@@ -121,8 +104,8 @@
             <a
               role="button"
               class="dropdown-item"
-              (click)="onSetFilter('townId', item.id, item.town_es)"
-              >{{ item.town_es }}</a
+              (click)="onSetFilter('townId', item.id, item.name)"
+              >{{ item.name }}</a
             >
           </li>
         }
@@ -136,13 +119,10 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Precio
+        <ng-container i18n="@@price">Precio</ng-container>
+
         <span class="form-select">
-          {{
-            currentFiltersName["Price"]
-              ? currentFiltersName["Price"]
-              : "Selecciona el rango de precio"
-          }}
+          {{ currentFiltersName["Price"] }}
         </span>
       </button>
       <ul
@@ -204,13 +184,12 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Cantidad de habitaciones
+        <ng-container i18n="@@prop-filter-total-rooms"
+          >Cantidad de habitaciones</ng-container
+        >
+
         <span class="form-select">
-          {{
-            currentFiltersName["Rooms"]
-              ? currentFiltersName["Rooms"]
-              : "Seleccione la cantidad"
-          }}
+          {{ currentFiltersName["Rooms"] }}
         </span>
       </button>
       <ul
@@ -256,13 +235,12 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Tamaño de terreno
+        <ng-container i18n="@@prop-filter-total-land"
+          >Tamaño de terreno</ng-container
+        >
+
         <span class="form-select">
-          {{
-            currentFiltersName["TotalSize"]
-              ? currentFiltersName["TotalSize"]
-              : "Selecciona el tamaño"
-          }}
+          {{ currentFiltersName["TotalSize"] }}
         </span>
       </button>
       <ul
@@ -309,7 +287,12 @@
     </div>
   }
   <div class="d-flex align-items-center property-filter__btn-search">
-    <button type="button" class="btn btn-invien px-4" (click)="onSearch()">
+    <button
+      type="button"
+      class="btn btn-invien px-4"
+      (click)="onSearch()"
+      i18n="@@search"
+    >
       Buscar
     </button>
   </div>

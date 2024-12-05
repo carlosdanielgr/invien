@@ -10,7 +10,10 @@
     <span>{{ property.location }}</span>
   </div>
   <div class="property__terrain">
-    <span>{{ property.total_size }} m2 Terreno</span>
+    <span
+      >{{ property.total_size }} m2
+      <ng-container i18n="@@land">Terreno</ng-container>
+    </span>
     <span>{{ property.built_size }} m2 Total</span>
   </div>
   <!-- <span class="property__info">{{ info }}</span> -->

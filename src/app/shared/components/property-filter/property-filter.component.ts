@@ -1,8 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Filter } from '@shared/interfaces/general.interface';
 
 import { Locations } from '@shared/interfaces/location.interface';
-import { Type } from '@shared/interfaces/property.interface';
 import { QueryFilter } from '@shared/interfaces/response.interface';
 import { FiltersService } from '@shared/services/filters.service';
 
@@ -24,11 +24,19 @@ export class PropertyFilterComponent implements OnInit {
     towns: [],
   };
 
-  types: Type[] = [];
+  types: Filter[] = [];
 
   currentFilters: Record<string, string> = {};
 
-  currentFiltersName: Record<string, string> = {};
+  currentFiltersName: Record<string, string> = {
+    typeId: $localize`:@@prop-filter-type-select:Selecciona el tipo de propiedad`,
+    countryId: $localize`:@@prop-filter-country-select:Ej. Mexico, Estados Unidos`,
+    stateId: $localize`:@@prop-filter-state-select:Selecciona un estado`,
+    townId: $localize`:@@prop-filter-town-select:Selecciona un municipio`,
+    Price: $localize`:@@prop-filter-price-select:Selecciona el rango de precio`,
+    Rooms: $localize`:@@prop-filter-rooms-select:Seleccione la cantidad`,
+    TotalSize: $localize`:@@prop-filter-total-size-select:Selecciona el tamaño`,
+  };
 
   constructor(
     private readonly router: Router,

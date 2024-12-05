@@ -1,6 +1,6 @@
 <app-carousel
-  titlePrimary="Comienza a invertir"
-  subtitle="Proyectos Inmobiliarios"
+  [titlePrimary]="title"
+  [subtitle]="subtitle"
   viewAll="/properties"
   id="properties"
 >
@@ -15,7 +15,7 @@
       </div>
     }
     @if (!matrixProperties.length) {
-      <app-no-data message="No hay propiedades disponibles" />
+      <app-no-data [message]="noProperties" />
     }
   } @else {
     <div class="carousel-item active">

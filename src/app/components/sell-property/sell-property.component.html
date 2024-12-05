@@ -1,7 +1,9 @@
 <article class="sell-property">
   <div class="sell-property__main main">
     <h1 class="sell-property__title">
-      Vende tu Propiedad con
+      <ng-container i18n="@@sell-property-title">
+        Vende tu Propiedad con
+      </ng-container>
       <span class="sell-property__title--custom">
         In<img src="./assets/icons/check.png" alt="check" />ien
       </span>
@@ -12,13 +14,13 @@
       <img src="./assets/images/sell-us.png" alt="" />
     </figure>
     <div class="sell-property__info-info col">
-      <h2 class="title">Nosotros Nos Ocupamos</h2>
+      <h2 class="title" i18n="@@sell-property-take">Nosotros Nos Ocupamos</h2>
       <div>
         <div class="sell-property__info-item">
           <img src="./assets/icons/check.png" alt="" />
-          <span>Seguridad & Confianza</span>
+          <span i18n="@@sell-property-security">Seguridad & Confianza</span>
         </div>
-        <span class="sell-property__info-desc">
+        <span class="sell-property__info-desc" i18n="@@sell-property-accompany">
           Te acompañamos en cada paso, asegurando una venta segura y
           transparente.
         </span>
@@ -26,9 +28,9 @@
       <div>
         <div class="sell-property__info-item">
           <img src="./assets/icons/check.png" alt="" />
-          <span>Conseguimos el mejor precio</span>
+          <span i18n="@@sell-property-get">Conseguimos el mejor precio</span>
         </div>
-        <span class="sell-property__info-desc">
+        <span class="sell-property__info-desc" i18n="@@sell-property-analyze">
           Analizamos el mercado para obtener la mejor oferta por tu propiedad.
         </span>
       </div>

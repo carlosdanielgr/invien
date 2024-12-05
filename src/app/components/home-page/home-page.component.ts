@@ -40,6 +40,10 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   slidesAdvisers: Advisor[][] = [];
 
+  advisorTitle = $localize`:@@advisors-title:CONOCE AL EQUIPO`;
+
+  advisorSubtitle = $localize`:@@advisors-subtitle:Tu Propiedad en las Mejores Manos`;
+
   constructor() {}
 
   ngOnInit(): void {

@@ -14,6 +14,10 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "es",
+        "locales": { "en": "src/locale/messages.en.xlf" }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -21,6 +25,7 @@
             "outputPath": "dist/invien",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "localize": true,
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -34,6 +39,10 @@
             ]
           },
           "configurations": {
+            "en": {
+              "aot": true,
+              "localize": ["en"]
+            },
             "production": {
               "budgets": [
                 {
@@ -71,6 +80,9 @@
             },
             "development": {
               "buildTarget": "invien:build:development"
+            },
+            "en": {
+              "buildTarget": "invien:build:en"
             }
           },
           "defaultConfiguration": "development"

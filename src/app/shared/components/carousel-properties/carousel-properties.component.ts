@@ -28,6 +28,12 @@ export class CarouselPropertiesComponent implements OnInit, OnDestroy {
 
   isWeb = window.innerWidth > 992;
 
+  title = $localize`:@@car-prop-title:Comienza a invertir`;
+
+  noProperties = $localize`:@@no-properties:No hay propiedades disponibles`;
+
+  subtitle = $localize`:@@car-prop-subtitle:Proyectos Inmobiliarios`;
+
   constructor(readonly propertyService: PropertyService) {}
 
   ngOnInit(): void {

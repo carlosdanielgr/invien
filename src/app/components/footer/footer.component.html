@@ -4,29 +4,33 @@
   </figure>
   <div class="my-5 footer-section-info">
     <div>
-      <span>Dejanos un mensaje</span>
-      <span class="d-block mt-1 mb-3">Diversificar tu patrimonio. </span>
-      <button type="button" class="btn btn-invien px-3">Contacto</button>
+      <span i18n="@@footer-leave">Dejanos un mensaje</span>
+      <span class="d-block mt-1 mb-3" i18n="@@footer-diversify"
+        >Diversificar tu patrimonio.
+      </span>
+      <button type="button" class="btn btn-invien px-3" i18n="@@contact">
+        Contacto
+      </button>
     </div>
     <div>
-      <span>Contacto</span>
+      <span i18n="@@contact">Contacto</span>
       <a href="tel:+52 6624247136">+52 662 424 7136</a>
       <a href="mailto:invien@invien.mx">{{ "invien@invien.mx" }}</a>
     </div>
     <div>
-      <span>Visitanos</span>
+      <span i18n="@@footer-visit">Visitanos</span>
       <span> Blvd. Fco. Eusebio kino # 514 </span>
       <span>Colonia Pitic Hermosillo, Sonora. </span>
-      <span>Código postal 83150</span>
+      <span i18n="@@footer-postal">Código postal 83150</span>
     </div>
   </div>
   <div class="footer-section-map">
     <div class="footer-section-links">
-      <a routerLink="about-us">Acerca de Nosotros</a>
-      <a routerLink="our-services">Servicios</a>
-      <a routerLink="properties">Propiedades</a>
-      <a routerLink="advisers">Asesorias</a>
-      <a href="">Contacto</a>
+      <a routerLink="about-us" i18n="@@about-us">Acerca de Nosotros</a>
+      <a routerLink="our-services" i18n="@@services">Servicios</a>
+      <a routerLink="properties" i18n="@@properties">Propiedades</a>
+      <a routerLink="advisers" i18n="@@advisors">Asesores</a>
+      <a href="" i18n="@@contact">Contacto</a>
     </div>
     <div class="footer-section-social">
       <a href="">
@@ -42,7 +46,9 @@
   </div>
   <hr />
   <div class="footer-section-legal">
-    <span>© 2024 Invien. Todos los derechos reservados.</span>
+    <span i18n="@@footer-reserved"
+      >© 2024 Invien. Todos los derechos reservados.</span
+    >
     <span>
       Powered by
       <a href="https://www.nomadasmedia.com/" target="_blank">Nómadas Media</a>

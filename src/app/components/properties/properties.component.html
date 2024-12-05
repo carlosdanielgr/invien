@@ -1,10 +1,14 @@
 <article class="properties">
   <div class="properties__main main">
-    <h1>Propiedades</h1>
+    <h1 i18n="@@properties">Propiedades</h1>
   </div>
   <div class="properties__filter section pb-5">
-    <span class="subtitle">Comienza a invertir</span>
-    <h2 class="title">Propiedades Seleccionadas</h2>
+    <span class="subtitle" i18n="@@properties-subtitle"
+      >Comienza a invertir</span
+    >
+    <h2 class="title" i18n="@@properties-selected">
+      Propiedades Seleccionadas
+    </h2>
     <app-property-filter (newFilter)="onGetProperties($event)" />
   </div>
   <div class="section pt-0">
@@ -23,7 +27,7 @@
       }
     </div>
     @if (!properties.length && !loading) {
-      <app-no-data message="No hay propiedades disponibles" />
+      <app-no-data [message]="noProperties" />
     }
     <app-pagination
       [pagination]="pagination"

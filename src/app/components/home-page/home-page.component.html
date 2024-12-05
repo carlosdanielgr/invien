@@ -11,7 +11,7 @@
     <source src="./assets/video/main.mp4" type="video/mp4" />
     Your browser does not support HTML5 video.
   </video>
-  <h1 class="home-page__title">
+  <h1 i18n="@@home-page-title" class="home-page__title">
     Transformamos
     <span> tu </span>
     <span>Inversión</span>
@@ -27,6 +27,7 @@
           class="nav-link flex-grow-1 active custom-rounded-start"
           role="tab"
           aria-selected="true"
+          i18n="@@buy"
           >Compra</a
         >
       </li>
@@ -38,6 +39,7 @@
           role="tab"
           aria-selected="false"
           tabindex="-1"
+          i18n="@@rent"
           >Renta</a
         >
       </li>
@@ -46,6 +48,7 @@
           routerLink="/sell"
           class="nav-link flex-grow-1 custom-rounded-end"
           tabindex="-1"
+          i18n="@@sell"
           >Vende</a
         >
       </li>
@@ -67,14 +70,14 @@
       <img src="./assets/images/invest.png" alt="invest" />
     </figure>
     <div class="col">
-      <h3 class="why-invest-title title">
+      <h3 class="why-invest-title title" i18n="@@home-page-why-invest">
         ¿Por qué invertir en bienes raíces?
       </h3>
-      <p>
+      <p i18n="@@home-page-investing">
         Invertir en bienes raíces es una de las formas más seguras de hacer
         crecer y diversificar tu patrimonio.
       </p>
-      <p>
+      <p i18n="@@home-page-this-type">
         Este tipo de inversión no solo te ofrece la posibilidad de generar
         ingresos estables a través de rentas, sino que también se beneficia de
         la plusvalía, es decir, el aumento del valor de las propiedades con el
@@ -83,15 +86,15 @@
       <div class="why-invest-options">
         <div>
           <img src="./assets/icons/check.png" alt="check" />
-          <span>Diversifica tu Patrimonio</span>
+          <span i18n="@@home-page-diversify">Diversifica tu Patrimonio</span>
         </div>
         <div>
           <img src="./assets/icons/check.png" alt="check" />
-          <span>Genera Ingresos Estables</span>
+          <span i18n="@@home-page-generate">Genera Ingresos Estables</span>
         </div>
         <div>
           <img src="./assets/icons/check.png" alt="check" />
-          <span>Gana mas por tu Inversion</span>
+          <span i18n="@@home-page-maximize">Gana mas por tu Inversion</span>
         </div>
       </div>
     </div>
@@ -99,18 +102,18 @@
 </div>
 <app-comments />
 <app-carousel
-  titlePrimary="CONOCE AL EQUIPO"
-  subtitle="Tu Propiedad en las Mejores Manos"
+  [titlePrimary]="advisorTitle"
+  [subtitle]="advisorSubtitle"
   viewAll="/advisers"
   id="advisers"
 >
   @for (advisers of slidesAdvisers; track $index; let isFirst = $first) {
-  <div class="carousel-item" [class.active]="isFirst">
-    <div class="carousel-primary-content-card">
-      @for (item of advisers; track $index) {
-      <app-adviser class="col" [adviser]="item" />
-      }
+    <div class="carousel-item" [class.active]="isFirst">
+      <div class="carousel-primary-content-card">
+        @for (item of advisers; track $index) {
+          <app-adviser class="col" [adviser]="item" />
+        }
+      </div>
     </div>
-  </div>
   }
 </app-carousel>

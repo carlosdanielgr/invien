@@ -8,7 +8,9 @@ import {
   QueryFilter,
   Response,
 } from '@shared/interfaces/response.interface';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Filter } from '@shared/interfaces/general.interface';
+import { BehaviorSubject, Observable, map } from 'rxjs';
+import { LocaleService } from './locale.service';
 
 @Injectable({
   providedIn: 'root',
@@ -22,22 +24,47 @@ export class PropertyService {
 
   loading = false;
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(
+    private readonly http: HttpClient,
+    private readonly locale: LocaleService,
+  ) {}
 
   getProperties() {
-    return this.http.get<Response<Property[]>>(`${this.API_URL}all/es`);
+    return this.http.get<Response<Property[]>>(
+      `${this.API_URL}all/${this.locale.current}`,
+    );
   }
 
   getPropertyById(id: string) {
-    return this.http.get<Response<Property>>(`${this.API_URL}${id}/es`);
+    return this.http
+      .get<Response<Property>>(`${this.API_URL}${id}/${this.locale.current}`)
+      .pipe(
+        map((response) => {
+          const { data } = response;
+
+          data.state = {
+            ...data.state,
+            name: data.state[`state_${this.locale.current}` as keyof Filter],
+          };
+          data.town = {
+            ...data.town,
+            name: data.town[`town_${this.locale.current}` as keyof Filter],
+          };
+
+          return data;
+        }),
+      );
   }
 
   getPropertiesPaginate(params: QueryFilter) {
-    return this.http.get<Response<Property[]>>(`${this.API_URL}all/es`, {
-      params: {
-        ...params,
+    return this.http.get<Response<Property[]>>(
+      `${this.API_URL}all/${this.locale.current}`,
+      {
+        params: {
+          ...params,
+        },
       },
-    });
+    );
   }
 
   initGetProperties() {

@@ -32,6 +32,8 @@ export class PropertiesComponent implements OnInit {
 
   urlParams = this.activatedRoute.snapshot.queryParams;
 
+  noProperties = $localize`:@@no-properties:No hay propiedades disponibles`;
+
   constructor(
     private readonly propertyService: PropertyService,
     private readonly activatedRoute: ActivatedRoute,

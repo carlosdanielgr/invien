@@ -11,4 +11,10 @@ import { Advisor } from '@shared/interfaces/advisor.interface';
 })
 export class FormComponent {
   @Input() advisor!: Advisor;
+
+  placeholders = {
+    name: $localize`:@@name:Nombre`,
+    email: $localize`:@@contact-email:tucorreo@email.com`,
+    message: $localize`:@@email-message:Dejanos un mensaje`,
+  };
 }

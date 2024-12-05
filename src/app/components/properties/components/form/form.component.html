@@ -12,17 +12,17 @@
     </div>
   </div>
   <div>
-    <label for="name" class="form-label">Nombre</label>
+    <label for="name" class="form-label" i18n="@@name">Nombre</label>
     <input
       type="text"
       class="form-control"
       id="name"
-      placeholder="Nombre"
+      [placeholder]="placeholders.name"
       required
     />
   </div>
   <div>
-    <label for="phone" class="form-label">Teléfono</label>
+    <label for="phone" class="form-label" i18n="@@phone">Teléfono</label>
     <input
       type="text"
       class="form-control"
@@ -32,24 +32,28 @@
     />
   </div>
   <div>
-    <label for="email" class="form-label">Correo electrónico</label>
+    <label for="email" class="form-label" i18n="@@email"
+      >Correo electrónico</label
+    >
     <input
       type="email"
       class="form-control"
       id="email"
-      placeholder="tucorreo@email.com"
+      [placeholder]="placeholders.email"
       required
     />
   </div>
   <div>
-    <label for="message" class="form-label">Mensaje</label>
+    <label for="message" class="form-label" i18n="@@message">Mensaje</label>
     <textarea
       class="form-control"
       id="message"
       rows="5"
-      placeholder="Dejanos un mensaje"
+      [placeholder]="placeholders.message"
       required
     ></textarea>
   </div>
-  <button type="submit" class="btn btn-invien px-3 mt-3">Enviar</button>
+  <button type="submit" class="btn btn-invien px-3 mt-3" i18n="@@send">
+    Enviar
+  </button>
 </form>
