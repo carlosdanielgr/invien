@@ -48,4 +48,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/sell-property/sell-property.component'),
   },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
 ];
