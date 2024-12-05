@@ -133,46 +133,56 @@
           <a
             role="button"
             class="dropdown-item"
-            (click)="onSetFilterRange('Price', '', '200', 'Menos de $200')"
-            >Menos de $200</a
+            (click)="onSetFilterRange('Price', '', '200')"
+          >
+            <ng-container i18n="@@prop-filter-less">Menos de</ng-container>
+            $200</a
           >
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="
-              onSetFilterRange('Price', '200', '500', 'Entre $200 y $500')
-            "
-            >Entre $200 y $500</a
+            (click)="onSetFilterRange('Price', '200', '500')"
           >
+            <ng-container i18n="@@between">Entre</ng-container>
+            $200
+            <ng-container i18n="@@and">y</ng-container>
+            $500
+          </a>
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="
-              onSetFilterRange('Price', '500', '1000', 'Entre $500 y $1.000')
-            "
-            >Entre $500 y $1.000</a
+            (click)="onSetFilterRange('Price', '500', '1000')"
           >
+            <ng-container i18n="@@between">Entre</ng-container>
+            $500
+            <ng-container i18n="@@and">y</ng-container>
+            $1.000
+          </a>
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="
-              onSetFilterRange('Price', '1000', '3000', 'Entre $1.000 y $3.000')
-            "
-            >Entre $1.000 y $3.000</a
+            (click)="onSetFilterRange('Price', '1000', '3000')"
           >
+            <ng-container i18n="@@between">Entre</ng-container>
+            $1.000
+            <ng-container i18n="@@and">y</ng-container>
+            $3.000
+          </a>
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="onSetFilterRange('Price', '3000', '', 'Más de $3.000')"
-            >Más de $3.000</a
+            (click)="onSetFilterRange('Price', '3000', '')"
+          >
+            <ng-container i18n="@@prop-filter-more">Más de </ng-container>
+            $3.000</a
           >
         </li>
       </ul>
@@ -200,30 +210,34 @@
           <a
             role="button"
             class="dropdown-item"
-            (click)="
-              onSetFilterRange('Rooms', '1', '3', 'Entre 1 y 3 habitaciones')
-            "
-            >Entre 1 y 3 habitaciones</a
+            (click)="onSetFilterRange('Rooms', '1', '3')"
           >
+            <ng-container i18n="@@between">Entre</ng-container>
+            1
+            <ng-container i18n="@@and">y</ng-container>
+            3
+          </a>
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="
-              onSetFilterRange('Rooms', '4', '7', 'Entre 4 y 7 habitaciones')
-            "
-            >Entre 4 y 7 habitaciones</a
+            (click)="onSetFilterRange('Rooms', '4', '7')"
           >
+            <ng-container i18n="@@between">Entre</ng-container>
+            4
+            <ng-container i18n="@@and">y</ng-container>
+            7
+          </a>
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="
-              onSetFilterRange('Rooms', '8', '', 'Más de 7 habitaciones')
-            "
-            >Más de 7 habitaciones</a
+            (click)="onSetFilterRange('Rooms', '8', '')"
+          >
+            <ng-container i18n="@@prop-filter-more">Más de </ng-container>
+            7</a
           >
         </li>
       </ul>
@@ -251,36 +265,44 @@
           <a
             role="button"
             class="dropdown-item"
-            (click)="onSetFilterRange('TotalSize', '', '10', 'Menos de 10m2')"
-            >Menos de 10m2</a
+            (click)="onSetFilterRange('TotalSize', '', '10')"
+          >
+            <ng-container i18n="@@prop-filter-less">Menos de</ng-container>
+            10m2</a
           >
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="
-              onSetFilterRange('TotalSize', '10', '20', 'Entre 10m2 y 20m2')
-            "
-            >Entre 10m2 y 20m2</a
+            (click)="onSetFilterRange('TotalSize', '10', '100')"
+          >
+            <ng-container i18n="@@between">Entre</ng-container>
+            10m2
+            <ng-container i18n="@@and">y</ng-container>
+            100m2</a
           >
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="
-              onSetFilterRange('TotalSize', '20', '50', 'Entre 20m2 y 50m2')
-            "
-            >Entre 20m2 y 50m2</a
+            (click)="onSetFilterRange('TotalSize', '100', '250')"
+          >
+            <ng-container i18n="@@between">Entre</ng-container>
+            100m2
+            <ng-container i18n="@@and">y</ng-container>
+            250m2</a
           >
         </li>
         <li>
           <a
             role="button"
             class="dropdown-item"
-            (click)="onSetFilterRange('TotalSize', '100', '', 'Más 100m2')"
-            >Más 100m2</a
+            (click)="onSetFilterRange('TotalSize', '250', '')"
+          >
+            <ng-container i18n="@@prop-filter-more">Más de </ng-container>
+            250m2</a
           >
         </li>
       </ul>
