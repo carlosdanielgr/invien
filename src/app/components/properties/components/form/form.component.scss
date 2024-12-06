@@ -44,3 +44,7 @@
     max-width: fit-content;
   }
 }
+.btn-invien:disabled {
+  background-color: var(--primary);
+  color: white;
+}

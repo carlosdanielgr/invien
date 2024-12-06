@@ -18,13 +18,14 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private readonly propertyService: PropertyService
+    private readonly propertyService: PropertyService,
   ) {}
 
   ngOnInit() {
     this.propertyService.initGetProperties();
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        if (event.url.includes('#contact')) window.location.href = '#contact';
         this.activeLightHeader = event.url.includes('/properties/');
         window.scrollTo(0, 0);
       }

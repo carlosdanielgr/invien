@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form__adviser">
     <figure class="form__adviser-img">
       <img [src]="advisor.image" [alt]="advisor.name" />
@@ -17,8 +17,8 @@
       type="text"
       class="form-control"
       id="name"
+      formControlName="name"
       [placeholder]="placeholders.name"
-      required
     />
   </div>
   <div>
@@ -27,8 +27,8 @@
       type="text"
       class="form-control"
       id="phone"
+      formControlName="phone"
       placeholder="+123 456 7890"
-      required
     />
   </div>
   <div>
@@ -39,8 +39,8 @@
       type="email"
       class="form-control"
       id="email"
+      formControlName="email"
       [placeholder]="placeholders.email"
-      required
     />
   </div>
   <div>
@@ -49,11 +49,16 @@
       class="form-control"
       id="message"
       rows="5"
+      formControlName="message"
       [placeholder]="placeholders.message"
-      required
     ></textarea>
   </div>
-  <button type="submit" class="btn btn-invien px-3 mt-3" i18n="@@send">
+  <button
+    type="submit"
+    class="btn btn-invien px-3 mt-3"
+    i18n="@@send"
+    [disabled]="form.invalid || loading"
+  >
     Enviar
   </button>
 </form>

@@ -8,4 +8,8 @@ import { RouterLink } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  onContact() {
+    window.location.href = '#contact';
+  }
+}

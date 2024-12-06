@@ -8,7 +8,12 @@
       <span class="d-block mt-1 mb-3" i18n="@@footer-diversify"
         >Diversificar tu patrimonio.
       </span>
-      <button type="button" class="btn btn-invien px-3" i18n="@@contact">
+      <button
+        type="button"
+        class="btn btn-invien px-3"
+        i18n="@@contact"
+        (click)="onContact()"
+      >
         Contacto
       </button>
     </div>
@@ -30,7 +35,7 @@
       <a routerLink="our-services" i18n="@@services">Servicios</a>
       <a routerLink="properties" i18n="@@properties">Propiedades</a>
       <a routerLink="advisers" i18n="@@advisors">Asesores</a>
-      <a href="" i18n="@@contact">Contacto</a>
+      <a href="#contact" i18n="@@contact">Contacto</a>
     </div>
     <div class="footer-section-social">
       <a href="">
