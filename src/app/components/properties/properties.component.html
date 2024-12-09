@@ -1,32 +1,37 @@
 <article class="properties">
   <div class="properties__main main">
-    <h1>Propiedades</h1>
+    <h1 i18n="@@properties">Propiedades</h1>
   </div>
   <div class="properties__filter section pb-5">
-    <span class="subtitle">Comienza a invertir</span>
-    <h2 class="title">Propiedades Seleccionadas</h2>
-    <app-property-filter />
+    <span class="subtitle" i18n="@@properties-subtitle"
+      >Comienza a invertir</span
+    >
+    <h2 class="title" i18n="@@properties-selected">
+      Propiedades Seleccionadas
+    </h2>
+    <app-property-filter (newFilter)="onGetProperties($event)" />
   </div>
   <div class="section pt-0">
     <div class="properties__list">
-      @for (item of properties; track $index) {
-      <app-property [property]="item" [info]="item.price" />
+      @if (!loading) {
+        @for (item of properties; track $index) {
+          <app-property [property]="item" />
+        }
+      } @else {
+        <app-property-skeleton />
+        <app-property-skeleton />
+        <app-property-skeleton />
+        <app-property-skeleton />
+        <app-property-skeleton />
+        <app-property-skeleton />
       }
     </div>
-    <div class="properties__pagination">
-      <button class="btn carousel-btn" type="button">
-        <i class="bi bi-arrow-left"></i>
-      </button>
-      <div class="properties__pagination-num">
-        <button type="button" class="btn properties__pagination-num--active">
-          1
-        </button>
-        <button type="button" class="btn">2</button>
-        <button type="button" class="btn">3</button>
-      </div>
-      <button class="btn carousel-btn" type="button">
-        <i class="bi bi-arrow-right"></i>
-      </button>
-    </div>
+    @if (!properties.length && !loading) {
+      <app-no-data [message]="noProperties" />
+    }
+    <app-pagination
+      [pagination]="pagination"
+      (params)="onGetProperties($event)"
+    />
   </div>
 </article>

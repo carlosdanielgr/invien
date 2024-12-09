@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <!-- GENERIC -->
+      <trans-unit id="init" datatype="html">
+        <source>Home</source>
+      </trans-unit>
+      <trans-unit id="about-us" datatype="html">
+        <source>About Us</source>
+      </trans-unit>
+      <trans-unit id="services" datatype="html">
+        <source>Services</source>
+      </trans-unit>
+      <trans-unit id="properties" datatype="html">
+        <source>Properties</source>
+      </trans-unit>
+      <trans-unit id="advisors" datatype="html">
+        <source>Advisors</source>
+      </trans-unit>
+      <trans-unit id="contact" datatype="html">
+        <source>Contact</source>
+      </trans-unit>
+      <trans-unit id="buy" datatype="html">
+        <source>Buy</source>
+      </trans-unit>
+      <trans-unit id="rent" datatype="html">
+        <source>Rent</source>
+      </trans-unit>
+      <trans-unit id="sell" datatype="html">
+        <source>Sell</source>
+      </trans-unit>
+      <trans-unit id="country" datatype="html">
+        <source>Country</source>
+      </trans-unit>
+      <trans-unit id="state" datatype="html">
+        <source>Estado</source>
+      </trans-unit>
+      <trans-unit id="town" datatype="html">
+        <source>Municipality</source>
+      </trans-unit>
+      <trans-unit id="price" datatype="html">
+        <source>Price</source>
+      </trans-unit>
+      <trans-unit id="search" datatype="html">
+        <source>Search</source>
+      </trans-unit>
+      <trans-unit id="no-properties" datatype="html">
+        <source>No properties available</source>
+      </trans-unit>
+      <trans-unit id="land" datatype="html">
+        <source>Land</source>
+      </trans-unit>
+      <trans-unit id="name" datatype="html">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="send" datatype="html">
+        <source>Send</source>
+      </trans-unit>
+      <trans-unit id="phone" datatype="html">
+        <source>Phone</source>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>E-mail address</source>
+      </trans-unit>
+      <trans-unit id="message" datatype="html">
+        <source>Message</source>
+      </trans-unit>
+      <trans-unit id="construction" datatype="html">
+        <source>Construction</source>
+      </trans-unit>
+      <trans-unit id="rooms" datatype="html">
+        <source>Rooms</source>
+      </trans-unit>
+      <trans-unit id="bathrooms" datatype="html">
+        <source>Bathrooms</source>
+      </trans-unit>
+      <trans-unit id="garage" datatype="html">
+        <source>Garage</source>
+      </trans-unit>
+      <trans-unit id="sale" datatype="html">
+        <source>For Sale</source>
+      </trans-unit>
+      <trans-unit id="description" datatype="html">
+        <source>Description</source>
+      </trans-unit>
+      <trans-unit id="details" datatype="html">
+        <source>Details</source>
+      </trans-unit>
+      <trans-unit id="amenities" datatype="html">
+        <source>Amenities</source>
+      </trans-unit>
+      <trans-unit id="between" datatype="html">
+        <source>Between</source>
+      </trans-unit>
+      <trans-unit id="and" datatype="html">
+        <source>y</source>
+      </trans-unit>
+
+      <!-- HOME PAGE -->
+      <trans-unit id="home-page-title" datatype="html">
+        <source>Transforming
+          <x id="START_TAG_SPAN" ctype="x-span" /> your <x id="CLOSE_TAG_SPAN" ctype="x-span" />
+          <x id="START_TAG_SPAN" ctype="x-span" />Investment<x id="CLOSE_TAG_SPAN" ctype="x-span" />
+          <x id="START_TAG_SPAN" ctype="x-span" /> into <x id="CLOSE_TAG_SPAN" ctype="x-span" />
+          <x id="START_TAG_SPAN" ctype="x-span" />Opportunities<x id="CLOSE_TAG_SPAN" ctype="x-span" />
+        </source>
+      </trans-unit>
+      <trans-unit id="home-page-why-invest" datatype="html">
+        <source>Why Invest in Real Estate?</source>
+      </trans-unit>
+      <trans-unit id="home-page-investing" datatype="html">
+        <source>Investing in real estate is one of the safest ways to grow and diversify your wealth.</source>
+      </trans-unit>
+      <trans-unit id="home-page-this-type" datatype="html">
+        <source>This type of investment not only provides the opportunity to generate stable income through rentals but also benefits from appreciation, meaning an increase in the value of properties over time.</source>
+      </trans-unit>
+      <trans-unit id="home-page-diversify" datatype="html">
+        <source>Diversify Your Wealth</source>
+      </trans-unit>
+      <trans-unit id="home-page-generate" datatype="html">
+        <source>Generate Stable Income</source>
+      </trans-unit>
+      <trans-unit id="home-page-maximize" datatype="html">
+        <source>Maximize Your Investment</source>
+      </trans-unit>
+      <!-- PROPERTY FILTER -->
+      <trans-unit id="prop-filter-type" datatype="html">
+        <source>Property Type</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-type-select" datatype="html">
+        <source>Select the type of property</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-country-select" datatype="html">
+        <source>E.g., Mexico, United States</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-state-select" datatype="html">
+        <source>Select a state</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-town-select" datatype="html">
+        <source>Select a municipality</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-price-select" datatype="html">
+        <source>Select price range</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-rooms-select" datatype="html">
+        <source>Select quantity</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-total-size-select" datatype="html">
+        <source>Select size</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-total-rooms" datatype="html">
+        <source>Number of rooms</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-total-land" datatype="html">
+        <source>Land size</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-less" datatype="html">
+        <source>Less than</source>
+      </trans-unit>
+      <trans-unit id="prop-filter-more" datatype="html">
+        <source>More than</source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+      <!-- CAROUSEL PROPERTIES -->
+      <trans-unit id="car-prop-title" datatype="html">
+        <source>Start Investing</source>
+      </trans-unit>
+      <trans-unit id="car-prop-subtitle" datatype="html">
+        <source>Real Estate Projects</source>
+      </trans-unit>
+      <!-- CAROUSEL -->
+      <trans-unit id="carousel-view" datatype="html">
+        <source>View All</source>
+      </trans-unit>
+      <!-- COMMENTS -->
+      <trans-unit id="comments-buyer" datatype="html">
+        <source>- Buyer</source>
+      </trans-unit>
+      <trans-unit id="comments-first" datatype="html">
+        <source>“Invien made the entire buying process simple and hassle-free. Great service!”</source>
+      </trans-unit>
+      <!-- ADVISORS -->
+      <trans-unit id="advisors-title" datatype="html">
+        <source>MEET THE TEAM</source>
+      </trans-unit>
+      <trans-unit id="advisors-subtitle" datatype="html">
+        <source>Your Property in the Best Hands</source>
+      </trans-unit>
+      <!-- CONTACT -->
+      <trans-unit id="contact-title" datatype="html">
+        <source>Connect with the Experts</source>
+      </trans-unit>
+      <trans-unit id="contact-email" datatype="html">
+        <source>youremail@email.com</source>
+      </trans-unit>
+      <trans-unit id="email-message" datatype="html">
+        <source>Leave us a message</source>
+      </trans-unit>
+      <!-- FOOTER -->
+      <trans-unit id="footer-leave" datatype="html">
+        <source>Leave us a message</source>
+      </trans-unit>
+      <trans-unit id="footer-diversify" datatype="html">
+        <source>Diversify your assets.</source>
+      </trans-unit>
+      <trans-unit id="footer-visit" datatype="html">
+        <source>Visit us</source>
+      </trans-unit>
+      <trans-unit id="footer-postal" datatype="html">
+        <source>Postal Code 83150</source>
+      </trans-unit>
+      <trans-unit id="footer-reserved" datatype="html">
+        <source>© 2024 Invien. All rights reserved.</source>
+      </trans-unit>
+      <!-- ABOUT-US -->
+      <trans-unit id="about-us-title" datatype="html">
+        <source>We Are an Innovative Proposal in the Real Estate World</source>
+      </trans-unit>
+      <trans-unit id="about-us-purpose" datatype="html">
+        <source>Our purpose is to offer a comprehensive service that goes beyond traditional brokerage. We listen to our clients' needs and strive to achieve their goals successfully.</source>
+      </trans-unit>
+      <trans-unit id="about-us-from-property" datatype="html">
+        <source>From property search and promotion to investment management.</source>
+      </trans-unit>
+      <trans-unit id="about-us-we-merge" datatype="html">
+        <source>We merge
+          <x id="START_TAG_SPAN" ctype="x-span"/>modernity and functionality<x id="CLOSE_TAG_SPAN" ctype="x-span"/>
+          to create a unique environment that reflects our passion for <x id="START_TAG_SPAN" ctype="x-span"/>
+          excellence in the real estate world.<x id="CLOSE_TAG_SPAN" ctype="x-span"/>
+        </source>
+      </trans-unit>
+      <trans-unit id="about-us-spaces" datatype="html">
+        <source>Spaces of Innovation and Productivity</source>
+      </trans-unit>
+      <trans-unit id="about-us-offices" datatype="html">
+        <source>At Invien, our offices are the core of innovation and efficiency in the real estate sector. Designed to enhance collaboration and productivity, every corner of our workspace combines modernity and comfort, creating an ideal environment for professional growth.</source>
+      </trans-unit>
+      <trans-unit id="about-us-cutting" datatype="html">
+        <source>With cutting-edge technology, our facilities reflect our commitment to excellence in every interaction with our clients. We invite you to discover a place where inspiration and real estate success come together.</source>
+      </trans-unit>
+      <!-- OUR SERVICES -->
+      <trans-unit id="our-services" datatype="html">
+        <source>Our Services</source>
+      </trans-unit>
+      <trans-unit id="our-services-title" datatype="html">
+        <source>Professional Valuation</source>
+      </trans-unit>
+      <trans-unit id="our-services-analisys" datatype="html">
+        <source>Comprehensive Analysis</source>
+      </trans-unit>
+      <trans-unit id="our-services-we-carry" datatype="html">
+        <source>We carry out a precise valuation of your property and conduct a detailed market study to determine the optimal value of your property.</source>
+      </trans-unit>
+      <trans-unit id="our-services-inspection" datatype="html">
+        <source>Professional Inspection</source>
+      </trans-unit>
+      <trans-unit id="our-services-your-property" datatype="html">
+        <source>Your property will be visited to evaluate its unique characteristics and conditions. We manage viewings with potential buyers, ensuring your property is presented at its best.</source>
+      </trans-unit>
+      <trans-unit id="our-services-global" datatype="html">
+        <source>Global Reach</source>
+      </trans-unit>
+      <trans-unit id="our-services-exclusive" datatype="html">
+        <source>Exclusive Events</source>
+      </trans-unit>
+      <trans-unit id="our-services-organize" datatype="html">
+        <source>We organize events and private viewings to attract high-profile potential buyers.</source>
+      </trans-unit>
+      <trans-unit id="our-services-access" datatype="html">
+        <source>Access to Qualified Buyers</source>
+      </trans-unit>
+      <trans-unit id="our-services-extensive" datatype="html">
+        <source>Thanks to our extensive network and strategic alliances, your property will be within reach of a global audience of qualified buyers.</source>
+      </trans-unit>
+      <trans-unit id="our-services-modernity" datatype="html">
+        <source>We merge
+          <x id="START_TAG_SPAN" ctype="x-span"/>modernity and functionality<x id="CLOSE_TAG_SPAN" ctype="x-span"/>
+          to create a unique environment that reflects our passion for <x id="START_TAG_SPAN" ctype="x-span"/>
+          excellence in the real estate world.<x id="CLOSE_TAG_SPAN" ctype="x-span"/>
+        </source>
+      </trans-unit>
+      <trans-unit id="our-services-personal" datatype="html">
+        <source>Personalized Plan</source>
+      </trans-unit>
+      <trans-unit id="our-services-we-design" datatype="html">
+        <source>We design a marketing strategy tailored to your property, using the best tools and platforms to attract potential buyers.</source>
+      </trans-unit>
+      <trans-unit id="our-services-professional" datatype="html">
+        <source>Professional Photography and Video</source>
+      </trans-unit>
+      <trans-unit id="our-services-we-capture" datatype="html">
+        <source>We capture high-quality images and videos to highlight your property's best features.</source>
+      </trans-unit>
+      <trans-unit id="our-services-promotion" datatype="html">
+        <source>Promotion</source>
+      </trans-unit>
+      <trans-unit id="our-services-we-list" datatype="html">
+        <source>We list your property on major real estate portals, social media, and our exclusive client database.</source>
+      </trans-unit>
+      <trans-unit id="our-services-comprehensive" datatype="html">
+        <source>Comprehensive Management</source>
+      </trans-unit>
+      <trans-unit id="our-services-legal-notary" datatype="html">
+        <source>Legal and Notary Advisory</source>
+      </trans-unit>
+      <trans-unit id="our-services-we-guide" datatype="html">
+        <source>We guide you through the entire legal process, ensuring that all documents are in order and that the closing is completed smoothly.</source>
+      </trans-unit>
+      <trans-unit id="our-services-negotiation" datatype="html">
+        <source>Negotiation and Closing</source>
+      </trans-unit>
+      <trans-unit id="our-services-team" datatype="html">
+        <source>Our team manages the entire negotiation process to secure the best terms for you.</source>
+      </trans-unit>
+      <trans-unit id="our-services-post-sale" datatype="html">
+        <source>Post-Sale Follow-Up</source>
+      </trans-unit>
+      <trans-unit id="our-services-we-continue" datatype="html">
+        <source>We continue to offer support and advice even after the sale, ensuring your complete satisfaction.</source>
+      </trans-unit>
+      <!-- PROPERTIES -->
+      <trans-unit id="properties-subtitle" datatype="html">
+        <source>Start Investing</source>
+      </trans-unit>
+      <trans-unit id="properties-selected" datatype="html">
+        <source>Selected Properties</source>
+      </trans-unit>
+      <!-- PROPERTY DETAIL -->
+      <trans-unit id="prop-detail-print" datatype="html">
+        <source>Print Property</source>
+      </trans-unit>
+      <!-- SELL PROPERTY -->
+      <trans-unit id="sell-property-title" datatype="html">
+        <source>Sell your property with</source>
+      </trans-unit>
+      <trans-unit id="sell-property-take" datatype="html">
+        <source>We take care of it</source>
+      </trans-unit>
+      <trans-unit id="sell-property-security" datatype="html">
+        <source>Security & Confidence</source>
+      </trans-unit>
+      <trans-unit id="sell-property-accompany" datatype="html">
+        <source>We accompany you every step of the way, ensuring a secure and transparent sale.</source>
+      </trans-unit>
+      <trans-unit id="sell-property-get" datatype="html">
+        <source>We get the best price</source>
+      </trans-unit>
+      <trans-unit id="sell-property-analyze" datatype="html">
+        <source>We analyze the market to get the best offer for your property.</source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="" datatype="html">
+        <source></source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

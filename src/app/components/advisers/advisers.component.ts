@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-import { ORIGINAL_ADVISERS } from '@shared/adviser.const';
 import { AdviserComponent } from '@shared/components/adviser/adviser.component';
 import { CarouselPropertiesComponent } from '@shared/components/carousel-properties/carousel-properties.component';
 import { CommentsComponent } from '@shared/components/comments/comments.component';
+import * as advisors from './../../../assets/advisors.json';
 
 @Component({
   selector: 'app-advisers',
@@ -13,5 +13,5 @@ import { CommentsComponent } from '@shared/components/comments/comments.componen
   styleUrl: './advisers.component.scss',
 })
 export class AdvisersComponent {
-  advisers = ORIGINAL_ADVISERS;
+  advisers = advisors.data;
 }

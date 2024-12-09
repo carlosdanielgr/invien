@@ -26,7 +26,7 @@ export const routes: Routes = [
     path: 'properties/:id',
     loadComponent: () =>
       import(
-        './components/properties/property-detail/property-detail.component'
+        './components/properties/components/property-detail/property-detail.component'
       ).then((c) => c.PropertyDetailComponent),
   },
   {
@@ -47,5 +47,10 @@ export const routes: Routes = [
     path: 'sell',
     loadComponent: () =>
       import('./components/sell-property/sell-property.component'),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];

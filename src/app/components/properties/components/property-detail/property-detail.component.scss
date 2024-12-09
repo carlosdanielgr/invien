@@ -1,4 +1,4 @@
-@use "../../../../styles/mixins" as *;
+@use "../../../../../styles/mixins" as *;
 
 %max-width {
   max-width: 1300px;
@@ -12,6 +12,15 @@
   }
   .carousel-item {
     max-height: 650px;
+  }
+  &__print-img {
+    display: none;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  &__carousel-img {
+    max-height: 650px;
+    object-fit: cover;
   }
   &__carousel-btn {
     position: absolute;
@@ -118,5 +127,8 @@
     > iframe {
       width: 100%;
     }
+  }
+  &__loader {
+    padding: 12rem 1rem 0;
   }
 }

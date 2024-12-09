@@ -81,7 +81,7 @@ p {
 .carousel-btn:active {
   border-radius: 50%;
   background-color: var(--primary);
-  padding: 0.1rem 0.3rem;
+  padding: 0.1rem 0.45rem;
   color: white;
   > i {
     font-size: 1.5rem;
@@ -140,6 +140,7 @@ p {
 
 @media print {
   .header,
+  .footer-section-map,
   app-form,
   app-carousel-properties,
   app-contact {
@@ -176,6 +177,9 @@ p {
     .carousel {
       display: none;
     }
+  }
+  .footer-section {
+    padding-top: 10rem !important;
   }
   .section {
     padding: 1rem !important;

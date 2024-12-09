@@ -1,0 +1,30 @@
+<div class="pagination">
+  <button
+    class="btn carousel-btn"
+    type="button"
+    [disabled]="!pagination || currentPage === 1"
+    (click)="previousPage()"
+  >
+    <i class="bi bi-arrow-left"></i>
+  </button>
+  <div class="pagination__buttons">
+    @for (item of visiblePages; track item; let index = $index) {
+    <button
+      type="button"
+      class="btn pagination__num"
+      [class.pagination__num--active]="currentPage === item"
+      (click)="goToPage(item)"
+    >
+      {{ item }}
+    </button>
+    }
+  </div>
+  <button
+    class="btn carousel-btn"
+    type="button"
+    [disabled]="!pagination || currentPage === totalPages"
+    (click)="nextPage()"
+  >
+    <i class="bi bi-arrow-right"></i>
+  </button>
+</div>

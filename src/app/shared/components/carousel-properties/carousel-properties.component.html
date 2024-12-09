@@ -1,16 +1,33 @@
 <app-carousel
-  titlePrimary="Comienza a invertir"
-  subtitle="Proyectos Inmobiliarios"
+  [titlePrimary]="title"
+  [subtitle]="subtitle"
   viewAll="/properties"
   id="properties"
 >
-  @for (properties of slidesProperties; track $index; let isFirst = $first) {
-  <div class="carousel-item" [class.active]="isFirst">
-    <div class="carousel-primary-content-card">
-      @for (item of properties; track $index) {
-      <app-property class="col" [property]="item" [info]="item.type" />
-      }
+  @if (!propertyService.loading) {
+    @for (properties of matrixProperties; track $index; let isFirst = $first) {
+      <div class="carousel-item" [class.active]="isFirst">
+        <div class="carousel-primary-content-card">
+          @for (item of properties; track $index) {
+            <app-property class="col" [property]="item" />
+          }
+        </div>
+      </div>
+    }
+    @if (!matrixProperties.length) {
+      <app-no-data [message]="noProperties" />
+    }
+  } @else {
+    <div class="carousel-item active">
+      <div class="carousel-primary-content-card">
+        @if (isWeb) {
+          <app-property-skeleton class="col" />
+          <app-property-skeleton class="col" />
+          <app-property-skeleton class="col" />
+        } @else {
+          <app-property-skeleton class="col" />
+        }
+      </div>
     </div>
-  </div>
   }
 </app-carousel>

@@ -76,10 +76,12 @@
   color: #000 !important;
 }
 
-.offcanvas-body .nav-i18n > a,
-div {
-  color: #000;
-  font-size: 1.2rem;
+.offcanvas-body .nav-i18n {
+  a,
+  div {
+    color: #000;
+    font-size: 1.2rem;
+  }
 }
 
 .offcanvas-body .nav-link {
