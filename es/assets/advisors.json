@@ -1,6 +1,33 @@
 {
   "data": [
     {
+      "id": 4,
+      "name": "Jorge Santamaría",
+      "email": "jsantamaria@invien.mx",
+      "phone": "+52 662 112 2880",
+      "image": "assets/images/advisors/jorge.png",
+      "role_es": "Fundador y asesor inmobiliario",
+      "role_en": "Founder and real estate advisor"
+    },
+    {
+      "id": 6,
+      "name": "Gaby Mancilla",
+      "email": "gmancilla@invien.mx",
+      "phone": "+52 81 8088 2015",
+      "image": "assets/images/advisors/advisor.png",
+      "role_es": "Fundadora y asesora inmobiliaria",
+      "role_en": "Founder and real estate advisor"
+    },
+    {
+      "id": 3,
+      "name": "Christian Janette Lopez",
+      "email": "clopez@invien.mx",
+      "phone": "+52 662 142 9293",
+      "image": "assets/images/advisors/advisor.png",
+      "role_es": "Gerente",
+      "role_en": "Manager"
+    },
+    {
       "id": 1,
       "name": "Lius Fdo. Ochoa",
       "email": "lochoa@invien.mx",
@@ -19,40 +46,13 @@
       "role_en": "Real state advisor"
     },
     {
-      "id": 3,
-      "name": "Christian Janette Lopez",
-      "email": "clopez@invien.mx",
-      "phone": "+52 662 142 9293",
-      "image": "assets/images/advisors/advisor.png",
-      "role_es": "Gerente",
-      "role_en": "Manager"
-    },
-    {
-      "id": 4,
-      "name": "Jorge Santamaría",
-      "email": "jsantamaria@invien.mx",
-      "phone": "+52 662 112 2880",
-      "image": "assets/images/advisors/jorge.png",
-      "role_es": "Fundador y asesor inmobiliario",
-      "role_en": "Founder and real estate advisor"
-    },
-    {
-      "id": 5,
-      "name": "Kenia Valdez",
-      "email": "kvalez@invien.mx",
-      "phone": "+52 662 225 2809",
-      "image": "assets/images/advisors/advisor.png",
-      "role_es": "Asesor inmobiliaria",
+      "id": 8,
+      "name": "Margarita Quintana",
+      "email": "mquintana@invien.mx",
+      "phone": "+52 662 112 0075",
+      "image": "assets/images/advisors/margarita.png",
+      "role_es": "Asesora inmobiliaria",
       "role_en": "Real estate advisor"
-    },
-    {
-      "id": 6,
-      "name": "Gaby Mancilla",
-      "email": "gmancilla@invien.mx",
-      "phone": "+52 81 8088 2015",
-      "image": "assets/images/advisors/advisor.png",
-      "role_es": "Fundadora y asesora inmobiliaria",
-      "role_en": "Founder and real estate advisor"
     },
     {
       "id": 7,
@@ -64,21 +64,21 @@
       "role_en": "Real estate advisor"
     },
     {
-      "id": 8,
-      "name": "Margarita Quintana",
-      "email": "mquintana@invien.mx",
-      "phone": "+52 662 112 0075",
-      "image": "assets/images/advisors/margarita.png",
-      "role_es": "Asesora inmobiliaria",
-      "role_en": "Real estate advisor"
-    },
-    {
       "id": 9,
       "name": "Martha Briseño",
       "email": "mbriseno@invien.mx",
       "phone": "+52 662 252 1058",
       "image": "assets/images/advisors/martha.png",
       "role_es": "Asesora inmobiliaria",
+      "role_en": "Real estate advisor"
+    },
+    {
+      "id": 5,
+      "name": "Kenia Valdez",
+      "email": "kvalez@invien.mx",
+      "phone": "+52 662 225 2809",
+      "image": "assets/images/advisors/advisor.png",
+      "role_es": "Asesor inmobiliaria",
       "role_en": "Real estate advisor"
     },
     {
