@@ -111,7 +111,7 @@
     <div class="carousel-item" [class.active]="isFirst">
       <div class="carousel-primary-content-card">
         @for (item of advisers; track $index) {
-          <app-adviser class="col" [adviser]="item" />
+          <app-adviser class="home-page__adviser" [adviser]="item" />
         }
       </div>
     </div>

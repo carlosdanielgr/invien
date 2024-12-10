@@ -67,6 +67,9 @@ p {
   display: flex;
   gap: 1rem;
   width: 100%;
+  @include screen(custom, max, 992) {
+    justify-content: center;
+  }
 }
 
 .properties .property-filter {

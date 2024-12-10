@@ -34,7 +34,7 @@
         <source>Country</source>
       </trans-unit>
       <trans-unit id="state" datatype="html">
-        <source>Estado</source>
+        <source>State</source>
       </trans-unit>
       <trans-unit id="town" datatype="html">
         <source>Municipality</source>

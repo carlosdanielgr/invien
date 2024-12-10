@@ -6,7 +6,7 @@ export function splitArray<T>(numParts: number, originalArray: T[]): T[][] {
     const end = start + numParts;
     if (numParts > 2) {
       originalArray.sort();
-      matrix.push(originalArray.sort(() => -1).slice(start, end));
+      matrix.push(originalArray.slice(start, end));
     } else matrix.push(originalArray.slice(start, end));
   }
   return matrix;
