@@ -31,7 +31,7 @@ export class PropertyService {
 
   getProperties() {
     return this.http.get<Response<Property[]>>(
-      `${this.API_URL}all/${this.locale.current}`,
+      `${this.API_URL}paginated/${this.locale.current}`,
     );
   }
 
@@ -58,7 +58,7 @@ export class PropertyService {
 
   getPropertiesPaginate(params: QueryFilter) {
     return this.http.get<Response<Property[]>>(
-      `${this.API_URL}all/${this.locale.current}`,
+      `${this.API_URL}paginated/${this.locale.current}`,
       {
         params: {
           ...params,
