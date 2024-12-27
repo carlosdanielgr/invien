@@ -42,7 +42,16 @@ export class PropertyDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProperty();
+    this.listenRouteChange();
+  }
+
+  private listenRouteChange(): void {
+    this.activatedRoute.params.subscribe({
+      next: ({ id }) => {
+        this.id = id;
+        this.getProperty();
+      },
+    });
   }
 
   private getProperty(): void {
