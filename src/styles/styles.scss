@@ -144,6 +144,9 @@ p {
 @media print {
   .header,
   .footer-section-map,
+  .footer-section-legal,
+  .footer-section hr,
+  .whatsapp-button,
   app-form,
   app-carousel-properties,
   app-contact {
@@ -182,7 +185,7 @@ p {
     }
   }
   .footer-section {
-    padding-top: 10rem !important;
+    padding-top: 12rem !important;
   }
   .section {
     padding: 1rem !important;
