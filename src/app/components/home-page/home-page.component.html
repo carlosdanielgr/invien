@@ -28,6 +28,7 @@
           role="tab"
           aria-selected="true"
           i18n="@@buy"
+          (click)="toggleTab('sale')"
           >Compra</a
         >
       </li>
@@ -40,6 +41,7 @@
           aria-selected="false"
           tabindex="-1"
           i18n="@@rent"
+          (click)="toggleTab('rent')"
           >Renta</a
         >
       </li>
@@ -55,10 +57,10 @@
     </ul>
     <div class="tab-content pb-3">
       <div class="tab-pane fade active show" id="venta-tab" role="tabpanel">
-        <app-property-filter />
+        <app-property-filter [isFor]="isFor" />
       </div>
       <div class="tab-pane fade" id="renta-tab" role="tabpanel">
-        <app-property-filter />
+        <app-property-filter [isFor]="isFor" />
       </div>
     </div>
   </div>

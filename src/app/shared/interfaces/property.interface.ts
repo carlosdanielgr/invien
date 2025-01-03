@@ -18,6 +18,7 @@ export interface Property {
   url_video: string;
   url_map: string;
   location: string;
+  is_for: string;
   advisor?: Advisor;
   advisorId: string;
   country: Filter;

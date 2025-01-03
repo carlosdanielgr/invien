@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Filter } from '@shared/interfaces/general.interface';
 
@@ -14,6 +14,10 @@ import { FiltersService } from '@shared/services/filters.service';
   styleUrl: './property-filter.component.scss',
 })
 export class PropertyFilterComponent implements OnInit {
+  @Input('isFor') set setIsFor(value: string) {
+    this.currentFilters['isFor'] = value;
+  }
+
   @Output() newFilter = new EventEmitter<QueryFilter>();
 
   isHomePage = this.router.url === '/';

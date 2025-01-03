@@ -44,6 +44,8 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   advisorSubtitle = $localize`:@@advisors-subtitle:Tu Propiedad en las Mejores Manos`;
 
+  isFor = 'sale';
+
   constructor() {}
 
   ngOnInit(): void {
@@ -56,5 +58,9 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.video.nativeElement.muted = true;
     this.video.nativeElement.play();
+  }
+
+  toggleTab(isFor: string): void {
+    this.isFor = isFor;
   }
 }
