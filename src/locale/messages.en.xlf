@@ -79,7 +79,7 @@
         <source>Garage</source>
       </trans-unit>
       <trans-unit id="sale" datatype="html">
-        <source>For Sale</source>
+        <source>Sale</source>
       </trans-unit>
       <trans-unit id="description" datatype="html">
         <source>Description</source>
@@ -95,6 +95,9 @@
       </trans-unit>
       <trans-unit id="and" datatype="html">
         <source>y</source>
+      </trans-unit>
+      <trans-unit id="for" datatype="html">
+        <source>For </source>
       </trans-unit>
 
       <!-- HOME PAGE -->

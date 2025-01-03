@@ -1,3 +1,10 @@
+%ellipsis {
+  width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .property {
   display: flex;
   flex-direction: column;
@@ -16,12 +23,14 @@
     gap: 1rem;
     > span {
       &:nth-child(1) {
+        @extend %ellipsis;
         font-size: 1.3rem;
       }
       &:nth-child(2) {
         color: var(--primary);
       }
       &:nth-child(3) {
+        @extend %ellipsis;
         font-size: 0.84rem;
         color: #4f4f4f;
       }

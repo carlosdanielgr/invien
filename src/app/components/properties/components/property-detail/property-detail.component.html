@@ -88,9 +88,14 @@
         </div>
       </div>
       <div class="property-detail__props-price">
-        <span i18n="@@sale"
-          >En {{ property.is_for === "sale" ? "Venta" : "Renta" }}</span
-        >
+        <span>
+          <ng-container i18n="@@for">En </ng-container>
+          @if (property.is_for === "sale") {
+            <ng-container i18n="@@sale">Venta</ng-container>
+          } @else {
+            <ng-container i18n="@@rent">Renta</ng-container>
+          }
+        </span>
         <span
           >$ {{ property.price | currency: property.currency : "" : "1.2-2" }}
           {{ property.currency }}</span
