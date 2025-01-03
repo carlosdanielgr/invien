@@ -88,12 +88,11 @@
         </div>
       </div>
       <div class="property-detail__props-price">
-        <span i18n="@@sale">En Venta</span>
+        <span i18n="@@sale"
+          >En {{ property.is_for === "sale" ? "Venta" : "Renta" }}</span
+        >
         <span
-          >{{
-            property.price
-              | currency: property.currency : "symbol-narrow" : "1.2-2"
-          }}
+          >$ {{ property.price | currency: property.currency : "" : "1.2-2" }}
           {{ property.currency }}</span
         >
       </div>

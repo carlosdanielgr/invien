@@ -147,7 +147,6 @@ p {
   .footer-section-legal,
   .footer-section hr,
   .whatsapp-button,
-  app-form,
   app-carousel-properties,
   app-contact {
     display: none !important;
@@ -168,10 +167,20 @@ p {
     &__video {
       display: none;
     }
+    &__description-content {
+      flex-direction: column-reverse !important;
+      app-form {
+        div:not(form__adviser),
+        button {
+          display: none;
+        }
+      }
+    }
     &__description-info {
       display: grid !important;
       grid-template-columns: 1fr 1fr;
       page-break-after: always;
+      max-width: 100% !important;
       > div:nth-child(3) {
         grid-column: 2 /3;
         grid-row: 1/3;
