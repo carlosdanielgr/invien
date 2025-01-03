@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,7 +8,7 @@ import { Property } from '@shared/interfaces/property.interface';
 @Component({
   selector: 'app-property',
   standalone: true,
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './property.component.html',
   styleUrl: './property.component.scss',
 })

@@ -25,7 +25,7 @@
         <source>Buy</source>
       </trans-unit>
       <trans-unit id="rent" datatype="html">
-        <source>Rent</source>
+        <source>RENT</source>
       </trans-unit>
       <trans-unit id="sell" datatype="html">
         <source>Sell</source>
@@ -79,7 +79,7 @@
         <source>Garage</source>
       </trans-unit>
       <trans-unit id="sale" datatype="html">
-        <source>Sale</source>
+        <source>SALE</source>
       </trans-unit>
       <trans-unit id="description" datatype="html">
         <source>Description</source>
