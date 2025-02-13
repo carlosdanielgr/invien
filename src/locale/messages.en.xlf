@@ -326,7 +326,7 @@
       </trans-unit>
       <!-- PROPERTIES -->
       <trans-unit id="properties-subtitle" datatype="html">
-        <source>Start Investing</source>
+        <source>START INVESTING</source>
       </trans-unit>
       <trans-unit id="properties-selected" datatype="html">
         <source>Selected Properties</source>
