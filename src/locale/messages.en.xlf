@@ -169,7 +169,7 @@
       </trans-unit>
       <!-- CAROUSEL PROPERTIES -->
       <trans-unit id="car-prop-title" datatype="html">
-        <source>Start Investing</source>
+        <source>START INVESTING</source>
       </trans-unit>
       <trans-unit id="car-prop-subtitle" datatype="html">
         <source>Real Estate Projects</source>

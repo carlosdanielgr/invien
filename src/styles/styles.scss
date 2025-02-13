@@ -105,8 +105,10 @@ p {
 }
 
 .subtitle {
+  display: block;
   font-size: 1rem;
   color: var(--primary);
+  margin-bottom: 1rem;
   @include screen(small) {
     font-size: 1.3rem;
   }
