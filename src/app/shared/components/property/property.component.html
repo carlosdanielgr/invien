@@ -16,8 +16,13 @@
       }
     </span>
     <span>
-      $ {{ property.price | currency: property.currency : "" : "1.2-2" }}
-      {{ property.currency }}
+      $
+      {{
+        localeService.current === "es"
+          ? (property.price_mxn | currency: "MXN" : "" : "1.2-2")
+          : (property.price_usd | currency: "USD" : "" : "1.2-2")
+      }}
     </span>
+    <span>{{ property.total_size }} m2 </span>
   </div>
 </div>

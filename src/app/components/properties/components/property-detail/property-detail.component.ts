@@ -10,6 +10,7 @@ import { PropertyService } from '@shared/services/property.service';
 import { FormComponent } from '../form/form.component';
 import * as advisors from '../../../../../assets/advisors.json';
 import { CurrencyPipe } from '@angular/common';
+import { LocaleService } from '@shared/services/locale.service';
 
 @Component({
   selector: 'app-property-detail',
@@ -37,6 +38,7 @@ export class PropertyDetailComponent implements OnInit {
     private readonly router: Router,
     private readonly sanitizer: DomSanitizer,
     private readonly propertyService: PropertyService,
+    readonly localeService: LocaleService,
   ) {
     this.id = activatedRoute.snapshot.params['id'];
   }

@@ -96,9 +96,13 @@
           }
         </span>
         <span
-          >$ {{ property.price | currency: property.currency : "" : "1.2-2" }}
-          {{ property.currency }}</span
-        >
+          >$
+          {{
+            localeService.current === "es"
+              ? (property.price_mxn | currency: "MXN" : "" : "1.2-2") + " MXN"
+              : (property.price_usd | currency: "USD" : "" : "1.2-2") + " USD"
+          }}
+        </span>
       </div>
     </div>
   </article>
