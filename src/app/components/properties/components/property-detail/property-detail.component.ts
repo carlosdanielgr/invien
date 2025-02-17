@@ -8,7 +8,6 @@ import { Property } from '@shared/interfaces/property.interface';
 import { LoaderComponent } from '@shared/components/loader/loader.component';
 import { PropertyService } from '@shared/services/property.service';
 import { FormComponent } from '../form/form.component';
-import * as advisors from '../../../../../assets/advisors.json';
 import { CurrencyPipe } from '@angular/common';
 import { LocaleService } from '@shared/services/locale.service';
 
@@ -38,7 +37,7 @@ export class PropertyDetailComponent implements OnInit {
     private readonly router: Router,
     private readonly sanitizer: DomSanitizer,
     private readonly propertyService: PropertyService,
-    readonly localeService: LocaleService,
+    readonly localeService: LocaleService
   ) {
     this.id = activatedRoute.snapshot.params['id'];
   }
@@ -60,9 +59,6 @@ export class PropertyDetailComponent implements OnInit {
     this.propertyService.getPropertyById(this.id).subscribe({
       next: (response) => {
         this.property = response;
-        this.property.advisor = advisors.data.find(
-          (advisor) => advisor.id === +this.property.advisorId,
-        );
         this.sanitizerUrl();
         this.loading = false;
       },
@@ -76,10 +72,10 @@ export class PropertyDetailComponent implements OnInit {
   private sanitizerUrl() {
     if (this.property.url_video)
       this.property.url_video = this.sanitizer.bypassSecurityTrustResourceUrl(
-        this.property.url_video,
+        this.property.url_video
       ) as string;
     this.property.url_map = this.sanitizer.bypassSecurityTrustResourceUrl(
-      this.property.url_map,
+      this.property.url_map
     ) as string;
   }
 

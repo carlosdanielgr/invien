@@ -1,7 +1,7 @@
 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form__adviser">
     <figure class="form__adviser-img">
-      <img [src]="advisor.image" [alt]="advisor.name" />
+      <img [src]="urlImage +'/'+ advisor.image" [alt]="advisor.name" />
     </figure>
     <div class="form__adviser-info">
       <span>{{ advisor.name }}</span>
@@ -13,52 +13,22 @@
   </div>
   <div>
     <label for="name" class="form-label" i18n="@@name">Nombre</label>
-    <input
-      type="text"
-      class="form-control"
-      id="name"
-      formControlName="name"
-      [placeholder]="placeholders.name"
-    />
+    <input type="text" class="form-control" id="name" formControlName="name" [placeholder]="placeholders.name" />
   </div>
   <div>
     <label for="phone" class="form-label" i18n="@@phone">Teléfono</label>
-    <input
-      type="text"
-      class="form-control"
-      id="phone"
-      formControlName="phone"
-      placeholder="+123 456 7890"
-    />
+    <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="+123 456 7890" />
   </div>
   <div>
-    <label for="email" class="form-label" i18n="@@email"
-      >Correo electrónico</label
-    >
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      formControlName="email"
-      [placeholder]="placeholders.email"
-    />
+    <label for="email" class="form-label" i18n="@@email">Correo electrónico</label>
+    <input type="email" class="form-control" id="email" formControlName="email" [placeholder]="placeholders.email" />
   </div>
   <div>
     <label for="message" class="form-label" i18n="@@message">Mensaje</label>
-    <textarea
-      class="form-control"
-      id="message"
-      rows="5"
-      formControlName="message"
-      [placeholder]="placeholders.message"
-    ></textarea>
+    <textarea class="form-control" id="message" rows="5" formControlName="message"
+      [placeholder]="placeholders.message"></textarea>
   </div>
-  <button
-    type="submit"
-    class="btn btn-invien px-3 mt-3"
-    i18n="@@send"
-    [disabled]="form.invalid || loading"
-  >
+  <button type="submit" class="btn btn-invien px-3 mt-3" i18n="@@send" [disabled]="form.invalid || loading">
     Enviar
   </button>
 </form>

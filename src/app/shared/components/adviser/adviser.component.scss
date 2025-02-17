@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  > img {
+    height: 22rem;
+    max-width: 18rem;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
   &__contact {
     display: block;
     color: #4f4f4f;

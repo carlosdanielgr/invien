@@ -10,8 +10,8 @@
       </h2>
     </div>
     <div class="advisers__list">
-      @for (item of advisers; track $index) {
-        <app-adviser [adviser]="item" />
+      @for (item of advisers$ | async; track $index) {
+      <app-adviser [adviser]="item" />
       }
     </div>
   </div>
