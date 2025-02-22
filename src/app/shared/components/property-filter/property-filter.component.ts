@@ -37,19 +37,18 @@ export class PropertyFilterComponent implements OnInit {
     countryId: $localize`:@@prop-filter-country-select:Ej. Mexico, Estados Unidos`,
     stateId: $localize`:@@prop-filter-state-select:Selecciona un estado`,
     townId: $localize`:@@prop-filter-town-select:Selecciona un municipio`,
-    Price: $localize`:@@prop-filter-price-select:Selecciona el rango de precio`,
     Rooms: $localize`:@@prop-filter-rooms-select:Seleccione la cantidad`,
     TotalSize: $localize`:@@prop-filter-total-size-select:Selecciona el tamaño`,
   };
 
   constructor(
     private readonly router: Router,
-    private readonly filtersService: FiltersService,
+    private readonly filtersService: FiltersService
   ) {}
 
   ngOnInit() {
     if (this.isHomePage) {
-      this.getLocations();
+      this.getCountries();
       this.getTypes();
     }
   }
@@ -62,10 +61,26 @@ export class PropertyFilterComponent implements OnInit {
     });
   }
 
-  private getLocations() {
-    this.filtersService.getLocations().subscribe({
-      next: (locations) => {
-        this.locations = locations;
+  private getCountries() {
+    this.filtersService.getCountries().subscribe({
+      next: (countries) => {
+        this.locations.countries = countries;
+      },
+    });
+  }
+
+  getStates() {
+    this.filtersService.getStates(this.currentFilters['countryId']).subscribe({
+      next: (states) => {
+        this.locations.states = states;
+      },
+    });
+  }
+
+  getTowns() {
+    this.filtersService.getTowns(this.currentFilters['stateId']).subscribe({
+      next: (towns) => {
+        this.locations.towns = towns;
       },
     });
   }
@@ -73,6 +88,12 @@ export class PropertyFilterComponent implements OnInit {
   onSetFilter(key: string, value: string, name: string) {
     this.currentFilters[key] = value;
     this.currentFiltersName[key] = name;
+    if (key === 'countryId') this.getStates();
+    if (key === 'stateId') this.getTowns();
+  }
+
+  onSetFilterPrice(value: string, type: string) {
+    this.currentFilters[`${type}Price`] = value;
   }
 
   onSetFilterRange(key: string, min: string, max: string) {

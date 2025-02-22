@@ -53,6 +53,18 @@
       box-shadow: none;
     }
   }
+  &__price {
+    padding-right: 1rem;
+    > label {
+      padding: 0;
+    }
+    input {
+      height: 1.5rem;
+      &::placeholder {
+        font-size: 0.8rem;
+      }
+    }
+  }
   &__btn-search {
     > button {
       width: 100%;
