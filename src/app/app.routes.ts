@@ -30,6 +30,13 @@ export const routes: Routes = [
       ).then((c) => c.PropertyDetailComponent),
   },
   {
+    path: 'print-property/:id',
+    loadComponent: () =>
+      import(
+        './components/properties/components/print-property/print-property.component'
+      ).then((c) => c.PrintPropertyComponent),
+  },
+  {
     path: 'our-services',
     loadComponent: () =>
       import('./components/our-services/our-services.component').then(

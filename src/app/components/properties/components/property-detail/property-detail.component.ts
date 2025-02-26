@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -31,15 +31,14 @@ export class PropertyDetailComponent implements OnInit {
   loading = true;
 
   id = '';
+  readonly activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  readonly router: Router = inject(Router);
+  readonly sanitizer: DomSanitizer = inject(DomSanitizer);
+  readonly propertyService: PropertyService = inject(PropertyService);
+  readonly localeService: LocaleService = inject(LocaleService);
 
-  constructor(
-    private readonly activatedRoute: ActivatedRoute,
-    private readonly router: Router,
-    private readonly sanitizer: DomSanitizer,
-    private readonly propertyService: PropertyService,
-    readonly localeService: LocaleService
-  ) {
-    this.id = activatedRoute.snapshot.params['id'];
+  constructor() {
+    this.id = this.activatedRoute.snapshot.params['id'];
   }
 
   ngOnInit(): void {
@@ -63,6 +62,8 @@ export class PropertyDetailComponent implements OnInit {
         this.loading = false;
       },
       error: (error) => {
+        console.log(error);
+
         this.router.navigate(['/properties']);
         this.loading = false;
       },
@@ -77,9 +78,5 @@ export class PropertyDetailComponent implements OnInit {
     this.property.url_map = this.sanitizer.bypassSecurityTrustResourceUrl(
       this.property.url_map
     ) as string;
-  }
-
-  onPrintPdf(): void {
-    window.print();
   }
 }
