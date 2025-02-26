@@ -131,12 +131,14 @@
         <h3 class="property-detail__description-title" i18n="@@amenities">
           Amenidades
         </h3>
-        @for (item of property.amenities; track $index) {
-        <span class="property-detail__description-amenity">
-          <img src="./assets/icons/check-gray.svg" alt="check-gray" />
-          {{ item }}
-        </span>
-        }
+        <div class="property-detail__description-amenities">
+          @for (item of property.amenities; track $index) {
+          <span class="property-detail__description-amenity">
+            <img src="./assets/icons/check-gray.svg" alt="check-gray" />
+            {{ item }}
+          </span>
+          }
+        </div>
       </div>
       <a
         class="btn btn-outline-primary"

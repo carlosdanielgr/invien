@@ -113,6 +113,11 @@
     &-text {
       color: #626262;
     }
+    &-amenities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
     &-amenity {
       display: flex;
       gap: 0.5rem;
