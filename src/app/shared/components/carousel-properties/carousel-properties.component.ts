@@ -28,7 +28,7 @@ export class CarouselPropertiesComponent implements OnInit, OnDestroy {
 
   isWeb = window.innerWidth > 992;
 
-  title = $localize`:@@car-prop-title:Comienza a invertir`;
+  title = $localize`:@@car-prop-title:COMIENZA A INVERTIR`;
 
   noProperties = $localize`:@@no-properties:No hay propiedades disponibles`;
 
