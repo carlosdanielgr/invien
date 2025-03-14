@@ -143,6 +143,11 @@ p {
   }
 }
 
+.dropdown-menu.show {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
 :root {
   --primary: #ec1c24;
 }

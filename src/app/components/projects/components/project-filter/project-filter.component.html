@@ -19,89 +19,29 @@
       />
     </div>
   </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle country-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      <ng-container i18n="@@country">País</ng-container>
-      <span class="form-select">
-        {{ currentFiltersName["countryId"] }}
-      </span>
-    </button>
-    <ul
-      class="dropdown-menu country-menu"
-      aria-labelledby="dropdownMenuButton2"
-    >
-      @for (item of locations.countries; track $index) {
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilter('countryId', item.id, item.name)"
-          >{{ item.name }}</a
-        >
-      </li>
-      }
-    </ul>
+  <div class="col">
+    <app-autocomplete
+      [label]="currentFiltersName['country']"
+      [placeholder]="currentFiltersName['countryId']"
+      [data]="countryNames"
+      (selectItem)="getStateByCountry($event)"
+    />
   </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle state-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-      [disabled]="!locations.states.length"
-    >
-      <ng-container i18n="@@state">Estado</ng-container>
-      <span class="form-select">
-        {{ currentFiltersName["stateId"] }}
-      </span>
-    </button>
-    <ul class="dropdown-menu state-menu" aria-labelledby="dropdownMenuButton3">
-      @for (item of locations.states; track $index) {
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilter('stateId', item.id, item.name)"
-          >{{ item.name }}</a
-        >
-      </li>
-      }
-    </ul>
+  <div class="col">
+    <app-autocomplete
+      [label]="currentFiltersName['state']"
+      [placeholder]="currentFiltersName['stateId']"
+      [data]="stateNames"
+      (selectItem)="getTownByState($event)"
+    />
   </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle municipality-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-      [disabled]="!locations.towns.length"
-    >
-      <ng-container i18n="@@town">Municipio</ng-container>
-
-      <span class="form-select">
-        {{ currentFiltersName["townId"] }}
-      </span>
-    </button>
-    <ul
-      class="dropdown-menu municipality-menu"
-      aria-labelledby="dropdownMenuButton4"
-    >
-      @for (item of locations.towns; track $index) {
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilter('townId', item.id, item.name)"
-          >{{ item.name }}</a
-        >
-      </li>
-      }
-    </ul>
+  <div class="col">
+    <app-autocomplete
+      [label]="currentFiltersName['town']"
+      [placeholder]="currentFiltersName['townId']"
+      [data]="townNames"
+      (selectItem)="setTown($event)"
+    />
   </div>
   <div class="d-flex align-items-center property-filter__btn-search">
     <button

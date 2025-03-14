@@ -1,0 +1,24 @@
+.autocomplete {
+  > label {
+    width: 100%;
+    color: #000;
+    text-align: start;
+  }
+  > input {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    &:focus {
+      box-shadow: none;
+    }
+    &::placeholder {
+      font-size: 0.8rem;
+    }
+  }
+  &--disabled {
+    > label {
+      color: #858585;
+    }
+    cursor: not-allowed;
+  }
+}

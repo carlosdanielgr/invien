@@ -13,7 +13,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1.5rem;
-    > div:not(:last-child, :nth-child(3)) {
+    > div:not(:last-child) {
+      padding-right: 1rem;
       border-right: 1px solid #b9b9b9;
     }
   }
