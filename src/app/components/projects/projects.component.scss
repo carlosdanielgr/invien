@@ -1,0 +1,17 @@
+.properties {
+  &__main {
+    background-image: url(./../../../assets/images/projects.png);
+  }
+  &__filter {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}

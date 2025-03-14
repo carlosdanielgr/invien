@@ -20,3 +20,11 @@ export interface QueryFilter extends Partial<Omit<Pagination, 'total'>> {
   stateId?: string;
   townId?: string;
 }
+
+export interface QueryFilterProject extends Partial<Omit<Pagination, 'total'>> {
+  maxPrice?: string;
+  minPrice?: string;
+  countryId?: string;
+  stateId?: string;
+  townId?: string;
+}

@@ -99,7 +99,9 @@
       <trans-unit id="for" datatype="html">
         <source>For </source>
       </trans-unit>
-
+      <trans-unit id="projects" datatype="html">
+        <source>Projects</source>
+      </trans-unit>
       <!-- HOME PAGE -->
       <trans-unit id="home-page-title" datatype="html">
         <source>Transforming
@@ -325,6 +327,13 @@
         <source>We continue to offer support and advice even after the sale, ensuring your complete satisfaction.</source>
       </trans-unit>
       <!-- PROPERTIES -->
+      <trans-unit id="projects-selected" datatype="html">
+        <source>Selected Projects</source>
+      </trans-unit>
+      <trans-unit id="no-projects" datatype="html">
+        <source>No projects available</source>
+      </trans-unit>
+      <!-- PROJECTS -->
       <trans-unit id="properties-subtitle" datatype="html">
         <source>START INVESTING</source>
       </trans-unit>

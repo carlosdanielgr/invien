@@ -1,0 +1,116 @@
+<form class="property-filter">
+  <div class="dropdown col property-filter__price">
+    <label class="property-filter__btn-toggle" i18n="@@price">Precio</label>
+    <div class="d-flex gap-2">
+      <input
+        #max
+        type="number"
+        class="form-control"
+        placeholder="Max"
+        (input)="onSetFilterPrice(max.value, 'max')"
+      />
+      -
+      <input
+        #min
+        type="number"
+        class="form-control"
+        placeholder="Min"
+        (input)="onSetFilterPrice(min.value, 'min')"
+      />
+    </div>
+  </div>
+  <div class="dropdown col">
+    <button
+      class="btn property-filter__btn-toggle dropdown-toggle country-dropdown"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <ng-container i18n="@@country">País</ng-container>
+      <span class="form-select">
+        {{ currentFiltersName["countryId"] }}
+      </span>
+    </button>
+    <ul
+      class="dropdown-menu country-menu"
+      aria-labelledby="dropdownMenuButton2"
+    >
+      @for (item of locations.countries; track $index) {
+      <li>
+        <a
+          role="button"
+          class="dropdown-item"
+          (click)="onSetFilter('countryId', item.id, item.name)"
+          >{{ item.name }}</a
+        >
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="dropdown col">
+    <button
+      class="btn property-filter__btn-toggle dropdown-toggle state-dropdown"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      [disabled]="!locations.states.length"
+    >
+      <ng-container i18n="@@state">Estado</ng-container>
+      <span class="form-select">
+        {{ currentFiltersName["stateId"] }}
+      </span>
+    </button>
+    <ul class="dropdown-menu state-menu" aria-labelledby="dropdownMenuButton3">
+      @for (item of locations.states; track $index) {
+      <li>
+        <a
+          role="button"
+          class="dropdown-item"
+          (click)="onSetFilter('stateId', item.id, item.name)"
+          >{{ item.name }}</a
+        >
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="dropdown col">
+    <button
+      class="btn property-filter__btn-toggle dropdown-toggle municipality-dropdown"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      [disabled]="!locations.towns.length"
+    >
+      <ng-container i18n="@@town">Municipio</ng-container>
+
+      <span class="form-select">
+        {{ currentFiltersName["townId"] }}
+      </span>
+    </button>
+    <ul
+      class="dropdown-menu municipality-menu"
+      aria-labelledby="dropdownMenuButton4"
+    >
+      @for (item of locations.towns; track $index) {
+      <li>
+        <a
+          role="button"
+          class="dropdown-item"
+          (click)="onSetFilter('townId', item.id, item.name)"
+          >{{ item.name }}</a
+        >
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="d-flex align-items-center property-filter__btn-search">
+    <button
+      type="button"
+      class="btn btn-invien px-4"
+      (click)="onSearch()"
+      i18n="@@search"
+    >
+      Buscar
+    </button>
+  </div>
+</form>
