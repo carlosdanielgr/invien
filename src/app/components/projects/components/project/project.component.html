@@ -1,0 +1,21 @@
+<div role="button" class="property" (click)="redirectProject()">
+  <img
+    class="property__img"
+    [src]="apiUrl + project.images[0]"
+    [alt]="project.name"
+  />
+  <div class="property__desc">
+    <span>{{ project.name }}</span>
+  </div>
+  <div class="property__terrain">
+    <span> Inversión desde </span>
+    <span>
+      $
+      {{
+        localeService.current === "es"
+          ? (project.price_mxn | currency : "MXN" : "" : "1.2-2")
+          : (project.price_usd | currency : "USD" : "" : "1.2-2")
+      }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.property {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  &__img {
+    max-width: 340px;
+    max-height: 420px;
+    height: 100%;
+    border-radius: 0.5rem;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+  }
+  &__desc {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    > span {
+      width: 19rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 1.3rem;
+    }
+  }
+  &__terrain {
+    display: flex;
+    gap: 1rem;
+    color: #4f4f4f;
+    > span {
+      font-size: 0.8rem;
+    }
+  }
+  &__info {
+    display: block;
+    color: #4f4f4f;
+  }
+}

@@ -7,12 +7,12 @@
       >COMIENZA A INVERTIR</span
     >
     <h2 class="title" i18n="@@projects-selected">Proyectos Seleccionadas</h2>
-    <app-project-filter (newFilter)="onGetProperties($event)" />
+    <app-project-filter (newFilter)="onGetProjects($event)" />
   </div>
   <div class="section pt-0">
     <div class="properties__list">
-      @if (!loading) { @for (item of properties; track $index) {
-      <app-property [property]="item" />
+      @if (!loading) { @for (item of projects; track $index) {
+      <app-project [project]="item" />
       } } @else {
       <app-property-skeleton />
       <app-property-skeleton />
@@ -22,12 +22,12 @@
       <app-property-skeleton />
       }
     </div>
-    @if (!properties.length && !loading) {
-    <app-no-data [message]="noProperties" />
+    @if (!projects.length && !loading) {
+    <app-no-data [message]="noProjects" />
     }
-    <!-- <app-pagination
-        [pagination]="pagination"
-        (params)="onGetProperties($event)"
-      /> -->
+    <app-pagination
+      [pagination]="pagination"
+      (params)="onGetProjects($event)"
+    />
   </div>
 </article>

@@ -54,27 +54,27 @@ export class ProjectFilterComponent implements OnInit {
   }
 
   getStateByCountry(country: string): void {
-    this.currentFilters['country'] = this.locations.countries.find(
+    this.currentFilters['countryId'] = this.locations.countries.find(
       (c) => c.name === country
-    );
-    const countryId = this.currentFilters['country']?.id;
-    if (countryId) {
-      this.filtersService.getStates(countryId).subscribe({
-        next: (res) => {
-          this.locations.states = res;
-          this.stateNames = res.map((state) => state.name);
-        },
-      });
+    )?.id;
+    if (this.currentFilters['countryId']) {
+      this.filtersService
+        .getStates(this.currentFilters['countryId'])
+        .subscribe({
+          next: (res) => {
+            this.locations.states = res;
+            this.stateNames = res.map((state) => state.name);
+          },
+        });
     }
   }
 
   getTownByState(state: string): void {
-    this.currentFilters['state'] = this.locations.states.find(
+    this.currentFilters['stateId'] = this.locations.states.find(
       (s) => s.name === state
-    );
-    const stateId = this.currentFilters['state']?.id;
-    if (stateId) {
-      this.filtersService.getTowns(stateId).subscribe({
+    )?.id;
+    if (this.currentFilters['stateId']) {
+      this.filtersService.getTowns(this.currentFilters['stateId']).subscribe({
         next: (res) => {
           this.locations.towns = res;
           this.townNames = res.map((town) => town.name);
@@ -84,9 +84,9 @@ export class ProjectFilterComponent implements OnInit {
   }
 
   setTown(town: string): void {
-    this.currentFilters['town'] = this.locations.towns.find(
+    this.currentFilters['townId'] = this.locations.towns.find(
       (t) => t.name === town
-    );
+    )?.id;
   }
 
   onSetFilterPrice(value: string, type: string) {

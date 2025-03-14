@@ -1,15 +1,7 @@
 <form class="property-filter">
   <div class="dropdown col property-filter__price">
-    <label class="property-filter__btn-toggle" i18n="@@price">Precio</label>
+    <label class="property-filter__btn-toggle">Precio desde</label>
     <div class="d-flex gap-2">
-      <input
-        #max
-        type="number"
-        class="form-control"
-        placeholder="Max"
-        (input)="onSetFilterPrice(max.value, 'max')"
-      />
-      -
       <input
         #min
         type="number"

@@ -9,9 +9,6 @@ export interface Pagination {
 }
 
 export interface QueryFilter extends Partial<Omit<Pagination, 'total'>> {
-  maxPrice?: string;
-  maxRooms?: string;
-  maxTotalSize?: string;
   minPrice?: string;
   minRooms?: string;
   minTotalSize?: string;
@@ -22,7 +19,6 @@ export interface QueryFilter extends Partial<Omit<Pagination, 'total'>> {
 }
 
 export interface QueryFilterProject extends Partial<Omit<Pagination, 'total'>> {
-  maxPrice?: string;
   minPrice?: string;
   countryId?: string;
   stateId?: string;

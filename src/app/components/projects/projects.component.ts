@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { PropertyComponent } from '@shared/components/property/property.component';
 import { PropertySkeletonComponent } from '@shared/components/property-skeleton/property-skeleton.component';
-import { Property } from '@shared/interfaces/property.interface';
 import { NoDataComponent } from '@shared/components/no-data/no-data.component';
 import { Pagination, QueryFilter } from '@shared/interfaces/response.interface';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { ProjectService } from '@shared/services/project.service';
 import { ProjectFilterComponent } from './components/project-filter/project-filter.component';
+import { Project } from '@shared/interfaces/project.interface';
+import { PaginationComponent } from '@shared/components/pagination/pagination.component';
+import { ProjectComponent } from './components/project/project.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [
     ProjectFilterComponent,
-    PropertyComponent,
+    ProjectComponent,
     PropertySkeletonComponent,
     PaginationComponent,
     NoDataComponent,
@@ -24,7 +24,7 @@ import { ProjectFilterComponent } from './components/project-filter/project-filt
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent implements OnInit {
-  properties: Property[] = [];
+  projects: Project[] = [];
 
   pagination!: Pagination;
 
@@ -32,37 +32,37 @@ export class ProjectsComponent implements OnInit {
 
   urlParams = this.activatedRoute.snapshot.queryParams;
 
-  noProperties = $localize`:@@no-projects:No hay proyectos disponibles`;
+  noProjects = $localize`:@@no-projects:No hay proyectos disponibles`;
 
   constructor(
-    private readonly propertyService: ProjectService,
+    private readonly projectService: ProjectService,
     private readonly activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.onGetProperties({
+    this.onGetProjects({
       page: 1,
     });
   }
 
-  onGetProperties(params: QueryFilter): void {
-    // this.loading = true;
-    // this.propertyService
-    //   .getPropertiesPaginate({
-    //     page: this.pagination?.page,
-    //     ...this.urlParams,
-    //     ...params,
-    //   })
-    //   .subscribe({
-    //     next: (response) => {
-    //       const { data, ...pagination } = response;
-    //       this.properties = data;
-    //       if (!this.pagination) this.pagination = pagination;
-    //       this.loading = false;
-    //     },
-    //     error: (error) => {
-    //       this.loading = false;
-    //     },
-    //   });
+  onGetProjects(params: QueryFilter): void {
+    this.loading = true;
+    this.projectService
+      .getProjectsPaginate({
+        page: this.pagination?.page,
+        ...this.urlParams,
+        ...params,
+      })
+      .subscribe({
+        next: (response) => {
+          const { data, ...pagination } = response;
+          this.projects = data;
+          if (!this.pagination) this.pagination = pagination;
+          this.loading = false;
+        },
+        error: (error) => {
+          this.loading = false;
+        },
+      });
   }
 }
