@@ -149,10 +149,10 @@
         <source>Select price range</source>
       </trans-unit>
       <trans-unit id="prop-filter-rooms-select" datatype="html">
-        <source>Select quantity</source>
+        <source>Enter the quantity</source>
       </trans-unit>
       <trans-unit id="prop-filter-total-size-select" datatype="html">
-        <source>Select size</source>
+        <source>Enter the size in m²</source>
       </trans-unit>
       <trans-unit id="prop-filter-total-rooms" datatype="html">
         <source>Number of rooms</source>

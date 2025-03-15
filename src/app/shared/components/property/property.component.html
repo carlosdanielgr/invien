@@ -10,19 +10,19 @@
   <div class="property__terrain">
     <span>
       @if (property.is_for === "sale") {
-        <ng-container i18n="@@sale">VENTA</ng-container>
+      <ng-container i18n="@@sale">VENTA</ng-container>
       } @else {
-        <ng-container i18n="@@rent">RENTA</ng-container>
+      <ng-container i18n="@@rent">RENTA</ng-container>
       }
     </span>
     <span>
       $
       {{
         localeService.current === "es"
-          ? (property.price_mxn | currency: "MXN" : "" : "1.2-2")
-          : (property.price_usd | currency: "USD" : "" : "1.2-2")
+          ? (property.price_mxn | currency : "MXN" : "" : "1.2-2")
+          : (property.price_usd | currency : "USD" : "" : "1.2-2")
       }}
     </span>
-    <span>{{ property.total_size }} m2 </span>
+    <span>{{ property.total_size }} m² </span>
   </div>
 </div>

@@ -1,0 +1,16 @@
+@use "../../../../styles/mixins" as *;
+
+.locations-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  @include screen(med-small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    > div:not(:last-child) {
+      padding-right: 1rem;
+      border-right: 1px solid #b9b9b9;
+    }
+  }
+}

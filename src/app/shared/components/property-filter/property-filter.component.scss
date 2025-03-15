@@ -53,13 +53,17 @@
       box-shadow: none;
     }
   }
-  &__price {
+  &__input {
     padding-right: 1rem;
+    text-align: start;
     > label {
       padding: 0;
     }
     input {
       height: 1.5rem;
+      background-color: transparent;
+      border: none;
+      padding: 0 0.2rem;
       &::placeholder {
         font-size: 0.8rem;
       }

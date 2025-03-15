@@ -1,252 +1,67 @@
 <form class="property-filter">
   @if (isHomePage) {
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle property-type-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      <ng-container i18n="@@prop-filter-type">Tipo de propiedad</ng-container>
-      <span class="form-select"> {{ currentFiltersName["typeId"] }} </span>
-    </button>
-    <ul
-      class="dropdown-menu property-type-menu"
-      aria-labelledby="dropdownMenuButton1"
-    >
-      @for (item of types; track $index) {
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilter('typeId', item.id, item.name)"
-          >{{ item.name }}</a
-        >
-      </li>
-      }
-    </ul>
-  </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle country-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      <ng-container i18n="@@country">País</ng-container>
-      <span class="form-select">
-        {{ currentFiltersName["countryId"] }}
-      </span>
-    </button>
-    <ul
-      class="dropdown-menu country-menu"
-      aria-labelledby="dropdownMenuButton2"
-    >
-      @for (item of locations.countries; track $index) {
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilter('countryId', item.id, item.name)"
-          >{{ item.name }}</a
-        >
-      </li>
-      }
-    </ul>
-  </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle state-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-      [disabled]="!locations.states.length"
-    >
-      <ng-container i18n="@@state">Estado</ng-container>
-      <span class="form-select">
-        {{ currentFiltersName["stateId"] }}
-      </span>
-    </button>
-    <ul class="dropdown-menu state-menu" aria-labelledby="dropdownMenuButton3">
-      @for (item of locations.states; track $index) {
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilter('stateId', item.id, item.name)"
-          >{{ item.name }}</a
-        >
-      </li>
-      }
-    </ul>
-  </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle municipality-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-      [disabled]="!locations.towns.length"
-    >
-      <ng-container i18n="@@town">Municipio</ng-container>
-
-      <span class="form-select">
-        {{ currentFiltersName["townId"] }}
-      </span>
-    </button>
-    <ul
-      class="dropdown-menu municipality-menu"
-      aria-labelledby="dropdownMenuButton4"
-    >
-      @for (item of locations.towns; track $index) {
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilter('townId', item.id, item.name)"
-          >{{ item.name }}</a
-        >
-      </li>
-      }
-    </ul>
-  </div>
-  } @else {
-  <div class="dropdown col property-filter__price">
-    <label class="property-filter__btn-toggle" i18n="@@price">Precio</label>
-    <div class="d-flex gap-2">
-      <input
-        #max
-        type="number"
-        class="form-control"
-        placeholder="Max"
-        (input)="onSetFilterPrice(max.value, 'max')"
-      />
-      -
-      <input
-        #min
-        type="number"
-        class="form-control"
-        placeholder="Min"
-        (input)="onSetFilterPrice(min.value, 'min')"
-      />
+  <app-locations-filter class="col" [(currentFilters)]="currentFilters">
+    <div class="dropdown col">
+      <button
+        class="btn property-filter__btn-toggle dropdown-toggle property-type-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <ng-container i18n="@@prop-filter-type">Tipo de propiedad</ng-container>
+        <span class="form-select"> {{ currentFiltersName["typeId"] }} </span>
+      </button>
+      <ul
+        class="dropdown-menu property-type-menu"
+        aria-labelledby="dropdownMenuButton1"
+      >
+        @for (item of types; track $index) {
+        <li>
+          <a
+            role="button"
+            class="dropdown-item"
+            (click)="onSetFilter('typeId', item.id, item.name)"
+            >{{ item.name }}</a
+          >
+        </li>
+        }
+      </ul>
     </div>
+  </app-locations-filter>
+  } @else {
+  <div class="col property-filter__input">
+    <label class="property-filter__btn-toggle" i18n="@@price">Precio</label>
+    <input
+      #min
+      type="number"
+      class="form-control"
+      placeholder="Min"
+      (input)="onSetFilterPrice(min.value, 'min')"
+    />
   </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle country-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
+  <div class="col property-filter__input">
+    <label class="property-filter__btn-toggle" i18n="@@prop-filter-total-rooms"
+      >Cantidad de habitaciones</label
     >
-      <ng-container i18n="@@prop-filter-total-rooms"
-        >Cantidad de habitaciones</ng-container
-      >
-
-      <span class="form-select">
-        {{ currentFiltersName["Rooms"] }}
-      </span>
-    </button>
-    <ul
-      class="dropdown-menu country-menu"
-      aria-labelledby="dropdownMenuButton2"
-    >
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilterRange('Rooms', '1', '3')"
-        >
-          <ng-container i18n="@@between">Entre</ng-container>
-          1
-          <ng-container i18n="@@and">y</ng-container>
-          3
-        </a>
-      </li>
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilterRange('Rooms', '4', '7')"
-        >
-          <ng-container i18n="@@between">Entre</ng-container>
-          4
-          <ng-container i18n="@@and">y</ng-container>
-          7
-        </a>
-      </li>
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilterRange('Rooms', '8', '')"
-        >
-          <ng-container i18n="@@prop-filter-more">Más de </ng-container>
-          7</a
-        >
-      </li>
-    </ul>
+    <input
+      #room
+      type="number"
+      class="form-control"
+      [placeholder]="currentFiltersName['Rooms']"
+      (input)="onSetFilterRange('Rooms', room.value)"
+    />
   </div>
-  <div class="dropdown col">
-    <button
-      class="btn property-filter__btn-toggle dropdown-toggle state-dropdown"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
+  <div class="col property-filter__input">
+    <label class="property-filter__btn-toggle" i18n="@@prop-filter-total-land"
+      >Tamaño de terreno</label
     >
-      <ng-container i18n="@@prop-filter-total-land"
-        >Tamaño de terreno</ng-container
-      >
-
-      <span class="form-select">
-        {{ currentFiltersName["TotalSize"] }}
-      </span>
-    </button>
-    <ul class="dropdown-menu state-menu" aria-labelledby="dropdownMenuButton3">
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilterRange('TotalSize', '', '10')"
-        >
-          <ng-container i18n="@@prop-filter-less">Menos de</ng-container>
-          10m2</a
-        >
-      </li>
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilterRange('TotalSize', '10', '100')"
-        >
-          <ng-container i18n="@@between">Entre</ng-container>
-          10m2
-          <ng-container i18n="@@and">y</ng-container>
-          100m2</a
-        >
-      </li>
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilterRange('TotalSize', '100', '250')"
-        >
-          <ng-container i18n="@@between">Entre</ng-container>
-          100m2
-          <ng-container i18n="@@and">y</ng-container>
-          250m2</a
-        >
-      </li>
-      <li>
-        <a
-          role="button"
-          class="dropdown-item"
-          (click)="onSetFilterRange('TotalSize', '250', '')"
-        >
-          <ng-container i18n="@@prop-filter-more">Más de </ng-container>
-          250m2</a
-        >
-      </li>
-    </ul>
+    <input
+      #total
+      type="number"
+      class="form-control"
+      [placeholder]="currentFiltersName['TotalSize']"
+      (input)="onSetFilterRange('TotalSize', total.value)"
+    />
   </div>
   }
   <div class="d-flex align-items-center property-filter__btn-search">

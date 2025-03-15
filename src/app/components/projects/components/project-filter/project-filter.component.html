@@ -1,40 +1,18 @@
 <form class="property-filter">
-  <div class="dropdown col property-filter__price">
-    <label class="property-filter__btn-toggle">Precio desde</label>
-    <div class="d-flex gap-2">
-      <input
-        #min
-        type="number"
-        class="form-control"
-        placeholder="Min"
-        (input)="onSetFilterPrice(min.value, 'min')"
-      />
+  <app-locations-filter class="col" [(currentFilters)]="currentFilters">
+    <div class="dropdown col property-filter__price">
+      <label class="property-filter__btn-toggle">Precio desde</label>
+      <div class="d-flex gap-2">
+        <input
+          #min
+          type="number"
+          class="form-control"
+          placeholder="Min"
+          (input)="onSetFilterPrice(min.value, 'min')"
+        />
+      </div>
     </div>
-  </div>
-  <div class="col">
-    <app-autocomplete
-      [label]="currentFiltersName['country']"
-      [placeholder]="currentFiltersName['countryId']"
-      [data]="countryNames"
-      (selectItem)="getStateByCountry($event)"
-    />
-  </div>
-  <div class="col">
-    <app-autocomplete
-      [label]="currentFiltersName['state']"
-      [placeholder]="currentFiltersName['stateId']"
-      [data]="stateNames"
-      (selectItem)="getTownByState($event)"
-    />
-  </div>
-  <div class="col">
-    <app-autocomplete
-      [label]="currentFiltersName['town']"
-      [placeholder]="currentFiltersName['townId']"
-      [data]="townNames"
-      (selectItem)="setTown($event)"
-    />
-  </div>
+  </app-locations-filter>
   <div class="d-flex align-items-center property-filter__btn-search">
     <button
       type="button"

@@ -9,11 +9,17 @@ import { CurrencyPipe } from '@angular/common';
 import { LocaleService } from '@shared/services/locale.service';
 import { Project } from '@shared/interfaces/project.interface';
 import { ProjectService } from '@shared/services/project.service';
+import { FormComponent } from '@shared/components/form/form.component';
 
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [CarouselPropertiesComponent, LoaderComponent, CurrencyPipe],
+  imports: [
+    CarouselPropertiesComponent,
+    LoaderComponent,
+    CurrencyPipe,
+    FormComponent,
+  ],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.scss',
 })
