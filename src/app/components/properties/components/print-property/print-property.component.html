@@ -1,8 +1,13 @@
 @if (!loading) {
 <article class="property-detail">
-  @if (property.advisor) {
-  <app-form [advisor]="property.advisor" />
-  }
+  <div class="property-detail__header">
+    <figure>
+      <img src="./assets/images/logo-dark.png" alt="logo" />
+    </figure>
+    @if (property.advisor) {
+    <app-form [advisor]="property.advisor" />
+    }
+  </div>
   <div>
     <h1 class="property-detail__title">{{ property.name }}</h1>
     <span class="property-detail__type"
@@ -40,31 +45,34 @@
   </div>
   <div class="property-detail__features">
     <div>
-      <img src="./assets/icons/measures.svg" alt="measures" />
-      <span>{{ property.total_size }} m²</span>
-      <span i18n="@@land">Terreno</span>
+      <img src="./assets/icons/total.png" alt="measures" />
+      <span>
+        <span i18n="@@land">Terreno</span> {{ property.total_size }} m²
+      </span>
     </div>
     <div>
-      <img src="./assets/icons/measures.svg" alt="measures" />
-      <span>{{ property.built_size }} m²</span>
-      <span i18n="@@construction">Construcción</span>
+      <img src="./assets/icons/totalsize.png" alt="measures" />
+      <span>
+        <span i18n="@@construction">Construcción</span>
+        {{ property.built_size }} m²
+      </span>
     </div>
     <div>
-      <img src="./assets/icons/room.svg" alt="room" />
+      <img src="./assets/icons/rooms.png" alt="room" />
       <span>
         {{ property.rooms }}
         <ng-container i18n="@@rooms">Habitaciones</ng-container>
       </span>
     </div>
     <div>
-      <img src="./assets/icons/bathroom.svg" alt="bathroom" />
+      <img src="./assets/icons/bathroom.png" alt="bathroom" />
       <span>
         {{ property.bathrooms }}
         <ng-container i18n="@@bathrooms">Baños</ng-container>
       </span>
     </div>
     <div>
-      <img src="./assets/icons/garage.svg" alt="garage" />
+      <img src="./assets/icons/garage.png" alt="garage" />
       <span>
         {{ property.garage }}
         <ng-container i18n="@@garage">Cochera</ng-container>
