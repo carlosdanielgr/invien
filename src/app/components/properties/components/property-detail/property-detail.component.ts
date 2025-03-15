@@ -57,7 +57,7 @@ export class PropertyDetailComponent implements OnInit {
   private getProperty(): void {
     this.propertyService.getPropertyById(this.id).subscribe({
       next: (response) => {
-        this.property = response;
+        this.property = response.data;
         this.sanitizerUrl();
         this.loading = false;
       },

@@ -18,7 +18,7 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private readonly propertyService: PropertyService,
+    private readonly propertyService: PropertyService
   ) {}
 
   ngOnInit() {
@@ -26,7 +26,9 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (event.url.includes('#contact')) window.location.href = '#contact';
-        this.activeLightHeader = event.url.includes('/properties/');
+        this.activeLightHeader =
+          event.url.includes('/properties/') ||
+          event.url.includes('/projects/');
         window.scrollTo(0, 0);
       }
     });

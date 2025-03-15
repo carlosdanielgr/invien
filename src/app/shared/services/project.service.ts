@@ -7,8 +7,7 @@ import {
   QueryFilter,
   Response,
 } from '@shared/interfaces/response.interface';
-import { Filter } from '@shared/interfaces/general.interface';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { LocaleService } from './locale.service';
 import { Project } from '@shared/interfaces/project.interface';
 
@@ -36,24 +35,9 @@ export class ProjectService {
   }
 
   getProjectById(id: string) {
-    return this.http
-      .get<Response<Project>>(`${this.API_URL}${id}/${this.locale.current}`)
-      .pipe(
-        map((response) => {
-          const { data } = response;
-
-          data.state = {
-            ...data.state,
-            name: data.state[`state_${this.locale.current}` as keyof Filter],
-          };
-          data.town = {
-            ...data.town,
-            name: data.town[`town_${this.locale.current}` as keyof Filter],
-          };
-
-          return data;
-        })
-      );
+    return this.http.get<Response<Project>>(
+      `${this.API_URL}${id}/${this.locale.current}`
+    );
   }
 
   getProjectsPaginate(params: QueryFilter) {

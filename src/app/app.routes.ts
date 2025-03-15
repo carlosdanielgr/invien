@@ -23,6 +23,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'properties/:id',
+    loadComponent: () =>
+      import(
+        './components/properties/components/property-detail/property-detail.component'
+      ).then((c) => c.PropertyDetailComponent),
+  },
+  {
     path: 'projects',
     loadComponent: () =>
       import('./components/projects/projects.component').then(
@@ -30,11 +37,11 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'properties/:id',
+    path: 'projects/:id',
     loadComponent: () =>
       import(
-        './components/properties/components/property-detail/property-detail.component'
-      ).then((c) => c.PropertyDetailComponent),
+        './components/projects/components/project-detail/project-detail.component'
+      ).then((c) => c.ProjectDetailComponent),
   },
   {
     path: 'print-property/:id',

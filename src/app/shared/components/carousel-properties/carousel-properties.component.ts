@@ -32,7 +32,7 @@ export class CarouselPropertiesComponent implements OnInit, OnDestroy {
 
   noProperties = $localize`:@@no-properties:No hay propiedades disponibles`;
 
-  subtitle = $localize`:@@car-prop-subtitle:Proyectos Inmobiliarios`;
+  subtitle = 'Propiedades Inmobiliarias';
 
   constructor(readonly propertyService: PropertyService) {}
 
@@ -41,7 +41,7 @@ export class CarouselPropertiesComponent implements OnInit, OnDestroy {
       next: (properties) => {
         this.matrixProperties = splitArray<Property>(
           this.isWeb ? 3 : 1,
-          properties,
+          properties
         );
       },
     });
