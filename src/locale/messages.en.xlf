@@ -27,6 +27,9 @@
       <trans-unit id="rent" datatype="html">
         <source>RENT</source>
       </trans-unit>
+      <trans-unit id="rent-lower" datatype="html">
+        <source>Rent</source>
+      </trans-unit>
       <trans-unit id="sell" datatype="html">
         <source>Sell</source>
       </trans-unit>
@@ -174,7 +177,7 @@
         <source>START INVESTING</source>
       </trans-unit>
       <trans-unit id="car-prop-subtitle" datatype="html">
-        <source>Real Estate Projects</source>
+        <source>Real Estate Properties</source>
       </trans-unit>
       <!-- CAROUSEL -->
       <trans-unit id="carousel-view" datatype="html">
@@ -339,6 +342,12 @@
       </trans-unit>
       <trans-unit id="properties-selected" datatype="html">
         <source>Selected Properties</source>
+      </trans-unit>
+      <trans-unit id="properties-title" datatype="html">
+        <source>Investment from</source>
+      </trans-unit>
+      <trans-unit id="properties-title-contact" datatype="html">
+        <source>Contact us for more information</source>
       </trans-unit>
       <!-- PROPERTY DETAIL -->
       <trans-unit id="prop-detail-print" datatype="html">

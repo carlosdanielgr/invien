@@ -32,7 +32,7 @@ export class CarouselPropertiesComponent implements OnInit, OnDestroy {
 
   noProperties = $localize`:@@no-properties:No hay propiedades disponibles`;
 
-  subtitle = 'Propiedades Inmobiliarias';
+  subtitle = $localize`:@@car-prop-subtitle:Propiedades Inmobiliarias`;
 
   constructor(readonly propertyService: PropertyService) {}
 
