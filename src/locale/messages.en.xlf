@@ -185,10 +185,16 @@
       </trans-unit>
       <!-- COMMENTS -->
       <trans-unit id="comments-buyer" datatype="html">
-        <source>- Buyer</source>
+        <source>Buyer</source>
       </trans-unit>
       <trans-unit id="comments-first" datatype="html">
-        <source>“Invien made the entire buying process simple and hassle-free. Great service!”</source>
+        <source>“Thanks to Invien, I found the perfect property without stress or delays. Their team guided me every step of the way and answered all my questions. Highly recommended!”</source>
+      </trans-unit>
+      <trans-unit id="comments-second" datatype="html">
+        <source>“Invien made buying my first home an amazing experience. They supported me from the search to the signing, always providing personalized attention and quick responses. Excellent service!”</source>
+      </trans-unit>
+      <trans-unit id="comments-three" datatype="html">
+        <source>“I had no experience buying real estate, but with Invien, everything was clear and easy. They helped me find the best option and close the deal without complications. Great team!”</source>
       </trans-unit>
       <!-- ADVISORS -->
       <trans-unit id="advisors-title" datatype="html">

@@ -27,7 +27,6 @@
     }
     @include screen(small) {
       flex-direction: row;
-      align-items: center;
     }
     &-info {
       display: flex;

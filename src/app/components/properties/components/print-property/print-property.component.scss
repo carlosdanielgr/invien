@@ -19,6 +19,7 @@ app-contact {
 .property-detail {
   padding: 1rem;
   @extend %max-width;
+  page-break-after: always;
   &__header {
     display: flex;
     align-items: center;
@@ -54,6 +55,11 @@ app-contact {
       &:nth-child(3) {
         grid-column: 3/4;
         grid-row: 2/3;
+      }
+      > img {
+        border-radius: 1rem;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }
@@ -140,12 +146,6 @@ app-contact {
       > img {
         width: 1rem;
       }
-    }
-  }
-  &__video {
-    @extend %max-width;
-    > iframe {
-      width: 100%;
     }
   }
   &__loader {

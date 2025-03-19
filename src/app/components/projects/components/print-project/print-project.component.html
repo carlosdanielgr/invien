@@ -1,1 +1,80 @@
-<p>print-project works!</p>
+@if (!loading) {
+<article class="property-detail">
+  <div class="property-detail__header">
+    <figure>
+      <img src="./assets/images/logo-dark.png" alt="logo" />
+    </figure>
+  </div>
+  <div>
+    <h1 class="property-detail__title">{{ project.name }}</h1>
+    <span class="property-detail__type"
+      >{{ project.location }}, {{ project.state.name }},
+      {{ project.town.name }}</span
+    >
+  </div>
+  <div class="property-detail__price">
+    <span i18n="@@properties-title"> Inversión desde </span>
+    <span
+      >$
+      {{
+        localeService.current === "es"
+          ? (project.price_mxn | currency : "MXN" : "" : "1.2-2") + " MXN"
+          : (project.price_usd | currency : "USD" : "" : "1.2-2") + " USD"
+      }}
+    </span>
+  </div>
+  <div class="property-detail__print-img">
+    @for (item of project.images; track $index) {
+    <figure>
+      <img
+        class="property-detail__carousel-img"
+        [src]="apiUrl + item"
+        [alt]="item"
+      />
+    </figure>
+    }
+  </div>
+</article>
+<div class="property-detail__description section">
+  <div class="property-detail__description-content">
+    <div class="property-detail__description-info">
+      <div>
+        <h2 class="property-detail__description-title" i18n="@@description">
+          Descripción
+        </h2>
+        <div
+          class="property-detail__description-text"
+          [innerHTML]="project.description"
+        ></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="property-detail__description-title" i18n="@@amenities">
+        Amenidades
+      </h3>
+      <div class="property-detail__description-amenities">
+        @for (item of project.amenities; track $index) {
+        <span class="property-detail__description-amenity">
+          <img src="./assets/icons/check-gray.svg" alt="check-gray" />
+          {{ item }}
+        </span>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section last-print">
+  <iframe
+    width="100%"
+    height="450"
+    style="border: 0"
+    allowfullscreen=""
+    referrerpolicy="no-referrer-when-downgrade"
+    [src]="project.url_map"
+  ></iframe>
+</div>
+} @else {
+<div class="property-detail__loader">
+  <app-loader />
+</div>
+}
