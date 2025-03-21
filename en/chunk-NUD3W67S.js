@@ -1,0 +1,2 @@
+import{f as o}from"./chunk-L25NALGY.js";import{$ as r,W as i}from"./chunk-UJLB5NHQ.js";var p=(()=>{class t{constructor(e){this.http=e}postSheetData(e){return this.http.post("https://api.apispreadsheets.com/data/ImgRbAbOhc0MIxIW/",e)}static{this.\u0275fac=function(a){return new(a||t)(r(o))}}static{this.\u0275prov=i({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{p as a};
+/**i18n:3955709bc36bd0ba7669313c1f79c91fc715c30fb3d7aaf5d8030353cbc277bc*/

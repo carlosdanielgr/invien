@@ -1,0 +1,2 @@
+import{b as a}from"./chunk-XFULGL7U.js";import"./chunk-KTQ27M5N.js";import"./chunk-TLFK3OR6.js";import"./chunk-NUD3W67S.js";import"./chunk-CLGHCBE3.js";import"./chunk-AJN2I6PP.js";import"./chunk-WPLGPZ2J.js";import"./chunk-AFUDEXJR.js";import"./chunk-MFZ6ZOJ4.js";import"./chunk-L25NALGY.js";import"./chunk-UJLB5NHQ.js";export{a as PropertyDetailComponent};
+/**i18n:3955709bc36bd0ba7669313c1f79c91fc715c30fb3d7aaf5d8030353cbc277bc*/
