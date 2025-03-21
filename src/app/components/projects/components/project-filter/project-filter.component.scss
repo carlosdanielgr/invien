@@ -7,23 +7,23 @@
   padding: 1rem;
   border-radius: 0.5rem;
   margin-top: 1rem;
-  max-width: 1000px;
+  max-width: 1200px;
   background-color: #fff;
   @include screen(med-small) {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   &__price {
     padding-right: 1rem;
     text-align: start;
+    flex-basis: 20%;
     > label {
       padding: 0;
     }
     input {
       height: 1.5rem;
       background-color: transparent;
-      border: none;
       padding: 0 0.2rem;
       &::placeholder {
         font-size: 0.8rem;

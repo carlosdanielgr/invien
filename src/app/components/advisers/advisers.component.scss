@@ -4,7 +4,7 @@
   &__main {
     position: relative;
     &::after {
-      content: "";
+      content: "" : "1.0-0";
       position: absolute;
       background-image: url(./../../../assets/images/advisors.jpg);
       background-repeat: no-repeat;

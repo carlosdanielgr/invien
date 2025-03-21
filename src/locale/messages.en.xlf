@@ -155,13 +155,10 @@
         <source>Enter the quantity</source>
       </trans-unit>
       <trans-unit id="prop-filter-total-size-select" datatype="html">
-        <source>Enter the size in m²</source>
-      </trans-unit>
-      <trans-unit id="prop-filter-total-rooms" datatype="html">
-        <source>Number of rooms</source>
+        <source>Enter in m²</source>
       </trans-unit>
       <trans-unit id="prop-filter-total-land" datatype="html">
-        <source>Land size</source>
+        <source>Land in m²</source>
       </trans-unit>
       <trans-unit id="prop-filter-less" datatype="html">
         <source>Less than</source>
@@ -337,7 +334,7 @@
       </trans-unit>
       <!-- PROPERTIES -->
       <trans-unit id="projects-selected" datatype="html">
-        <source>Selected Projects</source>
+        <source>Real Estate Projects</source>
       </trans-unit>
       <trans-unit id="no-projects" datatype="html">
         <source>No projects available</source>
@@ -347,7 +344,7 @@
         <source>START INVESTING</source>
       </trans-unit>
       <trans-unit id="properties-selected" datatype="html">
-        <source>Selected Properties</source>
+        <source>Real Estate Properties</source>
       </trans-unit>
       <trans-unit id="properties-title" datatype="html">
         <source>Investment from</source>

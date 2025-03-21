@@ -29,34 +29,48 @@
     </div>
   </app-locations-filter>
   } @else {
-  <div class="col property-filter__input">
+  <div class="property-filter__input">
     <label class="property-filter__btn-toggle" i18n="@@price">Precio</label>
-    <input
-      #min
-      type="number"
-      class="form-control"
-      placeholder="Min"
-      (input)="onSetFilterPrice(min.value, 'min')"
-    />
+    <div class="input-group">
+      <input
+        #min
+        type="number"
+        class="form-control"
+        placeholder="Min"
+        (input)="onSetFilterPrice(min.value, 'min')"
+      />
+      <input
+        #max
+        type="number"
+        class="form-control"
+        placeholder="Max"
+        (input)="onSetFilterPrice(max.value, 'max')"
+      />
+    </div>
   </div>
-  <div class="col property-filter__input">
-    <label class="property-filter__btn-toggle" i18n="@@prop-filter-total-rooms"
-      >Cantidad de habitaciones</label
+  <div class="property-filter__input">
+    <label for="rooms" class="property-filter__btn-toggle" i18n="@@rooms"
+      >Habitaciones</label
     >
     <input
       #room
+      id="rooms"
       type="number"
       class="form-control"
       [placeholder]="currentFiltersName['Rooms']"
       (input)="onSetFilterRange('Rooms', room.value)"
     />
   </div>
-  <div class="col property-filter__input">
-    <label class="property-filter__btn-toggle" i18n="@@prop-filter-total-land"
-      >Tamaño de terreno</label
+  <div class="property-filter__input">
+    <label
+      for="size"
+      class="property-filter__btn-toggle"
+      i18n="@@prop-filter-total-land"
+      >Terreno en m²</label
     >
     <input
       #total
+      id="size"
       type="number"
       class="form-control"
       [placeholder]="currentFiltersName['TotalSize']"

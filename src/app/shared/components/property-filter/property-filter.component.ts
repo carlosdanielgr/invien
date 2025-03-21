@@ -29,7 +29,7 @@ export class PropertyFilterComponent implements OnInit {
   currentFiltersName: Record<string, string> = {
     typeId: $localize`:@@prop-filter-type-select:Selecciona el tipo de propiedad`,
     Rooms: $localize`:@@prop-filter-rooms-select:Ingrese la cantidad`,
-    TotalSize: $localize`:@@prop-filter-total-size-select:Ingrese el tamaño en m²`,
+    TotalSize: $localize`:@@prop-filter-total-size-select:Ingrese en m²`,
   };
 
   constructor(

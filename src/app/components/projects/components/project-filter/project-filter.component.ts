@@ -21,8 +21,6 @@ export class ProjectFilterComponent {
     this.currentFilters[`${type}Price`] = value;
   }
   onSearch() {
-    console.log('onSearch', this.currentFilters);
-
-    // this.newFilter.emit(this.currentFilters);
+    this.newFilter.emit(this.currentFilters);
   }
 }

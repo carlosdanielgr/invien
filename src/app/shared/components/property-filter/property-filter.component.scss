@@ -11,8 +11,7 @@
   background-color: #fff;
   @include screen(med-small) {
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
     > div:not(:last-child, :nth-child(3)) {
       border-right: 1px solid #b9b9b9;
     }
@@ -56,13 +55,18 @@
   &__input {
     padding-right: 1rem;
     text-align: start;
+    @include screen(med-small) {
+      flex-basis: 20%;
+      &:first-child {
+        flex-basis: 50%;
+      }
+    }
     > label {
       padding: 0;
     }
     input {
       height: 1.5rem;
       background-color: transparent;
-      border: none;
       padding: 0 0.2rem;
       &::placeholder {
         font-size: 0.8rem;

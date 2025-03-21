@@ -2,13 +2,20 @@
   <app-locations-filter class="col" [(currentFilters)]="currentFilters">
     <div class="dropdown col property-filter__price">
       <label class="property-filter__btn-toggle">Precio desde</label>
-      <div class="d-flex gap-2">
+      <div class="input-group">
         <input
           #min
           type="number"
           class="form-control"
           placeholder="Min"
           (input)="onSetFilterPrice(min.value, 'min')"
+        />
+        <input
+          #max
+          type="number"
+          class="form-control"
+          placeholder="Max"
+          (input)="onSetFilterPrice(max.value, 'max')"
         />
       </div>
     </div>
