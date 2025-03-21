@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { PropertyService } from '@shared/services/property.service';
-import { Property } from '@shared/interfaces/property.interface';
 import { splitArray } from '@shared/functions';
+import { ProjectService } from '@shared/services/project.service';
+import { Project } from '@shared/interfaces/project.interface';
+import { ProjectComponent } from 'src/app/components/projects/components/project/project.component';
 import { NoDataComponent } from '../no-data/no-data.component';
-import { PropertyComponent } from '../property/property.component';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { PropertySkeletonComponent } from '../property-skeleton/property-skeleton.component';
 
@@ -14,7 +14,7 @@ import { PropertySkeletonComponent } from '../property-skeleton/property-skeleto
   standalone: true,
   imports: [
     CarouselComponent,
-    PropertyComponent,
+    ProjectComponent,
     PropertySkeletonComponent,
     NoDataComponent,
   ],
@@ -22,7 +22,7 @@ import { PropertySkeletonComponent } from '../property-skeleton/property-skeleto
   styleUrl: './carousel-properties.component.scss',
 })
 export class CarouselPropertiesComponent implements OnInit, OnDestroy {
-  matrixProperties: Property[][] = [];
+  matrixProperties: Project[][] = [];
 
   subscription$ = new Subscription();
 
@@ -30,18 +30,18 @@ export class CarouselPropertiesComponent implements OnInit, OnDestroy {
 
   title = $localize`:@@car-prop-title:COMIENZA A INVERTIR`;
 
-  noProperties = $localize`:@@no-properties:No hay propiedades disponibles`;
+  noProperties = $localize`:@@no-projects:No hay proyectos disponibles`;
 
-  subtitle = $localize`:@@car-prop-subtitle:Propiedades Inmobiliarias`;
+  subtitle = $localize`:@@projects-selected:Proyectos Inmobiliarios`;
 
-  constructor(readonly propertyService: PropertyService) {}
+  constructor(readonly projectService: ProjectService) {}
 
   ngOnInit(): void {
-    this.subscription$ = this.propertyService.properties$.subscribe({
-      next: (properties) => {
-        this.matrixProperties = splitArray<Property>(
+    this.subscription$ = this.projectService.projects$.subscribe({
+      next: (projects) => {
+        this.matrixProperties = splitArray<Project>(
           this.isWeb ? 3 : 1,
-          properties
+          projects
         );
       },
     });

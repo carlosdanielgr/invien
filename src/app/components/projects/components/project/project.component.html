@@ -1,4 +1,8 @@
-<div role="button" class="property" (click)="redirectProject()">
+<div
+  class="property"
+  [class.property--link]="showPrice"
+  (click)="redirectProject()"
+>
   <img
     class="property__img"
     [src]="apiUrl + project.images[0]"
@@ -8,6 +12,7 @@
     <span>{{ project.name }}</span>
   </div>
   <div class="property__terrain">
+    @if(showPrice){
     <span i18n="@@properties-title"> Inversión desde </span>
     <span>
       $
@@ -17,5 +22,13 @@
           : (project.price_usd | currency : "USD" : "" : "1.0-0")
       }}
     </span>
+    }@else {
+    <a
+      class="text-primary text-center col-12"
+      routerLink="/projects/{{ this.project.id }}"
+      i18n="@@see-more"
+      >Ver más</a
+    >
+    }
   </div>
 </div>

@@ -105,6 +105,9 @@
       <trans-unit id="projects" datatype="html">
         <source>Projects</source>
       </trans-unit>
+      <trans-unit id="see-more" datatype="html">
+        <source>See more</source>
+      </trans-unit>
       <!-- HOME PAGE -->
       <trans-unit id="home-page-title" datatype="html">
         <source>Transforming
@@ -224,7 +227,7 @@
         <source>Postal Code 83150</source>
       </trans-unit>
       <trans-unit id="footer-reserved" datatype="html">
-        <source>© 2024 Invien. All rights reserved.</source>
+        <source>Invien. All rights reserved.</source>
       </trans-unit>
       <!-- ABOUT-US -->
       <trans-unit id="about-us-title" datatype="html">
