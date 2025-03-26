@@ -1,0 +1,35 @@
+<form class="property-filter">
+  <app-locations-filter class="col" [(currentFilters)]="currentFilters">
+    <div class="dropdown col property-filter__price">
+      <label class="property-filter__btn-toggle">Precio desde</label>
+      <div class="input-group">
+        <input
+          #min
+          type="number"
+          class="form-control"
+          min="0"
+          [placeholder]="placeholders['from']"
+          (input)="onSetFilterPrice(min.value, 'min')"
+        />
+        <input
+          #max
+          type="number"
+          class="form-control"
+          min="0"
+          [placeholder]="placeholders['to']"
+          (input)="onSetFilterPrice(max.value, 'max')"
+        />
+      </div>
+    </div>
+  </app-locations-filter>
+  <div class="d-flex align-items-center property-filter__btn-search">
+    <button
+      type="button"
+      class="btn btn-invien px-4"
+      (click)="onSearch()"
+      i18n="@@search"
+    >
+      Buscar
+    </button>
+  </div>
+</form>

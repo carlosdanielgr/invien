@@ -34,6 +34,7 @@
       <a routerLink="about-us" i18n="@@about-us">Acerca de Nosotros</a>
       <a routerLink="our-services" i18n="@@services">Servicios</a>
       <a routerLink="properties" i18n="@@properties">Propiedades</a>
+      <a routerLink="projects" i18n="@@projects">Proyectos</a>
       <a routerLink="advisers" i18n="@@advisors">Asesores</a>
       <a href="#contact" i18n="@@contact">Contacto</a>
     </div>
@@ -54,9 +55,12 @@
   </div>
   <hr />
   <div class="footer-section-legal">
-    <span i18n="@@footer-reserved"
-      >© 2024 Invien. Todos los derechos reservados.</span
-    >
+    <span
+      >© {{ year }}
+      <ng-container i18n="@@footer-reserved">
+        Invien. Todos los derechos reservados.
+      </ng-container>
+    </span>
     <span>
       Powered by
       <a href="https://www.nomadasmedia.com/" target="_blank">Nómadas Media</a>

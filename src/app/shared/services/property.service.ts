@@ -8,8 +8,7 @@ import {
   QueryFilter,
   Response,
 } from '@shared/interfaces/response.interface';
-import { Filter } from '@shared/interfaces/general.interface';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { LocaleService } from './locale.service';
 
 @Injectable({
@@ -26,34 +25,19 @@ export class PropertyService {
 
   constructor(
     private readonly http: HttpClient,
-    private readonly locale: LocaleService,
+    private readonly locale: LocaleService
   ) {}
 
   getProperties() {
     return this.http.get<Response<Property[]>>(
-      `${this.API_URL}paginated/${this.locale.current}`,
+      `${this.API_URL}paginated/${this.locale.current}`
     );
   }
 
   getPropertyById(id: string) {
-    return this.http
-      .get<Response<Property>>(`${this.API_URL}${id}/${this.locale.current}`)
-      .pipe(
-        map((response) => {
-          const { data } = response;
-
-          data.state = {
-            ...data.state,
-            name: data.state[`state_${this.locale.current}` as keyof Filter],
-          };
-          data.town = {
-            ...data.town,
-            name: data.town[`town_${this.locale.current}` as keyof Filter],
-          };
-
-          return data;
-        }),
-      );
+    return this.http.get<Response<Property>>(
+      `${this.API_URL}${id}/${this.locale.current}`
+    );
   }
 
   getPropertiesPaginate(params: QueryFilter) {
@@ -63,7 +47,7 @@ export class PropertyService {
         params: {
           ...params,
         },
-      },
+      }
     );
   }
 

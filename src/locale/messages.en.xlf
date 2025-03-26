@@ -27,6 +27,9 @@
       <trans-unit id="rent" datatype="html">
         <source>RENT</source>
       </trans-unit>
+      <trans-unit id="rent-lower" datatype="html">
+        <source>Rent</source>
+      </trans-unit>
       <trans-unit id="sell" datatype="html">
         <source>Sell</source>
       </trans-unit>
@@ -99,7 +102,18 @@
       <trans-unit id="for" datatype="html">
         <source>For </source>
       </trans-unit>
-
+      <trans-unit id="from" datatype="html">
+        <source>From</source>
+      </trans-unit>
+      <trans-unit id="to" datatype="html">
+        <source>To </source>
+      </trans-unit>
+      <trans-unit id="projects" datatype="html">
+        <source>Projects</source>
+      </trans-unit>
+      <trans-unit id="see-more" datatype="html">
+        <source>See more</source>
+      </trans-unit>
       <!-- HOME PAGE -->
       <trans-unit id="home-page-title" datatype="html">
         <source>Transforming
@@ -147,16 +161,13 @@
         <source>Select price range</source>
       </trans-unit>
       <trans-unit id="prop-filter-rooms-select" datatype="html">
-        <source>Select quantity</source>
+        <source>Enter the quantity</source>
       </trans-unit>
       <trans-unit id="prop-filter-total-size-select" datatype="html">
-        <source>Select size</source>
-      </trans-unit>
-      <trans-unit id="prop-filter-total-rooms" datatype="html">
-        <source>Number of rooms</source>
+        <source>Enter in m²</source>
       </trans-unit>
       <trans-unit id="prop-filter-total-land" datatype="html">
-        <source>Land size</source>
+        <source>Land in m²</source>
       </trans-unit>
       <trans-unit id="prop-filter-less" datatype="html">
         <source>Less than</source>
@@ -169,10 +180,10 @@
       </trans-unit>
       <!-- CAROUSEL PROPERTIES -->
       <trans-unit id="car-prop-title" datatype="html">
-        <source>Start Investing</source>
+        <source>START INVESTING</source>
       </trans-unit>
       <trans-unit id="car-prop-subtitle" datatype="html">
-        <source>Real Estate Projects</source>
+        <source>Real Estate Properties</source>
       </trans-unit>
       <!-- CAROUSEL -->
       <trans-unit id="carousel-view" datatype="html">
@@ -180,10 +191,16 @@
       </trans-unit>
       <!-- COMMENTS -->
       <trans-unit id="comments-buyer" datatype="html">
-        <source>- Buyer</source>
+        <source>Buyer</source>
       </trans-unit>
       <trans-unit id="comments-first" datatype="html">
-        <source>“Invien made the entire buying process simple and hassle-free. Great service!”</source>
+        <source>“Thanks to Invien, I found the perfect property without stress or delays. Their team guided me every step of the way and answered all my questions. Highly recommended!”</source>
+      </trans-unit>
+      <trans-unit id="comments-second" datatype="html">
+        <source>“Invien made buying my first home an amazing experience. They supported me from the search to the signing, always providing personalized attention and quick responses. Excellent service!”</source>
+      </trans-unit>
+      <trans-unit id="comments-three" datatype="html">
+        <source>“I had no experience buying real estate, but with Invien, everything was clear and easy. They helped me find the best option and close the deal without complications. Great team!”</source>
       </trans-unit>
       <!-- ADVISORS -->
       <trans-unit id="advisors-title" datatype="html">
@@ -216,7 +233,7 @@
         <source>Postal Code 83150</source>
       </trans-unit>
       <trans-unit id="footer-reserved" datatype="html">
-        <source>© 2024 Invien. All rights reserved.</source>
+        <source>Invien. All rights reserved.</source>
       </trans-unit>
       <!-- ABOUT-US -->
       <trans-unit id="about-us-title" datatype="html">
@@ -325,11 +342,24 @@
         <source>We continue to offer support and advice even after the sale, ensuring your complete satisfaction.</source>
       </trans-unit>
       <!-- PROPERTIES -->
+      <trans-unit id="projects-selected" datatype="html">
+        <source>Real Estate Projects</source>
+      </trans-unit>
+      <trans-unit id="no-projects" datatype="html">
+        <source>No projects available</source>
+      </trans-unit>
+      <!-- PROJECTS -->
       <trans-unit id="properties-subtitle" datatype="html">
-        <source>Start Investing</source>
+        <source>START INVESTING</source>
       </trans-unit>
       <trans-unit id="properties-selected" datatype="html">
-        <source>Selected Properties</source>
+        <source>Real Estate Properties</source>
+      </trans-unit>
+      <trans-unit id="properties-title" datatype="html">
+        <source>Investment from</source>
+      </trans-unit>
+      <trans-unit id="properties-title-contact" datatype="html">
+        <source>Contact us for more information</source>
       </trans-unit>
       <!-- PROPERTY DETAIL -->
       <trans-unit id="prop-detail-print" datatype="html">

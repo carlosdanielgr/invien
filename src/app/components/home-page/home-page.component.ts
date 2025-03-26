@@ -14,7 +14,7 @@ import { CommentsComponent } from '@shared/components/comments/comments.componen
 import { PropertyFilterComponent } from '@shared/components/property-filter/property-filter.component';
 import { splitArray } from '@shared/functions';
 import { Advisor } from '@shared/interfaces/advisor.interface';
-import * as advisors from './../../../assets/advisors.json';
+import { AdvisorService } from '@shared/services/advisor.service';
 
 @Component({
   selector: 'app-home-page',
@@ -33,11 +33,6 @@ import * as advisors from './../../../assets/advisors.json';
 export class HomePageComponent implements OnInit, AfterViewInit {
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
 
-  // @HostListener('document:click', ['$event'])
-  // onClick(): void {
-  //   // if (this.video) this.video.nativeElement.play();
-  // }
-
   slidesAdvisers: Advisor[][] = [];
 
   advisorTitle = $localize`:@@advisors-title:CONOCE AL EQUIPO`;
@@ -46,13 +41,21 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   isFor = 'sale';
 
-  constructor() {}
+  constructor(private readonly advisorService: AdvisorService) {}
 
   ngOnInit(): void {
-    this.slidesAdvisers = splitArray<Advisor>(
-      window.innerWidth > 992 ? 3 : 1,
-      advisors.data,
-    );
+    this.getAdvisers();
+  }
+
+  private getAdvisers() {
+    this.advisorService.getAdvisors().subscribe({
+      next: (advisors) => {
+        this.slidesAdvisers = splitArray<Advisor>(
+          window.innerWidth > 992 ? 3 : 1,
+          advisors
+        );
+      },
+    });
   }
 
   ngAfterViewInit(): void {

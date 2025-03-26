@@ -8,7 +8,7 @@ import { PropertyService } from '@shared/services/property.service';
 import { Property } from '@shared/interfaces/property.interface';
 import { NoDataComponent } from '@shared/components/no-data/no-data.component';
 import { Pagination, QueryFilter } from '@shared/interfaces/response.interface';
-import { PaginationComponent } from './components/pagination/pagination.component';
+import { PaginationComponent } from '@shared/components/pagination/pagination.component';
 
 @Component({
   selector: 'app-properties',
@@ -36,7 +36,7 @@ export class PropertiesComponent implements OnInit {
 
   constructor(
     private readonly propertyService: PropertyService,
-    private readonly activatedRoute: ActivatedRoute,
+    private readonly activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {

@@ -7,6 +7,11 @@ $primary: #ec1c24;
 
 @font-face {
   font-family: bell;
+  src: url(./../assets/fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: bell-mt;
   src: url(./../assets/fonts/Bell\ MT.ttf);
 }
 
@@ -105,8 +110,10 @@ p {
 }
 
 .subtitle {
+  display: block;
   font-size: 1rem;
   color: var(--primary);
+  margin-bottom: 1rem;
   @include screen(small) {
     font-size: 1.3rem;
   }
@@ -141,64 +148,9 @@ p {
   }
 }
 
-@media print {
-  .header,
-  .footer-section-map,
-  .footer-section-legal,
-  .footer-section hr,
-  .whatsapp-button,
-  app-carousel-properties,
-  app-contact {
-    display: none !important;
-  }
-  .property-detail {
-    padding: 1rem !important;
-    &__print-img {
-      display: flex !important;
-      page-break-after: always;
-      > figure {
-        flex: 1 1 calc(50% - 16px);
-        height: 20rem;
-        > img {
-          height: 100%;
-        }
-      }
-    }
-    &__video {
-      display: none;
-    }
-    &__description-content {
-      flex-direction: column-reverse !important;
-      app-form {
-        div:not(form__adviser),
-        button {
-          display: none;
-        }
-      }
-    }
-    &__description-info {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr;
-      page-break-after: always;
-      max-width: 100% !important;
-      > div:nth-child(3) {
-        grid-column: 2 /3;
-        grid-row: 1/3;
-      }
-      > button {
-        display: none;
-      }
-    }
-    .carousel {
-      display: none;
-    }
-  }
-  .footer-section {
-    padding-top: 12rem !important;
-  }
-  .section {
-    padding: 1rem !important;
-  }
+.dropdown-menu.show {
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 :root {

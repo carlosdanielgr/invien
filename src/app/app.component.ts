@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
-import { PropertyService } from '@shared/services/property.service';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ProjectService } from '@shared/services/project.service';
 
 @Component({
   selector: 'app-root',
@@ -18,15 +18,17 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private readonly propertyService: PropertyService,
+    private readonly projectService: ProjectService
   ) {}
 
   ngOnInit() {
-    this.propertyService.initGetProperties();
+    this.projectService.initGetProjects();
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (event.url.includes('#contact')) window.location.href = '#contact';
-        this.activeLightHeader = event.url.includes('/properties/');
+        this.activeLightHeader =
+          event.url.includes('/properties/') ||
+          event.url.includes('/projects/');
         window.scrollTo(0, 0);
       }
     });

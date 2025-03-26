@@ -1,0 +1,134 @@
+@if (!loading) {
+<article class="property-detail">
+  <div class="property-detail__header">
+    <figure>
+      <img src="./assets/images/logo-dark.png" alt="logo" />
+    </figure>
+    @if (property.advisor) {
+    <app-form [advisor]="property.advisor" />
+    }
+  </div>
+  <div>
+    <h1 class="property-detail__title">{{ property.name }}</h1>
+    <span class="property-detail__type"
+      >{{ property.location }}, {{ property.state.name }},
+      {{ property.town.name }}</span
+    >
+  </div>
+  <div class="property-detail__price">
+    <span>
+      @if (property.is_for === "sale") {
+      <ng-container i18n="@@sale">VENTA</ng-container>
+      } @else {
+      <ng-container i18n="@@rent">RENTA</ng-container>
+      }
+    </span>
+    <span
+      >$
+      {{
+        localeService.current === "es"
+          ? (property.price_mxn | currency : "MXN" : "" : "1.0-0") + " MXN"
+          : (property.price_usd | currency : "USD" : "" : "1.0-0") + " USD"
+      }}
+    </span>
+  </div>
+  <div class="property-detail__print-img">
+    @for (item of property.images; track $index) {
+    <figure>
+      <img
+        class="property-detail__carousel-img"
+        [src]="apiUrl + item"
+        [alt]="item"
+      />
+    </figure>
+    }
+  </div>
+  <div class="property-detail__features">
+    <div>
+      <img src="./assets/icons/total.png" alt="measures" />
+      <span>
+        <span i18n="@@land">Terreno</span> {{ property.total_size }} m²
+      </span>
+    </div>
+    <div>
+      <img src="./assets/icons/totalsize.png" alt="measures" />
+      <span>
+        <span i18n="@@construction">Construcción</span>
+        {{ property.built_size }} m²
+      </span>
+    </div>
+    <div>
+      <img src="./assets/icons/rooms.png" alt="room" />
+      <span>
+        {{ property.rooms }}
+        <ng-container i18n="@@rooms">Habitaciones</ng-container>
+      </span>
+    </div>
+    <div>
+      <img src="./assets/icons/bathroom.png" alt="bathroom" />
+      <span>
+        {{ property.bathrooms }}
+        <ng-container i18n="@@bathrooms">Baños</ng-container>
+      </span>
+    </div>
+    <div>
+      <img src="./assets/icons/garage.png" alt="garage" />
+      <span>
+        {{ property.garage }}
+        <ng-container i18n="@@garage">Cochera</ng-container>
+      </span>
+    </div>
+  </div>
+</article>
+<div class="property-detail__description section">
+  <div class="property-detail__description-content">
+    <div class="property-detail__description-info">
+      <div>
+        <h2 class="property-detail__description-title" i18n="@@description">
+          Descripción
+        </h2>
+        <div
+          class="property-detail__description-text"
+          [innerHTML]="property.description"
+        ></div>
+      </div>
+      <div>
+        <h2 class="property-detail__description-title" i18n="@@details">
+          Detalles
+        </h2>
+        <div
+          class="property-detail__description-text"
+          [innerHTML]="property.details"
+        ></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="property-detail__description-title" i18n="@@amenities">
+        Amenidades
+      </h3>
+      <div class="property-detail__description-amenities">
+        @for (item of property.amenities; track $index) {
+        <span class="property-detail__description-amenity">
+          <img src="./assets/icons/check-gray.svg" alt="check-gray" />
+          {{ item }}
+        </span>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section last-print">
+  <iframe
+    width="100%"
+    height="450"
+    style="border: 0"
+    allowfullscreen=""
+    referrerpolicy="no-referrer-when-downgrade"
+    [src]="property.url_map"
+  ></iframe>
+</div>
+} @else {
+<div class="property-detail__loader">
+  <app-loader />
+</div>
+}

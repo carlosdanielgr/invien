@@ -40,7 +40,7 @@
           role="tab"
           aria-selected="false"
           tabindex="-1"
-          i18n="@@rent"
+          i18n="@@rent-lower"
           (click)="toggleTab('rent')"
           >Renta</a
         >
@@ -57,10 +57,10 @@
     </ul>
     <div class="tab-content pb-3">
       <div class="tab-pane fade active show" id="venta-tab" role="tabpanel">
-        <app-property-filter [isFor]="isFor" />
+        <app-property-filter [isFor]="isFor" [isHomePage]="true" />
       </div>
       <div class="tab-pane fade" id="renta-tab" role="tabpanel">
-        <app-property-filter [isFor]="isFor" />
+        <app-property-filter [isFor]="isFor" [isHomePage]="true" />
       </div>
     </div>
   </div>
@@ -110,12 +110,12 @@
   id="advisers"
 >
   @for (advisers of slidesAdvisers; track $index; let isFirst = $first) {
-    <div class="carousel-item" [class.active]="isFirst">
-      <div class="carousel-primary-content-card">
-        @for (item of advisers; track $index) {
-          <app-adviser class="home-page__adviser" [adviser]="item" />
-        }
-      </div>
+  <div class="carousel-item" [class.active]="isFirst">
+    <div class="carousel-primary-content-card">
+      @for (item of advisers; track $index) {
+      <app-adviser class="home-page__adviser" [adviser]="item" />
+      }
     </div>
+  </div>
   }
 </app-carousel>

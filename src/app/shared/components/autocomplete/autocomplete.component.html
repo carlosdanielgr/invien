@@ -1,0 +1,16 @@
+<div class="autocomplete" [class.autocomplete--disabled]="!data.length">
+  <label [for]="id">{{ label }}</label>
+  <input
+    #instance="ngbTypeahead"
+    type="text"
+    class="form-control"
+    [id]="id"
+    [placeholder]="placeholder"
+    [disabled]="!data.length"
+    [ngbTypeahead]="search"
+    [(ngModel)]="model"
+    (focus)="focus$.next($any($event).target.value)"
+    (click)="click$.next($any($event).target.value)"
+    (selectItem)="onSelectItem($event)"
+  />
+</div>

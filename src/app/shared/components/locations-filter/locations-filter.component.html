@@ -1,0 +1,30 @@
+<div class="locations-filter">
+  <ng-content></ng-content>
+  <div class="col">
+    <app-autocomplete
+      id="country"
+      [label]="currentFiltersName['country']"
+      [placeholder]="currentFiltersName['countryId']"
+      [data]="countryNames"
+      (selectItem)="getStateByCountry($event)"
+    />
+  </div>
+  <div class="col">
+    <app-autocomplete
+      id="state"
+      [label]="currentFiltersName['state']"
+      [placeholder]="currentFiltersName['stateId']"
+      [data]="stateNames"
+      (selectItem)="getTownByState($event)"
+    />
+  </div>
+  <div class="col">
+    <app-autocomplete
+      id="town"
+      [label]="currentFiltersName['town']"
+      [placeholder]="currentFiltersName['townId']"
+      [data]="townNames"
+      (selectItem)="setTown($event)"
+    />
+  </div>
+</div>

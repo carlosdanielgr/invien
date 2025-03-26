@@ -12,4 +12,6 @@ export class FooterComponent {
   onContact() {
     window.location.href = '#contact';
   }
+
+  year = new Date().getFullYear();
 }

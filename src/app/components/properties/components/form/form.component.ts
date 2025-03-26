@@ -5,6 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { environment } from '@env/environment';
 
 import { Advisor } from '@shared/interfaces/advisor.interface';
 import { SheetService } from '@shared/services/sheet.service';
@@ -31,6 +32,8 @@ export class FormComponent {
     email: $localize`:@@contact-email:tucorreo@email.com`,
     message: $localize`:@@email-message:Dejanos un mensaje`,
   };
+
+  urlImage = `${environment.apiUrl}uploads/advisors/`;
 
   loading = false;
 

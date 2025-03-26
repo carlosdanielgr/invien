@@ -1,0 +1,44 @@
+@use "../../../../../styles/mixins" as *;
+
+.property-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  max-width: 1200px;
+  background-color: #fff;
+  @include screen(med-small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  &__price {
+    padding-right: 1rem;
+    text-align: start;
+    flex-basis: 20%;
+    > label {
+      padding: 0;
+    }
+    input {
+      height: 1.5rem;
+      background-color: transparent;
+      padding: 0 0.2rem;
+      &::placeholder {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  &__btn-search {
+    > button {
+      width: 100%;
+    }
+    @include screen(med-small) {
+      justify-content: flex-end;
+      > button {
+        width: fit-content;
+      }
+    }
+  }
+}

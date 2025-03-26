@@ -1,0 +1,157 @@
+@if (!loading) {
+<article class="property-detail">
+  <div class="property-detail__print-img">
+    @for (item of project.images; track $index) {
+    <figure>
+      <img
+        class="property-detail__carousel-img"
+        [src]="apiUrl + item"
+        [alt]="item"
+      />
+    </figure>
+    }
+  </div>
+  <div
+    id="carouselExampleAutoplaying2"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      @for (item of project.images; track $index; let first = $first) {
+      <div class="carousel-item" [class.active]="first">
+        <img
+          class="property-detail__carousel-img"
+          [src]="apiUrl + item"
+          [alt]="item"
+        />
+      </div>
+      }
+    </div>
+    <div class="property-detail__carousel-btn">
+      <button
+        class="btn carousel-btn mx-2"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying2"
+        data-bs-slide="prev"
+      >
+        <i class="bi bi-arrow-left"></i>
+      </button>
+      <button
+        class="btn carousel-btn"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying2"
+        data-bs-slide="next"
+      >
+        <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  <div class="property-detail__props section">
+    <div>
+      <h1 class="property-detail__props-title">{{ project.name }}</h1>
+      <span class="property-detail__props-type"
+        >{{ project.location }}, {{ project.state.name }},
+        {{ project.town.name }}</span
+      >
+    </div>
+    <div class="property-detail__props-price">
+      <span i18n="@@properties-title"> Inversión desde </span>
+      <span
+        >$
+        {{
+          localeService.current === "es"
+            ? (project.price_mxn | currency : "MXN" : "" : "1.0-0") + " MXN"
+            : (project.price_usd | currency : "USD" : "" : "1.0-0") + " USD"
+        }}
+      </span>
+    </div>
+  </div>
+</article>
+<div class="property-detail__description section">
+  <div class="property-detail__description-content">
+    <div class="property-detail__description-info col">
+      <div>
+        <h2 class="property-detail__description-title" i18n="@@description">
+          Descripción
+        </h2>
+        <div
+          class="property-detail__description-text"
+          [innerHTML]="project.description"
+        ></div>
+      </div>
+      <div>
+        <h3 class="property-detail__description-title" i18n="@@amenities">
+          Amenidades
+        </h3>
+        <div class="property-detail__description-amenities">
+          @for (item of project.amenities; track $index) {
+          <span class="property-detail__description-amenity">
+            <img src="./assets/icons/check-gray.svg" alt="check-gray" />
+            {{ item }}
+          </span>
+          }
+        </div>
+      </div>
+      <a
+        class="btn btn-outline-primary"
+        href="/print-project/{{ project.id }}"
+        target="_blank"
+      >
+        <i class="bi bi-printer"></i>&nbsp;
+        <ng-container i18n="@@prop-detail-print"
+          >Imprimir Propiedad</ng-container
+        >
+      </a>
+    </div>
+    <div class="col property-detail__form">
+      <div>
+        <div class="ps-3">
+          <p
+            class="property-detail__description-title fw-bold"
+            i18n="@@properties-title-contact"
+          >
+            Contáctanos para mas información
+          </p>
+          <img
+            class="property-detail__logo"
+            src="./assets/images/logo-dark.png"
+            alt="logo"
+          />
+        </div>
+        <app-form />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row px-3 py-5">
+  <div class="col-sm-12 col-md-6 last-print">
+    <iframe
+      width="100%"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      referrerpolicy="no-referrer-when-downgrade"
+      [src]="project.url_map"
+    ></iframe>
+  </div>
+  @if (project.url_video) {
+  <div class="property-detail__video col-sm-12 col-md-6">
+    <iframe
+      height="450"
+      loading="lazy"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      [src]="project.url_video"
+    ></iframe>
+  </div>
+  }
+</div>
+} @else {
+<div class="property-detail__loader">
+  <app-loader />
+</div>
+}
+<app-carousel-properties />

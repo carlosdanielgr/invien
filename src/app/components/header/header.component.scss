@@ -13,7 +13,7 @@
   @include screen(med-small) {
     padding: 1rem 3rem;
   }
-  @include screen(custom, max, 850) {
+  @include screen(custom, max, 920) {
     .nav-i18n {
       display: none;
     }
@@ -41,7 +41,7 @@
   }
   &__links {
     flex-direction: row;
-    @include screen(custom, max, 850) {
+    @include screen(custom, max, 920) {
       display: none;
     }
   }

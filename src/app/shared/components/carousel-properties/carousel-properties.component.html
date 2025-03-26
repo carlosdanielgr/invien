@@ -1,33 +1,31 @@
 <app-carousel
   [titlePrimary]="title"
   [subtitle]="subtitle"
-  viewAll="/properties"
+  viewAll="/projects"
   id="properties"
 >
-  @if (!propertyService.loading) {
-    @for (properties of matrixProperties; track $index; let isFirst = $first) {
-      <div class="carousel-item" [class.active]="isFirst">
-        <div class="carousel-primary-content-card">
-          @for (item of properties; track $index) {
-            <app-property class="col" [property]="item" />
-          }
-        </div>
-      </div>
-    }
-    @if (!matrixProperties.length) {
-      <app-no-data [message]="noProperties" />
-    }
-  } @else {
-    <div class="carousel-item active">
-      <div class="carousel-primary-content-card">
-        @if (isWeb) {
-          <app-property-skeleton class="col" />
-          <app-property-skeleton class="col" />
-          <app-property-skeleton class="col" />
-        } @else {
-          <app-property-skeleton class="col" />
-        }
-      </div>
+  @if (!projectService.loading) { @for (properties of matrixProperties; track
+  $index; let isFirst = $first) {
+  <div class="carousel-item" [class.active]="isFirst">
+    <div class="carousel-primary-content-card">
+      @for (item of properties; track $index) {
+      <app-project class="col" [showPrice]="false" [project]="item" />
+      }
     </div>
+  </div>
+  } @if (!matrixProperties.length) {
+  <app-no-data [message]="noProperties" />
+  } } @else {
+  <div class="carousel-item active">
+    <div class="carousel-primary-content-card">
+      @if (isWeb) {
+      <app-property-skeleton class="col" />
+      <app-property-skeleton class="col" />
+      <app-property-skeleton class="col" />
+      } @else {
+      <app-property-skeleton class="col" />
+      }
+    </div>
+  </div>
   }
 </app-carousel>

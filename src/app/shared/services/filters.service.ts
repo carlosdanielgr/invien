@@ -17,8 +17,33 @@ export class FiltersService {
 
   constructor(
     private readonly http: HttpClient,
-    private readonly locale: LocaleService,
+    private readonly locale: LocaleService
   ) {}
+
+  getCountries() {
+    return this.http.get<Filter[]>(`${this.API_URL_FILTER}countries`).pipe(
+      map((countries) => {
+        return countries.map((country) => {
+          return {
+            ...country,
+            name: country[`name_${this.locale.current}` as keyof Filter],
+          };
+        });
+      })
+    );
+  }
+
+  getStates(countryId: string) {
+    return this.http.get<Filter[]>(`${this.API_URL_FILTER}states`, {
+      params: { countryId },
+    });
+  }
+
+  getTowns(stateId: string) {
+    return this.http.get<Filter[]>(`${this.API_URL_FILTER}towns`, {
+      params: { stateId },
+    });
+  }
 
   getLocations() {
     return this.http.get<Locations>(this.API_URL_FILTER).pipe(
@@ -42,7 +67,7 @@ export class FiltersService {
           };
         });
         return locations;
-      }),
+      })
     );
   }
 
@@ -55,7 +80,7 @@ export class FiltersService {
             name: type[`type_${this.locale.current}` as keyof Filter],
           };
         });
-      }),
+      })
     );
   }
 }
