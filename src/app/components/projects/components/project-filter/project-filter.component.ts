@@ -15,6 +15,11 @@ export class ProjectFilterComponent {
 
   currentFilters: Record<string, any> = {};
 
+  placeholders = {
+    from: $localize`:@@from:Desde`,
+    to: $localize`:@@to:Hasta`,
+  };
+
   constructor() {}
 
   onSetFilterPrice(value: string, type: string) {

@@ -36,14 +36,16 @@
         #min
         type="number"
         class="form-control"
-        placeholder="Min"
+        min="0"
+        [placeholder]="currentFiltersName['from']"
         (input)="onSetFilterPrice(min.value, 'min')"
       />
       <input
         #max
         type="number"
         class="form-control"
-        placeholder="Max"
+        min="0"
+        [placeholder]="currentFiltersName['to']"
         (input)="onSetFilterPrice(max.value, 'max')"
       />
     </div>
@@ -57,22 +59,19 @@
       id="rooms"
       type="number"
       class="form-control"
+      min="0"
       [placeholder]="currentFiltersName['Rooms']"
       (input)="onSetFilterRange('Rooms', room.value)"
     />
   </div>
   <div class="property-filter__input">
-    <label
-      for="size"
-      class="property-filter__btn-toggle"
-      i18n="@@prop-filter-total-land"
-      >Terreno en m²</label
-    >
+    <label for="size" class="property-filter__btn-toggle">M²</label>
     <input
       #total
       id="size"
       type="number"
       class="form-control"
+      min="0"
       [placeholder]="currentFiltersName['TotalSize']"
       (input)="onSetFilterRange('TotalSize', total.value)"
     />

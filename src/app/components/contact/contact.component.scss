@@ -10,7 +10,7 @@
     align-items: center;
   }
   &__image {
-    background-image: url(./../../../assets/images/contact.png);
+    background-image: url(./../../../assets/images/contact.jpg);
     background-position-y: center;
     background-size: cover;
     height: 791px;
@@ -21,4 +21,5 @@
 .contact-title {
   margin: 1.5rem 0;
   max-width: 15rem;
+  font-family: bell-mt;
 }

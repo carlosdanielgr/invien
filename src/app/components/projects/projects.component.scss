@@ -1,6 +1,17 @@
 .properties {
   &__main {
-    background-image: url(./../../../assets/images/projects.png);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(./../../../assets/images/projects.jpg);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
   }
   &__filter {
     max-width: 1200px;

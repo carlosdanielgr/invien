@@ -7,14 +7,16 @@
           #min
           type="number"
           class="form-control"
-          placeholder="Min"
+          min="0"
+          [placeholder]="placeholders['from']"
           (input)="onSetFilterPrice(min.value, 'min')"
         />
         <input
           #max
           type="number"
           class="form-control"
-          placeholder="Max"
+          min="0"
+          [placeholder]="placeholders['to']"
           (input)="onSetFilterPrice(max.value, 'max')"
         />
       </div>

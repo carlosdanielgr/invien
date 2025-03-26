@@ -102,6 +102,12 @@
       <trans-unit id="for" datatype="html">
         <source>For </source>
       </trans-unit>
+      <trans-unit id="from" datatype="html">
+        <source>From</source>
+      </trans-unit>
+      <trans-unit id="to" datatype="html">
+        <source>To </source>
+      </trans-unit>
       <trans-unit id="projects" datatype="html">
         <source>Projects</source>
       </trans-unit>

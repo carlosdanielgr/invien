@@ -18,9 +18,9 @@ export class PropertyFilterComponent implements OnInit {
     this.currentFilters['isFor'] = value;
   }
 
-  @Output() newFilter = new EventEmitter<QueryFilter>();
+  @Input() isHomePage = false;
 
-  isHomePage = this.router.url === '/';
+  @Output() newFilter = new EventEmitter<QueryFilter>();
 
   types: Filter[] = [];
 
@@ -28,6 +28,8 @@ export class PropertyFilterComponent implements OnInit {
 
   currentFiltersName: Record<string, string> = {
     typeId: $localize`:@@prop-filter-type-select:Selecciona el tipo de propiedad`,
+    from: $localize`:@@from:Desde`,
+    to: $localize`:@@to:Hasta`,
     Rooms: $localize`:@@prop-filter-rooms-select:Ingrese la cantidad`,
     TotalSize: $localize`:@@prop-filter-total-size-select:Ingrese en m²`,
   };
