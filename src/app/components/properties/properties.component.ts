@@ -46,6 +46,10 @@ export class PropertiesComponent implements OnInit {
   }
 
   onGetProperties(params: QueryFilter): void {
+    const element = document.getElementById('props-init');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     this.loading = true;
     this.propertyService
       .getPropertiesPaginate({

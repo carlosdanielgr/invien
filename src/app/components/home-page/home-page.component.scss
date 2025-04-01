@@ -73,10 +73,20 @@
 .why-invest {
   max-width: 1200px;
   margin: 0 auto;
+  img {
+    border-radius: 1rem;
+  }
   @include screen(small) {
     display: flex;
     align-items: center;
     gap: 2rem;
+    > figure {
+      height: 570px;
+      > img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }
 

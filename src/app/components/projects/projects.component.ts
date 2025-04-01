@@ -46,6 +46,10 @@ export class ProjectsComponent implements OnInit {
   }
 
   onGetProjects(params: QueryFilter): void {
+    const element = document.getElementById('projects-init');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     this.loading = true;
     this.projectService
       .getProjectsPaginate({
