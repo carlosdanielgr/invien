@@ -3,6 +3,13 @@
 .advisers {
   &__main {
     position: relative;
+    > h1 {
+      position: absolute;
+      bottom: 4rem;
+      @include screen(small) {
+        bottom: 7rem;
+      }
+    }
     &::after {
       content: "";
       position: absolute;
