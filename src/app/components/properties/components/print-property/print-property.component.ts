@@ -13,6 +13,8 @@ import { LoaderComponent } from '@shared/components/loader/loader.component';
   encapsulation: ViewEncapsulation.None,
 })
 export class PrintPropertyComponent extends PropertyDetailComponent {
+  isPageBreak = window.innerWidth > 992;
+
   constructor() {
     super();
     this.id = this.activatedRoute.snapshot.params['id'];

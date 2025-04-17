@@ -1,5 +1,5 @@
 @if (!loading) {
-<article class="property-detail">
+<article class="property-detail" [class.page-break]="isPageBreak">
   <div class="property-detail__header">
     <figure>
       <img src="./assets/images/logo-dark.png" alt="logo" />
@@ -35,7 +35,10 @@
     }
   </div>
 </article>
-<div class="property-detail__description section">
+<div
+  class="property-detail__description section"
+  [class.page-break]="isPageBreak"
+>
   <div class="property-detail__description-content">
     <div class="property-detail__description-info">
       <div>

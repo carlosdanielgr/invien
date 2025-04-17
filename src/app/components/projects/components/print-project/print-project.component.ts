@@ -14,6 +14,8 @@ import { ProjectDetailComponent } from '../project-detail/project-detail.compone
   encapsulation: ViewEncapsulation.None,
 })
 export class PrintProjectComponent extends ProjectDetailComponent {
+  isPageBreak = window.innerWidth > 992;
+
   constructor() {
     super();
     this.id = this.activatedRoute.snapshot.params['id'];

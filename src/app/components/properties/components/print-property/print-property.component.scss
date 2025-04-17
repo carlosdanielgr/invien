@@ -19,7 +19,6 @@ app-contact {
 .property-detail {
   padding: 1rem;
   @extend %max-width;
-  page-break-after: always;
   &__header {
     display: flex;
     align-items: center;
@@ -87,7 +86,6 @@ app-contact {
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
-    page-break-after: always;
     > div {
       display: flex;
       column-gap: 0.5rem;
@@ -151,4 +149,8 @@ app-contact {
   &__loader {
     padding: 12rem 1rem 0;
   }
+}
+
+.page-break {
+  page-break-after: always;
 }

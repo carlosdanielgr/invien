@@ -1,5 +1,5 @@
 @if (!loading) {
-<article class="property-detail">
+<article class="property-detail" [class.page-break]="isPageBreak">
   <div class="property-detail__header">
     <figure>
       <img src="./assets/images/logo-dark.png" alt="logo" />
@@ -43,7 +43,7 @@
     </figure>
     }
   </div>
-  <div class="property-detail__features">
+  <div class="property-detail__features" [class.page-break]="isPageBreak">
     <div>
       <img src="./assets/icons/total.png" alt="measures" />
       <span>
@@ -124,7 +124,7 @@
     style="border: 0"
     allowfullscreen=""
     referrerpolicy="no-referrer-when-downgrade"
-    [src]="property.url_map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.891994085319!2d-75.7304012756019!3d4.78856909089076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e387d9b7d6570d7%3A0xa5ce2a44d7a63849!2sbarrio%20montelibano%2C%20Comuna%20Oriente%2C%20Pereira%2C%20Risaralda!5e0!3m2!1ses!2sco!4v1744774329476!5m2!1ses!2sco"
   ></iframe>
 </div>
 } @else {
