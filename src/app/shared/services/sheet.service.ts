@@ -9,8 +9,15 @@ export class SheetService {
 
   postSheetData(data: any) {
     return this.http.post(
-      'https://api.apispreadsheets.com/data/ImgRbAbOhc0MIxIW/',
-      data,
+      'https://api.apispreadsheets.com/data/wQuX07I4aAzVvDop/',
+      data
+    );
+  }
+
+  postSheetDataAdvisors(data: any) {
+    return this.http.post(
+      'https://api.apispreadsheets.com/data/oNvNtZvSggQHcn7z/',
+      data
     );
   }
 }

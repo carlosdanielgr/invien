@@ -42,9 +42,8 @@ export class FormComponent {
   onSubmit() {
     if (this.form.invalid) return;
     const { name, email, phone, message } = this.form.value;
-    const date = new Date();
     const body = {
-      Fecha: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+      Fecha: new Date(),
       Nombre: name,
       'Correo Electrónico': email,
       Teléfono: phone,
@@ -52,7 +51,7 @@ export class FormComponent {
       Asesor: this.advisor.name,
     };
     this.loading = true;
-    this.sheetService.postSheetData(body).subscribe({
+    this.sheetService.postSheetDataAdvisors(body).subscribe({
       next: () => {
         this.form.reset();
         this.loading = false;

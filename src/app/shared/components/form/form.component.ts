@@ -35,9 +35,8 @@ export class FormComponent {
   onSubmit() {
     if (this.form.invalid) return;
     const { name, email, phone, message } = this.form.value;
-    const date = new Date();
     const body = {
-      Fecha: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+      Fecha: new Date(),
       Nombre: name,
       'Correo Electrónico': email,
       Teléfono: phone,
